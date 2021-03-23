@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <title>SellCar - Cadastro Cliente</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+        <div class="font-weight-bold text-center">
+            <img src="/img/logo.jpg" alt="logo">
+            <h1>SellCar - Cadastro Cliente</h1>
+        </div>
+
+        <form action="/cadastrar-cliente" method="POST">
+
+            <div class="form-group">
+                <b><label for="nome">Nome Completo</label></b>
+                <input class="form-control" type="text" name="nome" id="nome" th:value="${cliente.nome}"
+                    placeholder="ex: José da Silva">
+            </div>
+
+            <div class="form-group">
+                <b><label for="cpf">CPF</label></b>
+                <input class="form-control" type="text" name="cpf" id="cpf" th:value="${cliente.cpf}"
+                    placeholder="ex: 000.000.000-00">
+            </div>
+
+            <div class="form-group">
+                <b><label for="datanascimento">Data Nascimento</label></b>
+                <input class="form-control" type="date" name="datanascimento" id="datanascimento" th:value="${cliente.datanascimentocli}"
+                    placeholder="ex: 01/01/2000">
+            </div>
+
+            <div class="form-group">
+                <b><label for="endereco">Endereço</label></b>
+                <input class="form-control" type="text" name="endereco" id="endereco" th:value="${cliente.endereco}"
+                    placeholder="ex: Rua X, 222">
+            </div>
+
+            <div class="form-group">
+                <b><label for="cep">CEP</label></b>
+                <input class="form-control" type="text" name="cep" id="cep" th:value="${cliente.cep}"
+                    placeholder="ex: 00.000-000">
+            </div>
+
+            <div class="form-group">
+                <b><label for="uf">UF</label></b>
+                <input class="form-control" type="text" name="uf" id="uf" th:value="${cliente.uf}"
+                    placeholder="ex: SC">
+            </div>
+
+            <div class="form-group">
+                <b><label for="telefone">Telefone</label></b>
+                <input class="form-control" type="text" name="telefone" id="telefone" th:value="${cliente.celular}"
+                    placeholder="ex: (48)9999-9999">
+            </div>
+
+            <input type="hidden" name="id" th:value="${cliente.id}">
+
+            <input class="btn btn-dark m-1" type="submit" value="CADASTRAR" id="cadastrar">
+        </form>
+
+        <a class="btn btn-dark m-1" href="/index-cliente">VOLTAR</a>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

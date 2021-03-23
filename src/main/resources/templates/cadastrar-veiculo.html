@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <title>SellCar - Cadastro Veículo</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+        <div class="font-weight-bold text-center">
+            <img src="/img/logo.jpg" alt="logo">
+            <h1>SellCar - Cadastro Veículo</h1>
+        </div>
+
+        <form action="/cadastrar-veiculo" method="POST">
+
+            <div class="form-group">
+                <b><label for="fabricante">Fabricante</label></b>
+                <input class="form-control" type="text" name="fabricante" id="fabricante" th:value="${veiculo.fabricante}"
+                    placeholder="ex: Ford">
+            </div>
+
+            <div class="form-group">
+                <b><label for="nomeveiculo">Nome do Veiculo</label></b>
+                <input class="form-control" type="text" name="nomeveiculo" id="nomeveiculo" th:value="${veiculo.nomeveiculo}"
+                    placeholder="ex: EcoSport">
+            </div>
+
+            <div class="form-group">
+                <b><label for="anofabricacao">Ano Fabricação</label></b>
+                <input class="form-control" type="date" name="anofabricacao" id="anofabricacao" th:value="${veiculo.anofabricacao}"
+                    placeholder="ex: 2010">
+            </div>
+
+            <div class="form-group">
+                <b><label for="anomodelo">Ano Modelo</label></b>
+                <input class="form-control" type="text" name="anomodelo" id="anomodelo" th:value="${veiculo.anomodelo}"
+                    placeholder="ex: 2011">
+            </div>
+
+            <div class="form-group">
+                <b><label for="placa">placa</label></b>
+                <input class="form-control" type="text" name="placa" id="placa" th:value="${veiculo.placa}"
+                    placeholder="ex: AAA-1234">
+            </div>
+
+            <div class="form-group">
+                <b><label for="renavan">Renavan</label></b>
+                <input class="form-control" type="text" name="renavan" id="renavan" th:value="${veiculo.renavan}"
+                    placeholder="ex: 78154935468">
+            </div>
+
+            <div class="form-group">
+                <b><label for="chassi">Chassi</label></b>
+                <input class="form-control" type="text" name="chassi" id="chassi" th:value="${veiculo.chassi}"
+                    placeholder="ex: ABC214587963">
+            </div>
+
+            <input type="hidden" name="id" th:value="${veiculo.id}">
+
+            <input class="btn btn-dark m-1" type="submit" value="CADASTRAR" id="cadastrar">
+        </form>
+
+        <a class="btn btn-dark m-1" href="/index-veiculo">VOLTAR</a>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
