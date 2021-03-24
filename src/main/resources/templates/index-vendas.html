@@ -20,7 +20,7 @@
             <div class="row m-1" th:each="vendas : ${listaVendas}">
                 <div class="col-6">
                     <a class="text-dark" th:href="@{/mostrar-vendas/{id}(id=${vendas.id})}"
-                        th:text="${vendas.nome}"></a>
+                        th:text="${vendas.nomecliente}"></a>
                 </div>
 
                 <div class="col-3">
