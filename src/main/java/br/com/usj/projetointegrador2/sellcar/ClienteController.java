@@ -16,7 +16,7 @@ public class ClienteController {
     ClienteRepository clienteRepository;
 
     @GetMapping(value = "/index-cliente")
-    ModelAndView getListarGame() {
+    ModelAndView getListarCliente() {
         List<Cliente> listaCliente = clienteRepository.findAll();
         ModelAndView modelAndView = new ModelAndView("index-cliente");
         modelAndView.addObject("listaCliente", listaCliente);

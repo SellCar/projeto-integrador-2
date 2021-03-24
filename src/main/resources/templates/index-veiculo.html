@@ -16,8 +16,8 @@
             <h1>SellCar - Cadastro Veículo</h1>
         </div>
 
-        <div th:if="${listaVeículo.size() > 0}">
-            <div class="row m-1" th:each="veículo : ${listaVeículo}">
+        <div th:if="${listaVeiculo.size() > 0}">
+            <div class="row m-1" th:each="veiculo : ${listaVeiculo}">
                 <div class="col-6">
                     <a class="text-dark" th:href="@{/mostrar-veiculo/{id}(id=${veiculo.id})}"
                         th:text="${veiculo.nome}"></a>
