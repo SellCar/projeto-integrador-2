@@ -1,16 +1,46 @@
 body {
-    background: #8A2387;  /* fallback for old browsers */
+background: #8A2387;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
-main{
-height: 900px;
+#bgWhite{
+  height: 900px;
+  
+  background-color: rgb(255, 255, 255);
+  width: 1110px;
+ margin-left: 400px;
+ border-radius: 20px;
 
-background-color: rgb(255, 255, 255);
-width: 1110px;
-margin-left: 400px;
-border-radius: 30px;
+}
 
+#logo{
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#tituloSellCar{
+  width: 1110px;
+  background: #000000;
+  color: white;
+  
+}
+
+.pequeno
+{
+  width: 30%;
+  margin-top: 20px;
+}
+
+#menuPrincipal{
+  margin: 100px;
+}
+
+#icones{
+  width: 20%;
+}
+
+#iconeHome{
+  width: 1%;
 }
