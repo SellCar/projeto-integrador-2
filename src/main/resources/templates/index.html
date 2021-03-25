@@ -5,30 +5,92 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+   
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/estilo.css">
   </head>
-  <body class="bg-info text-center">
-    <div>
-        <img src="/img/sellcar-banner.png" alt="logo">
-        <h1 class="font-weight-bold">SellCar - Menu Principal</h1>
-    </div>
+  
+<style>
+body {
+background: #8A2387;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    <div class="text-center">
-        <a class="btn btn-dark mr-2 mb-2" href="index-cliente">CADASTRO CLIENTE</a>
-        <a class="btn btn-dark mr-2 mb-2" href="index-funcionario">CADASTRO FUNCIONARIO</a>
-    </div>
+}
 
-    <div class="text-center">
-        <a class="btn btn-dark mr-2 mb-2" href="index-veiculo">CADASTRO VEICULO</a>
-        <a class="btn btn-dark mr-2 mb-2" href="index-vendas">CADASTRO VENDAS</a>
-    </div>
+#bgWhite{
+  height: 900px;
+  
+  background-color: rgb(255, 255, 255);
+  width: 1110px;
+ margin-left: 400px;
+ border-radius: 20px;
+
+}
+
+#logo{
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#tituloSellCar{
+  width: 1110px;
+  background: #000000;
+  color: white;
+  
+}
+
+.pequeno
+{
+  width: 30%;
+  margin-top: 20px;
+}
+
+#menuPrincipal{
+  margin: 100px;
+}
+
+#icones{
+  width: 20%;
+}
+</style>
+  
+  <body class="text-center">
+    
+    <div id="bgWhite">
+      <img src="/img/sellcar-banner.png" alt="logo" id="logo">
+        <div id="tituloSellCar">
+           <h1 class="font-weight-bold p-1">MENU PRINCIPAL</h1>
       
+    </div>
+   
+    <div id="menuPrincipal">
+      <div class="row text-center mt-2">
+        <div class="col-md-6"><img src="/img/cliente.png" alt="cliente" id="icones"></div>
+        <div class="col-md-6"><img src="/img/funcionario.png" alt="funcionario" id="icones"></div>
+      </div>
+        <div class="row text-center mt-1">
+        <div class="col-md-6"><a class="btn btn-dark mr-2 mb-2 pequeno" href="index-cliente">CADASTRO CLIENTE</a></div>
+        <div class="col-md-6"><a class="btn btn-dark mr-2 mb-2 pequeno" href="index-funcionario">CADASTRO FUNCIONARIO</a></div>
+      </div>
+
+      <div class="row text-center mt-5">
+        <div class="col-md-6"><img src="/img/veiculo.png" alt="veiculo" id="icones"></div>
+        <div class="col-md-6"><img src="/img/venda.png" alt="venda" id="icones"></div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-6"><a class="btn btn-dark mr-2 mb-2 pequeno" href="index-veiculo">CADASTRO VEICULO</a></div>
+        <div class="col-md-6"><a class="btn btn-dark mr-2 mb-2 pequeno" href="index-vendas">CADASTRO VENDAS</a></div>
+      </div>
+    
+      </div>
+    </div> 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
   </body>
 </html>

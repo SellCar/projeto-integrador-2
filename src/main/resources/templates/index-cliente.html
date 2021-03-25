@@ -9,12 +9,59 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
+  <style>
+    body {
+    background: #8A2387;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    }
+    
+    #bgWhite{
+      height: 900px;
+      
+      background-color: rgb(255, 255, 255);
+      width: 1110px;
+     margin-left: 400px;
+     border-radius: 20px;
+    
+    }
+    
+    #logo{
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+    
+    #tituloSellCar{
+      width: 1110px;
+      background: #000000;
+      color: white;
+      
+    }
+    
+    .pequeno
+    {
+      width: 30%;
+      margin-top: 20px;
+    }
+    
+    #menuPrincipal{
+      margin: 100px;
+    }
+    
+    #icones{
+      width: 20%;
+    }
+    </style>
+  
+  
   <body class="text-center">
-    <div class="container">
-        <div class="font-weight-bold text-center">
-            <img src="/img/sellcar-banner.png" alt="logo">
-            <h1>SellCar - Cadastro Cliente</h1>
-        </div>
+    <div id="bgWhite">
+      <img src="/img/sellcar-banner.png" alt="logo" id="logo">
+        <div id="tituloSellCar">
+           <h1 class="font-weight-bold p-1">CADASTRO DE CLIENTES</h1>
+         </div>
+
 
         <div th:if="${listaCliente.size() > 0}">
             <div class="row m-1" th:each="cliente : ${listaCliente}">
@@ -31,10 +78,14 @@
             </div>
         </div>
 
-        <div><a class="btn btn-dark" href="/cadastrar-cliente">CADASTRAR NOVO CLIENTE</a></div>
-        <div><a class="btn btn-dark" href="/">MENU PRINCIPAL</a></div>
+            <div class="row m-3">
+                <div class="col-md-12"><a class="btn btn-dark" href="/cadastrar-cliente">CADASTRAR NOVO CLIENTE</a></div>
+            </div>
+            <div class="row m-3">
+                <div class="col-md-12"><a class="btn btn-dark" href="/">MENU PRINCIPAL</a></div>
+            </div>
     </div>
-      
+</div>      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
