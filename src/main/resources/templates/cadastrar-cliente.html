@@ -64,10 +64,14 @@
 
             <input type="hidden" name="id" th:value="${cliente.id}">
 
-            <input class="btn btn-dark m-1" type="submit" value="CADASTRAR" id="cadastrar">
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4"><input class="btn btn-dark m-1" type="submit" value="CADASTRAR" id="cadastrar"></div>
+                <div class="col-4"><a href="/index-cliente"><img src="/img/back.png" alt="voltar" id="icones"></a></div>
+            </div>
         </form>
 
-        <a class="btn btn-dark m-1" href="/index-cliente">VOLTAR</a>
+        <!--<a class="btn btn-dark m-1" href="/index-cliente">VOLTAR</a>--->
     </div>
     </div>
     <!-- Optional JavaScript -->
