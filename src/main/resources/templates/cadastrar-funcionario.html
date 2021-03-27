@@ -19,58 +19,61 @@
 
         <form action="/cadastrar-funcionario" method="POST">
 
-            <div class="form-group">
-                <b><label for="nome">Nome Completo</label></b>
-                <input class="form-control" type="text" name="nome" id="nome" th:value="${funcionario.nome}"
-                    placeholder="ex: José da Silva">
-            </div>
+            <div class="form-group text-left m-3">
+                
+                <div class="row">
+                    <div class="col-6"><b><label for="nome">Nome Completo</label></b></div>
+                    <div class="col-3"><b><label for="cpf">CPF</label></b></div>
+                    <div class="col-3"><b><label for="datanascimento">Data Nascimento</label></b></div>
+                </div>
+                
+                <div class="row mb-3">
+                    <div class="col-6"><input class="form-control" type="text" name="nome" id="nome" th:value="${funcionario.nome}"
+                        placeholder="ex: José da Silva"></div>
+                    <div class="col-3"><input class="form-control" type="text" name="cpf" id="cpf" th:value="${funcionario.cpf}"
+                        placeholder="ex: 000.000.000-00"></div>
+                    <div class="col-3"><input class="form-control" type="date" name="datanascimento" id="datanascimento" th:value="${funcionario.datanascimentofunc}"
+                        placeholder="ex: 01/01/2000"></div>
+                </div>
 
-            <div class="form-group">
-                <b><label for="cpf">CPF</label></b>
-                <input class="form-control" type="text" name="cpf" id="cpf" th:value="${funcionario.cpf}"
-                    placeholder="ex: 000.000.000-00">
-            </div>
+                <div class="row">
+                    <div class="col-6"><b><label for="endereco">Endereço</label></b></div>
+                    <div class="col-3"><b><label for="cep">CEP</label></b></div>
+                    <div class="col-3"><b><label for="uf">UF</label></b></div>
+                </div>
 
-            <div class="form-group">
-                <b><label for="datanascimento">Data Nascimento</label></b>
-                <input class="form-control" type="date" name="datanascimento" id="datanascimento" th:value="${funcionario.datanascimentofunc}"
-                    placeholder="ex: 01/01/2000">
-            </div>
+                <div class="row mb-3">
+                    <div class="col-6"><input class="form-control" type="text" name="endereco" id="endereco" th:value="${funcionario.endereco}"
+                        placeholder="ex: Rua X, 222"></div>
+                    <div class="col-3"><input class="form-control" type="text" name="cep" id="cep" th:value="${funcionario.cep}"
+                        placeholder="ex: 00.000-000"></div>
+                    <div class="col-3"><input class="form-control" type="text" name="uf" id="uf" th:value="${funcionario.uf}"
+                        placeholder="ex: SC"></div>
+                </div>
 
-            <div class="form-group">
-                <b><label for="endereco">Endereço</label></b>
-                <input class="form-control" type="text" name="endereco" id="endereco" th:value="${funcionario.endereco}"
-                    placeholder="ex: Rua X, 222">
-            </div>
+                <div class="row">
+                    <div class="col-5"><b><label for="telefone">Telefone</label></b></div>
+                    <div class="col-7"><b></b><label for="email">E-Mail</label></div>
+                </div>
 
-            <div class="form-group">
-                <b><label for="cep">CEP</label></b>
-                <input class="form-control" type="text" name="cep" id="cep" th:value="${funcionario.cep}"
-                    placeholder="ex: 00.000-000">
-            </div>
+                <div class="row mb-3">
+                    <div class="col-4"><input class="form-control" type="text" name="telefone" id="telefone" th:value="${funcionario.celular}"
+                        placeholder="ex: (48)9999-9999"></div>
+                    <!-- <div class="col-4"><input class="form-control" type="email" name="email" id="email" th:value="${funcionario.email}"
+                        placeholder="ex: email@email.com.br"></div> -->
+                </div>            
 
-            <div class="form-group">
-                <b><label for="uf">UF</label></b>
-                <input class="form-control" type="text" name="uf" id="uf" th:value="${funcionario.uf}"
-                    placeholder="ex: SC">
-            </div>
+                <div class="row">
+                    <div class="col-6"><b><label for="login">Login</label></b></div>
+                    <div class="col-6"><b><label for="senha">Senha</label></b></div>
+                </div>
 
-            <div class="form-group">
-                <b><label for="telefone">Telefone</label></b>
-                <input class="form-control" type="text" name="telefone" id="telefone" th:value="${funcionario.celular}"
-                    placeholder="ex: (48)9999-9999">
-            </div>
-
-            <div class="form-group">
-                <b><label for="login">Login</label></b>
-                <input class="form-control" type="text" name="login" id="login" th:value="${funcionario.cadlogin}"
-                    placeholder="ex: alberto.silva">
-            </div>
-
-            <div class="form-group">
-                <b><label for="senha">Senha</label></b>
-                <input class="form-control" type="password" name="senha" id="senha" th:value="${funcionario.cadsenha}"
-                    placeholder="mínimo 8 dígitos">
+                <div class="row mb-3">
+                    <div class="col-6"><input class="form-control" type="text" name="login" id="login" th:value="${funcionario.cadlogin}"
+                        placeholder="ex: alberto.silva"></div>
+                    <div class="col-6"><input class="form-control" type="password" name="senha" id="senha" th:value="${funcionario.cadsenha}"
+                        placeholder="mínimo 8 dígitos"></div>
+                </div>
             </div>
 
             <input type="hidden" name="id" th:value="${funcionario.id}">
