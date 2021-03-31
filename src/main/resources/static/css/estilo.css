@@ -55,10 +55,15 @@ a{
 }
 
 footer{
-  margin-top: 12%;
   background-color: #000000;
   color: white;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  padding: 15px;
+  padding: 16px;
+  height: 100%;
+  
+}
+
+#footerindex{
+  margin-top: 494px;
 }

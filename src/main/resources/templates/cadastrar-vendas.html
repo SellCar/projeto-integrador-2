@@ -1,34 +1,37 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <title>SellCar - Cadastro Vendas</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="/css/estilo.css">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body class="text-center">
-    <div id="bgWhite">
-      <img src="/img/sellcar-banner.png" alt="logo" id="logo">
-        <div id="tituloSellCar">
-           <h1 class="font-weight-bold p-1">CADASTRO DE VENDAS</h1>
-         </div>
+<head>
+  <title>SellCar - Cadastro Vendas</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="/css/estilo.css">
 
-        <form action="/cadastrar-vendas" method="POST">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
 
-          <div class="form-group text-left m-3">
-            <div class="row">
-              <div class="col-6"><b><label for="nomecliente">Nome Completo</label></b></div>
-              <div class="col-6"><b><label for="nomeveiculo">Nome do Veículo</label></b></div>
-          </div>
-          <div class="row mb-3">
-            <div class="col-6"><input class="form-control" type="text" name="nomecliente" id="nomecliente" th:value="${vendas.nomecliente}"
-              placeholder="ex: José da Silva"></div>
-            <div class="col-6"><input class="form-control" type="text" name="nomeveiculo" id="nomeveiculo" th:value="${vendas.nomeveiculo}"
-              placeholder="ex: Ford EcoSport"></div>
+<body class="text-center">
+  <div id="bgWhite">
+    <img src="/img/sellcar-banner.png" alt="logo" id="logo">
+    <div id="tituloSellCar">
+      <h1 class="font-weight-bold p-1">CADASTRO DE VENDAS</h1>
+    </div>
+
+    <form action="/cadastrar-vendas" method="POST">
+
+      <div class="form-group text-left m-3">
+        <div class="row">
+          <div class="col-6"><b><label for="nomecliente">Nome Completo</label></b></div>
+          <div class="col-6"><b><label for="nomeveiculo">Nome do Veículo</label></b></div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-6"><input class="form-control" type="text" name="nomecliente" id="nomecliente"
+              th:value="${vendas.nomecliente}" placeholder="ex: José da Silva"></div>
+          <div class="col-6"><input class="form-control" type="text" name="nomeveiculo" id="nomeveiculo"
+              th:value="${vendas.nomeveiculo}" placeholder="ex: Ford EcoSport"></div>
         </div>
 
         <div class="row">
@@ -38,31 +41,40 @@
         </div>
 
         <div class="row mb-3">
-          <div class="col-4"><input class="form-control" type="text" name="valororiginal" id="valororiginal" th:value="${vendas.valororiginal}"
-            placeholder="ex: R$35900,00"></div>
-          <div class="col-4"><input class="form-control" type="text" name="valorfinal" id="valorfinal" th:value="${vendas.valorfinal}"
-            placeholder="ex: R$33900,00"></div>
-          <div class="col-4"><input class="form-control" type="text" name="formaspagamento" id="formaspagamento" th:value="${vendas.formaspagamento}"
-            placeholder="ex: A Vista"></div>
+          <div class="col-4"><input class="form-control" type="text" name="valororiginal" id="valororiginal"
+              th:value="${vendas.valororiginal}" placeholder="ex: R$35900,00"></div>
+          <div class="col-4"><input class="form-control" type="text" name="valorfinal" id="valorfinal"
+              th:value="${vendas.valorfinal}" placeholder="ex: R$33900,00"></div>
+          <div class="col-4"><input class="form-control" type="text" name="formaspagamento" id="formaspagamento"
+              th:value="${vendas.formaspagamento}" placeholder="ex: A Vista"></div>
         </div>
-        </div>
+      </div>
 
-            <input type="hidden" name="id" th:value="${vendas.id}">
+      <input type="hidden" name="id" th:value="${vendas.id}">
 
-            <div class="row">
-              <div class="col-4"></div>
-              <div class="col-4"><input class="btn btn-dark m-1" type="submit" value="CADASTRAR" id="cadastrar" onclick="confirmar()"></div>
-              <div class="col-4"><a href="/index-vendas"><img src="/img/back.png" alt="voltar" id="voltar"></a></div>
-           </div>
-        </form>
-        <footer class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All Rights Reserved &copy</footer>
-    </div>
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4"><input class="btn btn-dark m-1" type="submit" value="CADASTRAR" id="cadastrar"
+            onclick="confirmar()"></div>
+        <div class="col-4"><a href="/index-vendas"><img src="/img/back.png" alt="voltar" id="voltar"></a></div>
+      </div>
+    </form>
+    <footer class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All Rights Reserved &copy
+    </footer>
+  </div>
   </div>
 
-  <script src="/js/interacoes.js"></script>    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+  <script src="/js/interacoes.js"></script> <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
