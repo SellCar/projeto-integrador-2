@@ -27,4 +27,5 @@ public class Cliente {
     String cep;
     String uf;
     String celular;
+    String emailcli;
 }

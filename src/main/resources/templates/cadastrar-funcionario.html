@@ -31,7 +31,7 @@
                     <div class="col-6"><input class="form-control" type="text" name="nome" id="nome" th:value="${funcionario.nome}"
                         placeholder="ex: José da Silva"></div>
                     <div class="col-3"><input class="form-control" type="text" name="cpf" id="cpf" th:value="${funcionario.cpf}"
-                        placeholder="ex: 000.000.000-00"></div>
+                        placeholder="ex: 000.000.000-00" maxlength="14"></div>
                     <div class="col-3"><input class="form-control" type="date" name="datanascimento" id="datanascimento" th:value="${funcionario.datanascimentofunc}"
                         placeholder="ex: 01/01/2000"></div>
                 </div>
@@ -46,21 +46,21 @@
                     <div class="col-6"><input class="form-control" type="text" name="endereco" id="endereco" th:value="${funcionario.endereco}"
                         placeholder="ex: Rua X, 222"></div>
                     <div class="col-3"><input class="form-control" type="text" name="cep" id="cep" th:value="${funcionario.cep}"
-                        placeholder="ex: 00.000-000"></div>
+                        placeholder="ex: 00.000-000" maxlength="10"></div>
                     <div class="col-3"><input class="form-control" type="text" name="uf" id="uf" th:value="${funcionario.uf}"
                         placeholder="ex: SC"></div>
                 </div>
 
                 <div class="row">
                     <div class="col-5"><b><label for="telefone">Telefone</label></b></div>
-                    <div class="col-7"><b></b><label for="email">E-Mail</label></div>
+                    <div class="col-7"><b></b><label for="email"><b>E-Mail</b></label></div>
                 </div>
 
                 <div class="row mb-3">
                     <div class="col-4"><input class="form-control" type="text" name="telefone" id="telefone" th:value="${funcionario.celular}"
-                        placeholder="ex: (48)9999-9999"></div>
-                    <!-- <div class="col-4"><input class="form-control" type="email" name="email" id="email" th:value="${funcionario.email}"
-                        placeholder="ex: email@email.com.br"></div> -->
+                        placeholder="ex: (48)99999-9999" maxlength="14"></div>
+                    <div class="col-4"><input class="form-control" type="email" name="email" id="email" th:value="${funcionario.emailfunc}"
+                        placeholder="ex: email@email.com.br"></div>
                 </div>            
 
                 <div class="row">
@@ -80,12 +80,15 @@
 
             <div class="row">
                 <div class="col-4"></div>
-                <div class="col-4"><input class="btn btn-dark m-1" type="submit" value="CADASTRAR" id="cadastrar"></div>
+                <div class="col-4"><input class="btn btn-dark m-1" type="submit" value="CADASTRAR" id="cadastrar" onclick="confirmar()"></div>
                 <div class="col-4"><a href="/index-funcionario"><img src="/img/back.png" alt="voltar" id="voltar"></a></div>
             </div>
             </form>
+            <footer class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All Rights Reserved &copy</footer>
         </div>
     </div>
+
+    <script src="/js/interacoes.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

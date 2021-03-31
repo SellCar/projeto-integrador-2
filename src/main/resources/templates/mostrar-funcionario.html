@@ -14,7 +14,7 @@
       <div id="bgWhite">
         <img src="/img/sellcar-banner.png" alt="logo" id="logo">
           <div id="tituloSellCar">
-             <h1 class="font-weight-bold p-1">CADASTRO DE CLIENTES</h1>
+             <h1 class="font-weight-bold p-1">CADASTRO DE FUNCIONÁRIOS</h1>
            </div>
 
         <h2 th:text="${funcionario.nome}">Nome:</h2>
@@ -24,10 +24,13 @@
         <h2 th:text="${funcionario.cep}">CEP:</h2>
         <h2 th:text="${funcionario.uf}">UF:</h2>
         <h2 th:text="${funcionario.celular}">Telefone:</h2>
+        <h2 th:email="${funcionario.emailfunc}">E-Mail:</h2>
         <h2 th:text="${funcionario.cadlogin}">Login:</h2>
-        <h2 th:text="${funcionario.cadsenha}">Senha:</h2>
+        <h2 th:password="${funcionario.cadsenha}">Senha:</h2>
 
         <div><a class="btn btn-dark m-1" href="/index-funcionario">VOLTAR</a></div>
+        
+        <footer class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All Rights Reserved &copy</footer>
     </div>
     </div>
     <!-- Optional JavaScript -->
