@@ -14,7 +14,7 @@
 </head>
 
 <body class="text-center">
-    <div id="bgWhite">
+    <main id="bgWhite">
         <img src="/img/sellcar-banner.png" alt="logo" id="logo">
         <div id="tituloSellCar">
             <h1 class="font-weight-bold p-1">CADASTRO DE FUNCIONÁRIOS</h1>
@@ -32,7 +32,8 @@
 
                 <div class="row mb-3">
                     <div class="col-6"><input class="form-control" type="text" name="nome" id="nome"
-                            th:value="${funcionario.nome}" placeholder="ex: José da Silva"></div>
+                            th:value="${funcionario.nome}" placeholder="ex: José da Silva"
+                            onkeydown="return/[a-z, ]/i.test(event.key)"></div>
                     <div class="col-3"><input class="form-control" type="text" name="cpf" id="cpf"
                             th:value="${funcionario.cpf}" placeholder="ex: 000.000.000-00" maxlength="14"></div>
                     <div class="col-3"><input class="form-control" type="date" name="datanascimento" id="datanascimento"
@@ -50,19 +51,25 @@
                             th:value="${funcionario.endereco}" placeholder="ex: Rua X, 222"></div>
                     <div class="col-3"><input class="form-control" type="text" name="cep" id="cep"
                             th:value="${funcionario.cep}" placeholder="ex: 00.000-000" maxlength="10"></div>
-                    <div class="col-3"><input class="form-control" type="text" name="uf" id="uf"
-                            th:value="${funcionario.uf}" placeholder="ex: SC"></div>
+                    <div class="col-3">
+                        <select class="form-control" name="uf" id="uf" th:value="${funcionario.uf}">
+                            <option selected disabled value="selecionar">SELECIONE O ESTADO</option>
+                            <option value="SC">SC</option>
+                            <option value="RS">RS</option>
+                            <option value="PR">PR</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-5"><b><label for="telefone">Telefone</label></b></div>
-                    <div class="col-7"><b></b><label for="email"><b>E-Mail</b></label></div>
+                    <div class="col-4"><b><label for="telefone">Telefone</label></b></div>
+                    <div class="col-4"><b></b><label for="email"><b>E-Mail</b></label></div>
                 </div>
 
                 <div class="row mb-3">
                     <div class="col-4"><input class="form-control" type="text" name="telefone" id="telefone"
                             th:value="${funcionario.celular}" placeholder="ex: (48)99999-9999" maxlength="14"></div>
-                    <div class="col-4"><input class="form-control" type="email" name="email" id="email"
+                    <div class="col-4"><input class="form-control" type="text" name="email" id="email"
                             th:value="${funcionario.emailfunc}" placeholder="ex: email@email.com.br"></div>
                 </div>
 
@@ -74,7 +81,7 @@
                 <div class="row mb-3">
                     <div class="col-6"><input class="form-control" type="text" name="login" id="login"
                             th:value="${funcionario.cadlogin}" placeholder="ex: alberto.silva"></div>
-                    <div class="col-6"><input class="form-control" type="password" name="senha" id="senha"
+                    <div class="col-6"><input class="form-control" type="text" name="senha" id="senha"
                             th:value="${funcionario.cadsenha}" placeholder="mínimo 8 dígitos"></div>
                 </div>
             </div>
@@ -89,10 +96,9 @@
                 </div>
             </div>
         </form>
-        <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All Rights Reserved
-            &copy</footer>
-    </div>
-    </div>
+    </main>
+    <footer class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All Rights Reserved
+        &copy</footer>
 
     <script src="/js/interacoes.js"></script>
     <!-- Optional JavaScript -->
