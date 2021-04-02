@@ -56,9 +56,11 @@
                     <div class="col-3">
                         <select class="form-control" name="uf" id="uf" th:value="${cliente.uf}">
                             <option selected disabled value="selecionar">SELECIONE O ESTADO</option>
-                            <option value="SC">SC</option>
-                            <option value="RS">RS</option>
-                            <option value="PR">PR</option>
+                            <optgroup label="Região Sul">
+                                <option value="SC">SC</option>
+                                <option value="RS">RS</option>
+                                <option value="PR">PR</option>
+                            </optgroup>
                         </select>
                     </div>
                 </div>

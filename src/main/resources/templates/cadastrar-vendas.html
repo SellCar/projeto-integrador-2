@@ -45,8 +45,14 @@
               th:value="${vendas.valororiginal}" placeholder="ex: R$35900,00"></div>
           <div class="col-4"><input class="form-control" type="text" name="valorfinal" id="valorfinal"
               th:value="${vendas.valorfinal}" placeholder="ex: R$33900,00"></div>
-          <div class="col-4"><input class="form-control" type="text" name="formaspagamento" id="formaspagamento"
-              th:value="${vendas.formaspagamento}" placeholder="ex: A Vista"></div>
+          <div class="col-4">
+            <select class="form-control" name="formaspagamento" id="formaspagamento" th:value="${vendas.formaspagamento}">
+              <option value="selecionar" selected disabled>Selecione uma Opção</option>
+              <option value="avista">A Vista</option>
+              <option value="financiamento">Financiamento</option>
+              <option value="troca">Troca</option>
+            </select>
+          </div>
         </div>
       </div>
 
