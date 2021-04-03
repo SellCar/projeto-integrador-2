@@ -83,8 +83,8 @@
                 <div class="row mb-3">
                     <div class="col-6"><input class="form-control" type="text" name="login" id="login"
                             th:value="${funcionario.cadlogin}" placeholder="ex: alberto.silva"></div>
-                    <div class="col-6"><input class="form-control" type="text" name="senha" id="senha"
-                            th:value="${funcionario.cadsenha}" placeholder="mínimo 8 dígitos"></div>
+                    <div class="col-6"><input class="form-control" type="password" name="senha" id="senha"
+                            th:value="${funcionario.cadsenha}" placeholder="mínimo 8 dígitos" minlength="8" maxlength="14"></div>
                 </div>
             </div>
 
