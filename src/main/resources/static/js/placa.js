@@ -1,27 +1,16 @@
-var MercoSulMaskBehavior = function (val) {
-    var myMask = 'SSS0A00';
-    var mercosul = /([A-Za-z]{3}[0-9]{1}[A-Za-z]{1})/;
-    var normal = /([A-Za-z]{3}[0-9]{2})/;
-    var replaced = val.replace(/[^\w]/g, '');
-    if (normal.exec(replaced)) {
-        myMask = 'SSS-0000';
-    } else if (mercosul.exec(replaced)) {
-        myMask = 'SSS0A00';
+function validarPlaca(entradaDoUsuario) {
+    var placa = entradaDoUsuario.value; // Passa para a variável 'placa' o que o usuário digitar no formulário
+    
+    if (placa.length === 1 || placa.length === 2) {                       // Quando a string possuir 1 ou 2 dígitos
+            placaMaiuscula = placa.toUpperCase();                      // Passa a string para letras maiúsculas
+            document.forms[0].placa.value = placaMaiuscula;    // Coloca a string modificada de volta no formulário
+            return true;
     }
-        return myMask;
-    },
 
-    mercoSulOptions = {
-        onKeyPress: function(val, e, field, options) {
-            field.mask(MercoSulMaskBehavior.apply({}, arguments), options);
-        }
-    };
-
-    $(function() {
-        $("body").delegate('input.placa','paste', function(e) {
-            $(this).unmask();
-        });
-        $("body").delegate('input.placa','input', function(e) {
-            $('input.placa').mask(MercoSulMaskBehavior, mercoSulOptions);
-        });
-    });
+    if (placa.length === 3){                                                        // Quando a string possuir 3 dígitos
+            placa += "-";                                                                 // Adiciona um hífen
+            placaMaiuscula = placa.toUpperCase();                   // Passa a string para letras maiúsculas
+            document.forms[0].placa.value = placaMaiuscula; // Coloca a nova string de volta no formulário
+            return true;
+}
+}
