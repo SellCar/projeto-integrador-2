@@ -14,10 +14,8 @@ body {
 
 #bgWhite{
   min-height: 900px;
-  height: auto;  
+  height: auto;
   background-color: rgb(255, 255, 255);
-  width: 1110px;
-  margin-left: 400px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -25,22 +23,22 @@ body {
 #logo{
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  width: 100%;
 }
 
 #tituloSellCar{
-  width: 1110px;
   background: #000000;
   color: white;
-  
 }
 
 .pequeno{
   width: 30%;
   margin-top: 20px;
+  font-size: auto;
 }
 
 #menuPrincipal{
-  margin: 100px;
+padding: auto;
 }
 
 #icones{
@@ -68,7 +66,9 @@ footer{
   border-bottom-right-radius: 20px;
   
   padding: 5px;
-  width: 1110px;
-  margin-left: 400px;
+
 }
 
+.container{
+  padding: 0px;
+}
