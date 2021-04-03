@@ -42,11 +42,9 @@
 
                 <div class="row  mb-3">
                     <div class="col-6"><input class="form-control" type="text" name="anofabricacao" id="anofabricacao"
-                            th:value="${veiculo.anofabricacao}" placeholder="ex: 2010" maxlength="4"
-                            onkeydown="return/[0-9, ]/i.test(event.key)"></div>
+                            th:value="${veiculo.anofabricacao}" placeholder="ex: 2010" maxlength="4"></div>
                     <div class="col-6"> <input class="form-control" type="text" name="anomodelo" id="anomodelo"
-                            th:value="${veiculo.anomodelo}" placeholder="ex: 2011" maxlength="4"
-                            onkeydown="return/[0-9, ]/i.test(event.key)"></div>
+                            th:value="${veiculo.anomodelo}" placeholder="ex: 2011" maxlength="4"></div>
                 </div>
 
                 <div class="row ">
@@ -57,11 +55,11 @@
 
                 <div class="row  mb-3">
                     <div class="col-4"><input class="form-control" type="text" name="placa" id="placa"
-                            th:value="${veiculo.placa}" placeholder="ex: AAA-1234"></div>
+                            th:value="${veiculo.placa}" onkeyup="validarPlaca(this)" placeholder="ex: AAA-1234" maxlength="8" autofocus></div>
                     <div class="col-4"><input class="form-control" type="text" name="renavan" id="renavan"
-                            th:value="${veiculo.renavan}" placeholder="ex: 78154935468"></div>
+                            th:value="${veiculo.renavan}" placeholder="ex: 00154935468" maxlength="11"></div>
                     <div class="col-4"><input class="form-control" type="text" name="chassi" id="chassi"
-                            th:value="${veiculo.chassi}" placeholder="ex: ABC214587963"></div>
+                            th:value="${veiculo.chassi}" placeholder="ex: 9BW.HE21J.X.24060831" maxlength="17"></div>
                 </div>
             </div>
 
@@ -78,9 +76,9 @@
     <footer class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All Rights Reserved
         &copy</footer>
 
-
-    <script src="/js/interacoes.js"></script>
     <!-- Optional JavaScript -->
+    <script src="/js/interacoes.js"></script>
+    <script src="/js/placa.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

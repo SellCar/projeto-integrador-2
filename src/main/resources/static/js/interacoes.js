@@ -16,3 +16,8 @@
   telefone.addEventListener("keyup", () => {
   let value = telefone.value.replace(/[^0-9]/g, "").replace(/^([\d]{2})([\d]{5})?([\d]{4})?/, "($1)$2-$3");
   telefone.value = value;});
+
+  const chassi = document.querySelector("#chassi");
+  chassi.addEventListener("keyup", () => {
+  let value = chassi.value.replace(/[^0-9A-Z]/g, "").replace(/^([\d]{3})([\d]{5})?([\d]{1})?([\d]{8})?/, "$1.$2.$3.$4");
+  cpf.value = value;});
