@@ -27,4 +27,5 @@ public class Veiculo {
     String placa;
     String renavan;
     String chassi;
+    String opcionais;
 }

@@ -42,9 +42,9 @@
 
         <div class="row mb-3">
           <div class="col-4"><input class="form-control" type="text" name="valororiginal" id="valororiginal"
-              th:value="${vendas.valororiginal}" placeholder="ex: R$35900,00"></div>
+              th:value="${vendas.valororiginal}" onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="R$35900,00"></div>
           <div class="col-4"><input class="form-control" type="text" name="valorfinal" id="valorfinal"
-              th:value="${vendas.valorfinal}" placeholder="ex: R$33900,00"></div>
+              th:value="${vendas.valorfinal}" onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="R$33900,00"></div>
           <div class="col-4">
             <select class="form-control" name="formaspagamento" id="formaspagamento" th:value="${vendas.formaspagamento}">
               <option value="selecionar" selected disabled>Selecione uma Opção</option>
@@ -73,6 +73,7 @@
 
   <!-- Optional JavaScript -->
   <script src="/js/interacoes.js"></script>
+  <script src="/js/moeda.js"></script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

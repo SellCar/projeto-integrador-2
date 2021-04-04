@@ -61,6 +61,22 @@
                     <div class="col-4"><input class="form-control" type="text" name="chassi" id="chassi"
                             th:value="${veiculo.chassi}" placeholder="ex: 9BW.HE21J.X.24060831" maxlength="17"></div>
                 </div>
+
+                <div><b>Opcionais</b></div>
+                <div class="ml-4">
+                    <div><label for="multimidia" class="form-check-label"><input class="form-check-input" type="checkbox" name="multimidia" id="multimidia" th:value="${veiculo.opcionais}">Multimídia</label></div>
+                    <div><label for="travaeletrica" class="form-check-label"><input class="form-check-input" type="checkbox" name="travaeletrica" id="travaeletrica" th:value="${veiculo.opcionais}">Trava Elétrica</label></div>
+                    <div><label for="vidroeletrico" class="form-check-label"><input class="form-check-input" type="checkbox" name="vidroeletrico" id="vidroeletrico" th:value="${veiculo.opcionais}">Vidro Elétrico</label></div>
+                    <div><label for="arcondicionado" class="form-check-label"><input class="form-check-input" type="checkbox" name="arcondicionado" id="arcondicionado" th:value="${veiculo.opcionais}">Ar Condicionado</label></div>
+                    <div><label class="form-check-label" for="direcaohid"><input class="form-check-input" type="checkbox" name="direcaohid" id="direcaohid" th:value="${veiculo.opcionais}">Direção Hidráulica</label></div>
+                    <div><label class="form-check-label" for="direcaoeletrica"><input class="form-check-input" type="checkbox" name="direcaoeletrica" id="direcaoeletrica" th:value="${veiculo.opcionais}">Direção Elétrica</label></div>
+                    <div><label class="form-check-label" for="rodaligaleve"><input class="form-check-input" type="checkbox" name="rodaligaleve" id="rodaligaleve" th:value="${veiculo.opcionais}">Roda Liga Leve</label></div>
+                    <div><label class="form-check-label" for="alarme"><input class="form-check-input" type="checkbox" name="alarme" id="alarme" th:value="${veiculo.opcionais}">Alarme</label></div>
+                    <div><label class="form-check-label" for="retrovisoreletro"><input class="form-check-input" type="checkbox" name="retrovisoreletro" id="retrovisoreletro" th:value="${veiculo.opcionais}">Retrovisor Eletrocrômico</label></div>
+                    <div><label class="form-check-label" for="sensorestacio"><input class="form-check-input" type="checkbox" name="sensorestacio" id="sensorestacio" th:value="${veiculo.opcionais}">Sensor de Estacionamento</label></div>
+                    <div><label class="form-check-label" for="chavecanivete"><input class="form-check-input" type="checkbox" name="chavecanivete" id="chavecanivete" th:value="${veiculo.opcionais}">Chave Canivete</label></div>
+                    <div><label class="form-check-label" for="controltrac"><input class="form-check-input" type="checkbox" name="controltrac" id="controltrac" th:value="${veiculo.opcionais}">Controle de Tração/Estabilidade</label></div>
+                </div>
             </div>
 
             <input type="hidden" name="id" th:value="${veiculo.id}">
