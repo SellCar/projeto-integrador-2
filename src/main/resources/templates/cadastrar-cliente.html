@@ -50,7 +50,7 @@
                     <div class="col-3"><input class="form-control" type="text" name="cpf" id="cpf"
                             th:value="${cliente.cpf}" title="CPF do Cliente (somente números)" placeholder="000.000.000-00" maxlength="14"></div>
                     <div class="col-3"> <input class="form-control" type="text" name="datanascimento"
-                            id="datanascimento" title="Data de Nascimento do Cliente (somente números)" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" maxlength="10" th:value="${cliente.datanascimentocli}" placeholder="01/01/2000">
+                            id="datanascimento" onkeypress="mascaraData( this, event )" title="Data de Nascimento do Cliente (somente números)" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" maxlength="10" th:value="${cliente.datanascimentocli}" placeholder="01/01/2000">
                     </div>
                 </div>
 
@@ -112,9 +112,9 @@
         </div>
       </div>
 
-
-    <script src="/js/interacoes.js"></script>
     <!-- Optional JavaScript -->
+    <script src="/js/interacoes.js"></script>
+    <script src="/js/mascara-data.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
