@@ -43,9 +43,9 @@
 
         <div class="row mb-3">
           <div class="col-6"><input class="form-control" type="text" name="nomecliente" id="nomecliente"
-              th:value="${vendas.nomecliente}" placeholder="ex: José da Silva"></div>
+              th:value="${vendas.nomecliente}" title="Nome Completo do comprador!" placeholder="José da Silva"></div>
           <div class="col-6"><input class="form-control" type="text" name="nomeveiculo" id="nomeveiculo"
-              th:value="${vendas.nomeveiculo}" placeholder="ex: Ford EcoSport"></div>
+              th:value="${vendas.nomeveiculo}" title="Veículo que será comprado!" placeholder="Ford EcoSport"></div>
         </div>
 
         <div class="row">
@@ -56,13 +56,13 @@
 
         <div class="row mb-3">
           <div class="col-4"><input class="form-control" type="text" name="valororiginal" id="valororiginal"
-              th:value="${vendas.valororiginal}" pattern="[0-9]+$" onKeyPress="return(moeda(this,'.',',',event))"
+              th:value="${vendas.valororiginal}" title="Valor que está sendo pedido no veículo!" pattern="[0-9]+$" onKeyPress="return(moeda(this,'.',',',event))"
               maxlength="10" placeholder="R$35900,00"></div>
           <div class="col-4"><input class="form-control" type="text" name="valorfinal" id="valorfinal"
-              th:value="${vendas.valorfinal}" pattern="[0-9]+$" onKeyPress="return(moeda(this,'.',',',event))"
+              th:value="${vendas.valorfinal}" title="Valor que o veículo foi vendido!" pattern="[0-9]+$" onKeyPress="return(moeda(this,'.',',',event))"
               maxlength="10" placeholder="R$33900,00"></div>
           <div class="col-4">
-            <select class="form-control" name="formaspagamento" id="formaspagamento"
+            <select class="form-control" title="Forma de Pagamento do Veículo" name="formaspagamento" id="formaspagamento"
               th:value="${vendas.formaspagamento}">
               <option value="selecionar" selected disabled>Selecione uma Opção</option>
               <option value="avista">A Vista</option>
@@ -77,7 +77,7 @@
 
       <div class="row">
         <div class="col-4"></div>
-        <div class="col-4"><input class="btn btn-dark m-1" type="submit" value="CADASTRAR" id="cadastrar"
+        <div class="col-4"><input class="btn btn-dark m-1" title="Botão para salvar os dados inseridos!" type="submit" value="CADASTRAR" id="cadastrar"
             onclick="confirmar()"></div>
         <div class="col-4"><a href="/index-vendas"><img src="/img/back.png" alt="voltar" id="voltar"></a></div>
       </div>
