@@ -42,9 +42,9 @@
 
                 <div class="row  mb-3">
                     <div class="col-6"><input class="form-control" type="text" name="anofabricacao" id="anofabricacao"
-                            th:value="${veiculo.anofabricacao}" placeholder="ex: 2010" maxlength="4"></div>
+                            th:value="${veiculo.anofabricacao}" pattern="[0-9]+$" title="Ano de Fabricação do Veículo" placeholder="ex: 2010" maxlength="4"></div>
                     <div class="col-6"> <input class="form-control" type="text" name="anomodelo" id="anomodelo"
-                            th:value="${veiculo.anomodelo}" placeholder="ex: 2011" maxlength="4"></div>
+                            th:value="${veiculo.anomodelo}" pattern="[0-9]+$" placeholder="ex: 2011" maxlength="4"></div>
                 </div>
 
                 <div class="row ">

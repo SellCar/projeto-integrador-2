@@ -42,9 +42,9 @@
 
         <div class="row mb-3">
           <div class="col-4"><input class="form-control" type="text" name="valororiginal" id="valororiginal"
-              th:value="${vendas.valororiginal}" onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="R$35900,00"></div>
+              th:value="${vendas.valororiginal}" pattern="[0-9]+$" onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="R$35900,00"></div>
           <div class="col-4"><input class="form-control" type="text" name="valorfinal" id="valorfinal"
-              th:value="${vendas.valorfinal}" onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="R$33900,00"></div>
+              th:value="${vendas.valorfinal}" pattern="[0-9]+$" onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="R$33900,00"></div>
           <div class="col-4">
             <select class="form-control" name="formaspagamento" id="formaspagamento" th:value="${vendas.formaspagamento}">
               <option value="selecionar" selected disabled>Selecione uma Opção</option>

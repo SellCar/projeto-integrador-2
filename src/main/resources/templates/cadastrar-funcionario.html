@@ -36,8 +36,8 @@
                             onkeydown="return/[a-z, ]/i.test(event.key)"></div>
                     <div class="col-3"><input class="form-control" type="text" name="cpf" id="cpf"
                             th:value="${funcionario.cpf}" placeholder="ex: 000.000.000-00" maxlength="14"></div>
-                    <div class="col-3"><input class="form-control" type="date" name="datanascimento" id="datanascimento"
-                            th:value="${funcionario.datanascimentofunc}" placeholder="ex: 01/01/2000"></div>
+                    <div class="col-3"><input class="form-control" type="text" name="datanascimento" id="datanascimento"
+                            th:value="${funcionario.datanascimentofunc}" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" maxlength="10" placeholder="ex: 01/01/2000"></div>
                 </div>
 
                 <div class="row">
