@@ -14,11 +14,24 @@
 </head>
 
 <body class="text-center">
-  <main id="bgWhite">
-    <img src="/img/sellcar-banner.png" alt="logo" id="logo">
-    <div id="tituloSellCar">
-      <h1 class="font-weight-bold p-1">CADASTRO DE VENDAS</h1>
-    </div>
+  
+  <div class="container" id="bgWhite">
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <img src="/img/sellcar-banner.png" alt="logo" id="logo">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div id="tituloSellCar">
+              <h1 class=" text-center font-weight-bold p-1">CADASTRO DE VENDA</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <form action="/cadastrar-vendas" method="POST">
 
@@ -27,6 +40,7 @@
           <div class="col-6"><b><label for="nomecliente">Nome Completo</label></b></div>
           <div class="col-6"><b><label for="nomeveiculo">Nome do Veículo</label></b></div>
         </div>
+
         <div class="row mb-3">
           <div class="col-6"><input class="form-control" type="text" name="nomecliente" id="nomecliente"
               th:value="${vendas.nomecliente}" placeholder="ex: José da Silva"></div>
@@ -42,11 +56,14 @@
 
         <div class="row mb-3">
           <div class="col-4"><input class="form-control" type="text" name="valororiginal" id="valororiginal"
-              th:value="${vendas.valororiginal}" pattern="[0-9]+$" onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="R$35900,00"></div>
+              th:value="${vendas.valororiginal}" pattern="[0-9]+$" onKeyPress="return(moeda(this,'.',',',event))"
+              maxlength="10" placeholder="R$35900,00"></div>
           <div class="col-4"><input class="form-control" type="text" name="valorfinal" id="valorfinal"
-              th:value="${vendas.valorfinal}" pattern="[0-9]+$" onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="R$33900,00"></div>
+              th:value="${vendas.valorfinal}" pattern="[0-9]+$" onKeyPress="return(moeda(this,'.',',',event))"
+              maxlength="10" placeholder="R$33900,00"></div>
           <div class="col-4">
-            <select class="form-control" name="formaspagamento" id="formaspagamento" th:value="${vendas.formaspagamento}">
+            <select class="form-control" name="formaspagamento" id="formaspagamento"
+              th:value="${vendas.formaspagamento}">
               <option value="selecionar" selected disabled>Selecione uma Opção</option>
               <option value="avista">A Vista</option>
               <option value="financiamento">Financiamento</option>
@@ -65,10 +82,16 @@
         <div class="col-4"><a href="/index-vendas"><img src="/img/back.png" alt="voltar" id="voltar"></a></div>
       </div>
     </form>
-  </main>
-  <footer class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All
-    Rights Reserved &copy
-  </footer>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All
+          Rights
+          Reserved &copy</footer>
+      </div>
+    </div>
+  </div>
 
 
   <!-- Optional JavaScript -->

@@ -13,14 +13,26 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body>
-  <div class="text-center">
-    <main id="bgWhite">
-      <img src="/img/sellcar-banner.png" alt="logo" id="logo">
-      <div id="tituloSellCar">
-        <h1 class="font-weight-bold p-1">Último Cliente Cadastrado</h1>
+<body class="text-center">
+  <div class="container" id="bgWhite">
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <img src="/img/sellcar-banner.png" alt="logo" id="logo">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div id="tituloSellCar">
+              <h1 class=" text-center font-weight-bold p-1">ULTIMO CLIENTE CADASTRADO</h1>
+            </div>
+          </div>
+        </div>
       </div>
+    </header>
 
+    <div class="container">
       <h2 th:text="${cliente.nome}">Nome:</h2>
       <hr>
       <h2 th:text="${cliente.cpf}">CPF:</h2>
@@ -37,11 +49,19 @@
       <hr>
       <h2 th:text="${cliente.emailcli}">E-Mail:</h2>
       <hr>
+    </div>
 
       <div><a class="btn btn-dark m-1" href="/index-cliente">VOLTAR</a></div>
-    </main>
-    <footer class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All Rights Reserved
-      &copy</footer>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All
+            Rights
+            Reserved &copy</footer>
+        </div>
+      </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

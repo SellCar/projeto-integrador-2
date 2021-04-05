@@ -14,11 +14,23 @@
 </head>
 
 <body class="text-center">
-    <main id="bgWhite">
-        <img src="/img/sellcar-banner.png" alt="logo" id="logo">
-        <div id="tituloSellCar">
-            <h1 class="font-weight-bold p-1">CADASTRO DE VEÍCULOS</h1>
-        </div>
+    <div class="container" id="bgWhite">
+        <header>
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <img src="/img/sellcar-banner.png" alt="logo" id="logo">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div id="tituloSellCar">
+                  <h1 class=" text-center font-weight-bold p-1">CADASTRO DE VEÍCULO</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
 
         <form action="/cadastrar-veiculo" method="POST">
 
@@ -88,10 +100,16 @@
                 <div class="col-4"><a href="/index-veiculo"><img src="/img/back.png" alt="voltar" id="voltar"></a></div>
             </div>
         </form>
-    </main>
-    <footer class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All Rights Reserved
-        &copy</footer>
-
+    </div>
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All
+              Rights
+              Reserved &copy</footer>
+          </div>
+        </div>
+      </div>
     <!-- Optional JavaScript -->
     <script src="/js/interacoes.js"></script>
     <script src="/js/placa.js"></script>
