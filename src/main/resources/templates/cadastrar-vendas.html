@@ -56,10 +56,10 @@
 
         <div class="row mb-3">
           <div class="col-4"><input class="form-control" type="text" name="valororiginal" id="valororiginal"
-              th:value="${vendas.valororiginal}" title="Valor que está sendo pedido no veículo!" pattern="[0-9]+$" onKeyPress="return(moeda(this,'.',',',event))"
+              th:value="${vendas.valororiginal}" title="Valor que está sendo pedido no veículo!" onKeyPress="return(moeda(this,'.',',',event))"
               maxlength="10" placeholder="R$35900,00"></div>
           <div class="col-4"><input class="form-control" type="text" name="valorfinal" id="valorfinal"
-              th:value="${vendas.valorfinal}" title="Valor que o veículo foi vendido!" pattern="[0-9]+$" onKeyPress="return(moeda(this,'.',',',event))"
+              th:value="${vendas.valorfinal}" title="Valor que o veículo foi vendido!" onKeyPress="return(moeda(this,'.',',',event))"
               maxlength="10" placeholder="R$33900,00"></div>
           <div class="col-4">
             <select class="form-control" title="Forma de Pagamento do Veículo" name="formaspagamento" id="formaspagamento"

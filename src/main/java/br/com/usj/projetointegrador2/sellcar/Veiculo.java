@@ -27,5 +27,16 @@ public class Veiculo {
     String placa;
     String renavan;
     String chassi;
-    String opcionais;
+    Boolean multimidia;
+    Boolean travaeletrica;
+    Boolean vidroeletrico;
+    Boolean arcondicionado;
+    Boolean direcaohid;
+    Boolean direcaoeletrica;
+    Boolean rodaligaleve;
+    Boolean alarme;
+    Boolean retrovisoreletro;
+    Boolean sensorestacio;
+    Boolean chavecanivete;
+    Boolean controltrac;
 }
