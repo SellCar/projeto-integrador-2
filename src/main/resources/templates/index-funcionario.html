@@ -14,24 +14,24 @@
   <link rel="stylesheet" href="/css/estilo.css">
 </head>
 
-<body class="text-center">
-  <div class="container" id="bgWhite">
-    <header>
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <img src="/img/sellcar-banner.png" alt="logo" id="logo">
-          </div>
+<body>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <img src="/img/sellcar-banner.png" alt="logo" id="logo">
         </div>
-        <div class="row">
-          <div class="col">
-            <div id="tituloSellCar">
-              <h1 class=" text-center font-weight-bold p-1">CADASTRO DE FUNCIONÁRIOS</h1>
-            </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div id="tituloSellCar">
+            <h1 class=" text-center font-weight-bold p-1">CADASTRO DE FUNCIONÁRIOS</h1>
           </div>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
+  <div class="container" id="bgWhite">
 
     <div th:if="${listaFuncionario.size() > 0}">
       <div class="row m-1" th:each="funcionario : ${listaFuncionario}">
@@ -52,7 +52,7 @@
       </div>
     </div>
 
-    <div class="row m-3">
+    <div class="row m-3 text-center">
       <div class="col-md-12"><a class="btn btn-dark" href="/cadastrar-funcionario">CADASTRAR NOVO FUNCIONARIO</a></div>
     </div>
 

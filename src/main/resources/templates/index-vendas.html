@@ -14,27 +14,25 @@
   <link rel="stylesheet" href="/css/estilo.css">
 </head>
 
-<body class="text-center">
-  <div class="container" id="bgWhite">
-    <header>
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <img src="/img/sellcar-banner.png" alt="logo" id="logo">
-          </div>
+<body>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <img src="/img/sellcar-banner.png" alt="logo" id="logo">
         </div>
-        <div class="row">
-          <div class="col">
-            <div id="tituloSellCar">
-              <h1 class=" text-center font-weight-bold p-1">CADASTRO DE VENDAS</h1>
-            </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div id="tituloSellCar">
+            <h1 class=" text-center font-weight-bold p-1">CADASTRO DE VENDAS</h1>
           </div>
         </div>
       </div>
-    </header>
-
-
-    <div th:if="${listaVendas.size() > 0}">
+    </div>
+  </header>
+  <div class="container" id="bgWhite">
+     <div th:if="${listaVendas.size() > 0}">
       <div class="row m-1" th:each="vendas : ${listaVendas}">
         <div class="col-6">
           <a class="text-dark" th:href="@{/mostrar-vendas/{id}(id=${vendas.id})}" th:text="${vendas.nomecliente}"></a>
@@ -52,7 +50,7 @@
       </div>
     </div>
 
-    <div class="row m-3">
+    <div class="row m-3 text-center">
       <div class="col-md-12"><a class="btn btn-dark" href="/cadastrar-vendas">CADASTRAR NOVA VENDA</a></div>
     </div>
 
