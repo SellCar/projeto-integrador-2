@@ -26,7 +26,7 @@ public class Funcionario {
     String endereco;
     String cep;
     String uf;
-    String celular;
+    String telefone;
     String emailfunc;
     String cadlogin;
     String cadsenha;

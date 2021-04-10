@@ -26,6 +26,6 @@ public class Cliente {
     String endereco;
     String cep;
     String uf;
-    String celular;
+    String telefone;
     String emailcli;
 }
