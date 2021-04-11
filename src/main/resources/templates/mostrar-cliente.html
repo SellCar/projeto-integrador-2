@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
   <head>
-    <title>Último Cliente Cadastrado</title>
+    <title>Cliente Cadastrado</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,7 +22,7 @@
         <div class="row">
           <div class="col">
             <div id="tituloSellCar">
-              <h1 class=" text-center font-weight-bold p-1">ULTIMO CLIENTE CADASTRADO</h1>
+              <h1 class=" text-center font-weight-bold p-1">CLIENTE CADASTRADO</h1>
             </div>
           </div>
         </div>
@@ -33,70 +33,62 @@
       <div class="container text-center">
         <div class="row">
           <div class="col">
-            <h2 th:text="${cliente.nome}">Nome:</h2>
+            <h4 th:text="${cliente.nome}">Nome:</h4>
             <hr>
           </div>
         </div>
-
-         <div class="row">
-          <div class="col">
-            <h2 th:text="${cliente.cpf}">CPF:</h2>
-            <hr>
-          </div>
-        </div>
-
         
         <div class="row">
           <div class="col">
-            <h2 th:text="${cliente.cpf}">CPF:</h2>
+            <h4 th:text="${cliente.cpf}">CPF:</h4>
             <hr>
           </div>
         </div>
 
         <div class="row">
           <div class="col">
-            <h2 th:text="${cliente.datanascimentocli}">Data Nascimento:</h2>
+            <h4 th:text="${cliente.datanascimentocli}">Data Nascimento:</h4>
             <hr>
           </div>
         </div>
 
         <div class="row">
           <div class="col">
-            <h2 th:text="${cliente.endereco}">Endereço:</h2>
+            <h4 th:text="${cliente.endereco}">Endereço:</h4>
             <hr>
           </div>
         </div>
 
         <div class="row">
           <div class="col">
-            <h2 th:text="${cliente.cep}">CEP:</h2>
+            <h4 th:text="${cliente.cep}">CEP:</h4>
             <hr>
           </div>
         </div>
 
         <div class="row">
           <div class="col">
-            <h2 th:text="${cliente.uf}">UF:</h2>
+            <h4 th:text="${cliente.uf}">UF:</h4>
             <hr>
           </div>
         </div>
 
         <div class="row">
           <div class="col">
-            <h2 th:text="${cliente.telefone}">Telefone:</h2>
+            <h4 th:text="${cliente.telefone}">Telefone:</h4>
             <hr>
           </div>
         </div>
 
         <div class="row">
           <div class="col">
-            <h2 th:text="${cliente.emailcli}">E-Mail:</h2>
+            <h4 th:text="${cliente.emailcli}">E-Mail:</h4>
             <hr>
           </div>
         </div>
-
-
-
+      </div>
+      <div class="text-center">
+        <a class="btn btn-dark m-1" href="/index-cliente">VOLTAR</a>
       </div>
     </div>
 

@@ -2,36 +2,34 @@
 <html lang="pt-br">
 
 <head>
-  <title>Última Venda Cadastrada</title>
+  <title>Venda Cadastrada</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="/css/estilo.css">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-
-<body class="text-center">
-  <div class="container" id="bgWhite">
-    <header>
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <img src="/img/sellcar-banner.png" alt="logo" id="logo">
-          </div>
+  <link rel="stylesheet" href="/css/estilo.css">
+<body>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <img src="/img/sellcar-banner.png" alt="logo" id="logo">
         </div>
-        <div class="row">
-          <div class="col">
-            <div id="tituloSellCar">
-              <h1 class=" text-center font-weight-bold p-1">ULTIMA VENDA CADASTRADA</h1>
-            </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div id="tituloSellCar">
+            <h1 class=" text-center font-weight-bold p-1">CADASTRO DE VENDA</h1>
           </div>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
+  <div class="container text-center" id="bgWhite">
     <h2 th:text="${vendas.nomecliente}">Nome Cliente:</h2>
     <h2 th:text="${vendas.nomeveiculo}">Nome do Veículo:</h2>
     <h2 th:text="${vendas.valororiginal}">Valor Original:</h2>
@@ -40,6 +38,7 @@
 
     <div><a class="btn btn-dark m-1" href="/index-vendas">VOLTAR</a></div>
   </div>
+  
   <div class="container">
     <div class="row">
       <div class="col">
@@ -49,6 +48,7 @@
       </div>
     </div>
   </div>
+  
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

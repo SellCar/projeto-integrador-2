@@ -2,36 +2,36 @@
 <html lang="pt-br">
 
 <head>
-  <title>Último Veículo Cadastrado</title>
+  <title>Veículo Cadastrado</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="/css/estilo.css">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/estilo.css">
 </head>
 
-<body class="text-center">
-  <div class="container" id="bgWhite">
-    <header>
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <img src="/img/sellcar-banner.png" alt="logo" id="logo">
-          </div>
+<body>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <img src="/img/sellcar-banner.png" alt="logo" id="logo">
         </div>
-        <div class="row">
-          <div class="col">
-            <div id="tituloSellCar">
-              <h1 class=" text-center font-weight-bold p-1">ULTIMO VEÍCULOO CADASTRADO</h1>
-            </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div id="tituloSellCar">
+            <h1 class=" text-center font-weight-bold p-1">VEÍCULO CADASTRADO</h1>
           </div>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
+  <div class="container text-center" id="bgWhite">
     <h2 th:text="${veiculo.fabricante}">Fabricante:</h2>
     <h2 th:text="${veiculo.nomeveiculo}">Nome do Veículo:</h2>
     <h2 th:text="${veiculo.anofabricacao}">Ano Fabricação:</h2>
@@ -39,21 +39,23 @@
     <h2 th:text="${veiculo.placa}">Placa:</h2>
     <h2 th:text="${veiculo.renavan}">Renavan:</h2>
     <h2 th:text="${veiculo.chassi}">Chassi:</h2>
-    <input type="checkbox" th:checked="${veiculo.multimidia}"/>Multimídia
-    <input type="checkbox" th:checked="${veiculo.travaeletrica}"/>Trava Elétrica
-    <input type="checkbox" th:checked="${veiculo.vidroeletrico}"/>Vidro Elétrico
-    <input type="checkbox" th:checked="${veiculo.arcondicionado}"/>Ar Condicionado
-    <input type="checkbox" th:checked="${veiculo.direcaohid}"/>Direção Hidráulica
-    <input type="checkbox" th:checked="${veiculo.direcaoeletrica}"/>Direção Elétrica
-    <input type="checkbox" th:checked="${veiculo.rodaligaleve}"/>Roda Liga Leve
-    <input type="checkbox" th:checked="${veiculo.alarme}"/>Alarme
-    <input type="checkbox" th:checked="${veiculo.retrovisoreletro}"/>Retrovisor Eletrocrômico
-    <input type="checkbox" th:checked="${veiculo.sensorestacio}"/>Sensor Estacionamento
-    <input type="checkbox" th:checked="${veiculo.chavecanivete}"/>Chave Canivete
-    <input type="checkbox" th:checked="${veiculo.controltrac}"/>Controle Tração/Estabilidade
+    <input type="checkbox" th:checked="${veiculo.multimidia}" />Multimídia
+    <input type="checkbox" th:checked="${veiculo.travaeletrica}" />Trava Elétrica
+    <input type="checkbox" th:checked="${veiculo.vidroeletrico}" />Vidro Elétrico
+    <input type="checkbox" th:checked="${veiculo.arcondicionado}" />Ar Condicionado
+    <input type="checkbox" th:checked="${veiculo.direcaohid}" />Direção Hidráulica
+    <input type="checkbox" th:checked="${veiculo.direcaoeletrica}" />Direção Elétrica
+    <input type="checkbox" th:checked="${veiculo.rodaligaleve}" />Roda Liga Leve
+    <input type="checkbox" th:checked="${veiculo.alarme}" />Alarme
+    <input type="checkbox" th:checked="${veiculo.retrovisoreletro}" />Retrovisor Eletrocrômico
+    <input type="checkbox" th:checked="${veiculo.sensorestacio}" />Sensor Estacionamento
+    <input type="checkbox" th:checked="${veiculo.chavecanivete}" />Chave Canivete
+    <input type="checkbox" th:checked="${veiculo.controltrac}" />Controle Tração/Estabilidade
 
     <div><a class="btn btn-dark m-1" href="/index-veiculo">VOLTAR</a></div>
   </div>
+  </div>
+
   <div class="container">
     <div class="row">
       <div class="col">
@@ -63,6 +65,7 @@
       </div>
     </div>
   </div>
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

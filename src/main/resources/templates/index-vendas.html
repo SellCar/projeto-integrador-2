@@ -18,7 +18,7 @@
   <header>
     <div class="container">
       <div class="row">
-        <div class="col-12">
+        <div class="col">
           <img src="/img/sellcar-banner.png" alt="logo" id="logo">
         </div>
       </div>
@@ -31,7 +31,7 @@
       </div>
     </div>
   </header>
-  <div class="container" id="bgWhite">
+  <div class="container text-center" id="bgWhite">
      <div th:if="${listaVendas.size() > 0}">
       <div class="row m-1" th:each="vendas : ${listaVendas}">
         <div class="col-6">
