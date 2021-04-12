@@ -53,14 +53,17 @@
                     </div>
         
                     <div class="row">
-                        <div class="col-6"><b><label for="endereco">Endereço</label></b></div>
+                        <div class="col-4"><b><label for="endereco">Endereço</label></b></div>
+                        <div class="col-2"><b><label for="numres">Número</label></b></div>
                         <div class="col-3"><b><label for="cep">CEP</label></b></div>
                         <div class="col-3"><b><label for="uf">UF</label></b></div>
                     </div>
         
                     <div class="row mb-3">
-                        <div class="col-6"><input class="form-control" type="text" name="endereco" id="endereco"
-                                th:value="${funcionario.endereco}" title="Endereço do Funcionário" placeholder="Rua X, 222"></div>
+                        <div class="col-4"><input class="form-control" type="text" name="endereco" id="endereco"
+                                th:value="${funcionario.endereco}" title="Endereço do Funcionário" placeholder="Rua X"></div>
+                        <div class="col-2"><input class="form-control" type="text" name="numres" id="numres"
+                                th:value="${funcionario.numres}" title="Número da Residencia do Funcionário" placeholder="100" max="4"></div>
                         <div class="col-3"><input class="form-control" type="text" name="cep" id="cep"
                                 th:value="${funcionario.cep}" title="CEP do Funcionário (somente números)" placeholder="00.000-000" maxlength="10"></div>
                         <div class="col-3">

@@ -24,6 +24,7 @@ public class Cliente {
     String cpf;
     String datanascimentocli;
     String endereco;
+    String numres; //numero da residencia
     String cep;
     String uf;
     String telefone;

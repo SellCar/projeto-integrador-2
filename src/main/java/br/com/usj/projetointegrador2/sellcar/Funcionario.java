@@ -24,6 +24,7 @@ public class Funcionario {
     String cpf;
     String datanascimentofunc;
     String endereco;
+    String numres; //numero da residencia
     String cep;
     String uf;
     String telefone;
