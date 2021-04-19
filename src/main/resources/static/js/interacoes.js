@@ -23,5 +23,18 @@
   //cpf.value = value;});
 
   function sair(){
-    window.confirm('Deseja sair do sistema?');
+    var sair = window.confirm('Deseja sair do sistema?');
+    if (sair == true){
+      window.alert("Volte Sempre!!!");
+    } else {
+      window.location("menu-principal.html");
+    }
+  }
+
+  function entrar(){
+    var entrar = confirm("Deseja entrar no sistema?");
+    if(entrar == true){
+      var nome = document.getElementById("login").value;
+      window.alert("Seja Bem Vindo, " + nome);
+    }
   }
