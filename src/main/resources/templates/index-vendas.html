@@ -44,7 +44,7 @@
         </div>
 
         <div class="col-3">
-          <a th:href="@{/deletar-vendas/{id}(id=${vendas.id})}"><img width="20px" height="20px" src="/img/lixeira.png"
+          <a onclick="excluir()" id="excluir" th:href="@{/deletar-vendas/{id}(id=${vendas.id})}"><img width="20px" height="20px" src="/img/lixeira.png"
               alt="excluir"></a>
         </div>
       </div>
@@ -77,6 +77,7 @@
 
 
   <!-- Optional JavaScript -->
+  <script src="/js/interacoes.js"></script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

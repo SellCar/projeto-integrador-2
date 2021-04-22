@@ -38,3 +38,10 @@
       window.alert("Seja Bem Vindo, " + nome);
     }
   }
+
+  function excluir(){
+    var excluir = confirm("Deseja excluir o item?");
+    if(excluir == true){
+      alert("Item excluído com sucesso!");
+    }
+  }

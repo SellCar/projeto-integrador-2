@@ -40,11 +40,11 @@
           <a class="text-dark" th:href="@{/mostrar-cliente/{id}(id=${cliente.id})}" th:text="${cliente.nome}"></a>
         </div>
         <div class="col-3">
-          <a th:href="@{/editar-cliente/{id}(id=${cliente.id})}"><img width="20px" height="20px" src="/img/lapis.png"
+          <a onclick="" th:href="@{/editar-cliente/{id}(id=${cliente.id})}"><img width="20px" height="20px" src="/img/lapis.png"
               alt="alterar"></a>
         </div>
         <div class="col-3">
-          <a th:href="@{/deletar-cliente/{id}(id=${cliente.id})}"><img width="20px" height="20px" src="/img/lixeira.png"
+          <a onclick="excluir()" id="excluir" th:href="@{/deletar-cliente/{id}(id=${cliente.id})}"><img width="20px" height="20px" src="/img/lixeira.png"
               alt="excluir"></a>
         </div>
       </div>
@@ -77,6 +77,7 @@
   </div>
 
   <!-- Optional JavaScript -->
+  <script src="/js/interacoes.js"></script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
