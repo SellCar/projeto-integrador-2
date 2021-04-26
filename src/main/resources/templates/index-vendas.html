@@ -44,9 +44,11 @@
         </div>
 
         <div class="col-3">
-          <a onclick="excluir()" id="excluir" th:href="@{/deletar-vendas/{id}(id=${vendas.id})}"><img width="20px" height="20px" src="/img/lixeira.png"
-              alt="excluir"></a>
-        </div>
+          <a onclick="return excluir()" 
+          id="excluir" th:href="@{/deletar-vendas/{id}(id=${vendas.id})}">
+          <img width="20px" height="20px" src="/img/lixeira.png" alt="excluir">
+          </a>
+        </div> 
       </div>
     </div>
 

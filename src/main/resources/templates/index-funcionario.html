@@ -45,10 +45,12 @@
               src="/img/lapis.png" alt="alterar"></a>
         </div>
 
-        <div class="col-3">
-          <a onclick="excluir()" id="excluir" th:href="@{/deletar-funcionario/{id}(id=${funcionario.id})}"><img width="20px" height="20px"
-              src="/img/lixeira.png" alt="excluir"></a>
-        </div>
+         <div class="col-3">
+          <a onclick="return excluir()" 
+          id="excluir" th:href="@{/deletar-funcionario/{id}(id=${funcionario.id})}">
+          <img width="20px" height="20px" src="/img/lixeira.png" alt="excluir">
+          </a>
+        </div> 
       </div>
     </div>
 
