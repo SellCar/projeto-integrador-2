@@ -32,6 +32,11 @@
     </div>
   </header>
   <div class="container text-center" id="bgWhite">
+    <div class="row font-weight-bold">
+      <div class="col-6">Nome</div>
+      <div class="col-3">Alterar</div>
+      <div class="col-3">Excluir</div>
+    </div>
      <div th:if="${listaVendas.size() > 0}">
       <div class="row m-1" th:each="vendas : ${listaVendas}">
         <div class="col-6">
@@ -39,7 +44,7 @@
         </div>
 
         <div class="col-3">
-          <a th:href="@{/editar-vendas/{id}(id=${vendas.id})}"><img width="20px" height="20px" src="/img/lapis.png"
+          <a onclick="return alterar()" th:href="@{/editar-vendas/{id}(id=${vendas.id})}"><img width="20px" height="20px" src="/img/lapis.png"
               alt="alterar"></a>
         </div>
 

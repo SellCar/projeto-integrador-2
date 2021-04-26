@@ -1,5 +1,11 @@
   function confirmar(){
-  window.confirm('Deseja salvar os dados?');
+    var confirmar = confirm('Deseja salvar os dados?');
+  if(confirmar == true){
+    alert("Dados salvos com sucesso!")
+    return true
+  } else {
+    return false
+  }
 }
 
   const cpf = document.querySelector("#cpf");
@@ -23,11 +29,12 @@
   //cpf.value = value;});
 
   function sair(){
-    var sair = window.confirm('Deseja sair do sistema?');
+    var sair = confirm('Deseja sair do sistema?');
     if (sair == true){
-      window.alert("Volte Sempre!!!");
+      alert("Volte Sempre!!!");
+      return true
     } else {
-      window.location("menu-principal.html");
+      return false
     }
   }
 
@@ -35,7 +42,10 @@
     var entrar = confirm("Deseja entrar no sistema?");
     if(entrar == true){
       var nome = document.getElementById("login").value;
-      window.alert("Seja Bem Vindo, " + nome);
+      alert("Seja Bem Vindo, " + nome);
+      return true
+    } else{
+      return false
     }
   }
 
@@ -49,4 +59,13 @@
    else{
      return false
    }
+  }
+
+  function alterar(){
+    var alterar = confirm("Deseja alterar o item?")
+    if(alterar == true){
+      return true
+    } else {
+      return false
+    }
   }
