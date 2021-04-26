@@ -39,9 +39,14 @@
     }
   }
 
+  // Alteraçoes feitas -- Botao excluir funcionando
   function excluir(){
-    var excluir = confirm("Deseja excluir o item?");
-    if(excluir == true){
-      alert("Item excluído com sucesso!");
-    }
+   var exclude = confirm('Confirmar exclusão')
+   if(exclude == true){
+     alert("Item excluído com sucesso!");
+     return true
+   }
+   else{
+     return false
+   }
   }

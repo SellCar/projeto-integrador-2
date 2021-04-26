@@ -43,10 +43,14 @@
           <a onclick="" th:href="@{/editar-cliente/{id}(id=${cliente.id})}"><img width="20px" height="20px" src="/img/lapis.png"
               alt="alterar"></a>
         </div>
+        <!-- Alteraçoes feitas -- Botao excluir funcionando -->
         <div class="col-3">
-          <a onclick="excluir()" id="excluir" th:href="@{/deletar-cliente/{id}(id=${cliente.id})}"><img width="20px" height="20px" src="/img/lixeira.png"
-              alt="excluir"></a>
-        </div>
+          <a onclick="return excluir()" 
+          id="excluir" th:href="@{/deletar-cliente/{id}(id=${cliente.id})}">
+          <img width="20px" height="20px" src="/img/lixeira.png" alt="excluir">
+          </a>
+        </div> 
+        
       </div>
     </div>
 
