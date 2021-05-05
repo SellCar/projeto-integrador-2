@@ -72,3 +72,9 @@ footer{
 input:focus{
   background-color: blueviolet;
 }
+
+/*olho senha index*/
+.olho {
+  cursor: pointer;
+  position: absolute;
+}
