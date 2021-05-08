@@ -39,21 +39,43 @@
     <h2 th:text="${veiculo.placa}">Placa:</h2>
     <h2 th:text="${veiculo.renavan}">Renavan:</h2>
     <h2 th:text="${veiculo.chassi}">Chassi:</h2>
-    <input type="checkbox" th:checked="${veiculo.multimidia}" th:if="${veiculo.multimidia}" />Multimídia
-    <input type="checkbox" th:checked="${veiculo.travaeletrica}" th:if="${veiculo.travaeletrica}"/>Trava Elétrica
-    <input type="checkbox" th:checked="${veiculo.vidroeletrico}" />Vidro Elétrico
-    <input type="checkbox" th:checked="${veiculo.arcondicionado}" />Ar Condicionado
-    <div th:if="${veiculo.direcaohid}">
+    
+    <div th:if="${veiculo.multimidia}">
+    <input type="checkbox" th:checked="${veiculo.multimidia}"  />Multimídia
+  </div>
+  <div th:if="${veiculo.travaeletrica}"> 
+  <input type="checkbox" th:checked="${veiculo.travaeletrica}"/>Trava Elétrica
+</div> 
+<div th:if="${veiculo.vidroeletrico}">  
+<input type="checkbox" th:checked="${veiculo.vidroeletrico}" />Vidro Elétrico
+</div>    
+<div th:if="${veiculo.arcondicionado}">
+  <input type="checkbox" th:checked="${veiculo.arcondicionado}" />Ar Condicionado
+</div>
+  <div th:if="${veiculo.direcaohid}">
     <input type="checkbox" th:checked="${veiculo.direcaohid}" />Direção Hidráulica
     </div>
-    <input type="checkbox" th:checked="${veiculo.direcaoeletrica}"  th:if="${veiculo.direcaoeletrica}"/>Direção Elétrica
+    <div th:if="${veiculo.direcaoeletrica}">
+    <input type="checkbox" th:checked="${veiculo.direcaoeletrica}"  />Direção Elétrica
+  </div>
+  <div th:if="${veiculo.rodaligaleve}">
     <input type="checkbox" th:checked="${veiculo.rodaligaleve}" />Roda Liga Leve
+  </div>
+  <div th:if="${veiculo.alarme}">
     <input type="checkbox" th:checked="${veiculo.alarme}" />Alarme
+  </div>
+  <div th:if="${veiculo.retrovisoreletro}">
     <input type="checkbox" th:checked="${veiculo.retrovisoreletro}" />Retrovisor Eletrocrômico
+  </div>
+  <div  th:if="${veiculo.sensorestacio}">
     <input type="checkbox" th:checked="${veiculo.sensorestacio}" />Sensor Estacionamento
+  </div>
+  <div th:if="${veiculo.chavecanivete}">
     <input type="checkbox" th:checked="${veiculo.chavecanivete}" />Chave Canivete
+  </div>
+  <div th:if="${veiculo.controltrac}">
     <input type="checkbox" th:checked="${veiculo.controltrac}" />Controle Tração/Estabilidade
-
+  </div>
     <div><a class="btn btn-dark m-1" href="/index-veiculo">VOLTAR</a></div> 
     
     <button type="button" id="botao" onclick="fonte('a')">Aumentar!</button>

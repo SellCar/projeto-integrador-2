@@ -91,25 +91,25 @@
             <div>
               <label for="multimidia" class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="multimidia" id="multimidia"
-                  th:value="${veiculo.multimidia}">Multimídia
+                  th:checked="${veiculo.multimidia}">Multimídia
               </label>
             </div>
             <div>
               <label for="travaeletrica" class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="travaeletrica" id="travaeletrica"
-                  th:value="${veiculo.travaeletrica}">Trava Elétrica
+                  th:checked="${veiculo.travaeletrica}">Trava Elétrica
               </label>
             </div>
             <div>
               <label for="vidroeletrico" class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="vidroeletrico" id="vidroeletrico"
-                  th:value="${veiculo.vidroeletrico}">Vidro Elétrico
+                  th:checked="${veiculo.vidroeletrico}">Vidro Elétrico
               </label>
             </div>
             <div>
               <label for="arcondicionado" class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="arcondicionado" id="arcondicionado"
-                  th:value="${veiculo.arcondicionado}">Ar Condicionado
+                  th:checked="${veiculo.arcondicionado}">Ar Condicionado
               </label>
             </div>
           </div>
@@ -121,23 +121,23 @@
                   name="direcaoeletrica" id="direcaoeletrica" th:checked="${veiculo.direcaoeletrica}">Direção
                 Elétrica</label></div>
             <div><label class="form-check-label" for="rodaligaleve"><input class="form-check-input" type="checkbox"
-                  name="rodaligaleve" id="rodaligaleve" th:value="${veiculo.rodaligaleve}">Roda Liga Leve</label></div>
+                  name="rodaligaleve" id="rodaligaleve" th:checked="${veiculo.rodaligaleve}">Roda Liga Leve</label></div>
             <div><label class="form-check-label" for="alarme"><input class="form-check-input" type="checkbox"
-                  name="alarme" id="alarme" th:value="${veiculo.alarme}">Alarme</label></div>
+                  name="alarme" id="alarme" th:checked="${veiculo.alarme}">Alarme</label></div>
           </div>
 
           <div class="col-4">
             <div><label class="form-check-label" for="retrovisoreletro"><input class="form-check-input" type="checkbox"
-                  name="retrovisoreletro" id="retrovisoreletro" th:value="${veiculo.retrovisoreletro}">Retrovisor
+                  name="retrovisoreletro" id="retrovisoreletro" th:checked="${veiculo.retrovisoreletro}">Retrovisor
                 Eletrocrômico</label></div>
             <div><label class="form-check-label" for="sensorestacio"><input class="form-check-input" type="checkbox"
-                  name="sensorestacio" id="sensorestacio" th:value="${veiculo.sensorestacio}">Sensor de
+                  name="sensorestacio" id="sensorestacio" th:checked="${veiculo.sensorestacio}">Sensor de
                 Estacionamento</label></div>
             <div><label class="form-check-label" for="chavecanivete"><input class="form-check-input" type="checkbox"
-                  name="chavecanivete" id="chavecanivete" th:value="${veiculo.chavecanivete}">Chave Canivete</label>
+                  name="chavecanivete" id="chavecanivete" th:checked="${veiculo.chavecanivete}">Chave Canivete</label>
             </div>
             <div><label class="form-check-label" for="controltrac"><input class="form-check-input" type="checkbox"
-                  name="controltrac" id="controltrac" th:value="${veiculo.controltrac}">Controle de
+                  name="controltrac" id="controltrac" th:checked="${veiculo.controltrac}">Controle de
                 Tração/Estabilidade</label></div>
           </div>
         </div>
