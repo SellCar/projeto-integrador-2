@@ -70,7 +70,7 @@
     }
   }
   function fonte(e){
-    var elemento = $(".acessibilidade");
+    var elemento = $("#bgWhite");
     var fonte = elemento.css('font-size');
     if (e == 'a') {
         elemento.css("fontSize", parseInt(fonte) + 5);

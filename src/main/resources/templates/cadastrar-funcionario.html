@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <div class="acessibilidade">
+ 
     <header>
         <div class="container">
           <div class="row">
@@ -22,11 +22,17 @@
               <img src="/img/sellcar-banner.png" alt="logo" id="logo">
             </div>
           </div>
-          <div class="row">
-            <div class="col">
-              <div id="tituloSellCar">
+          <div class="row"  id="tituloSellCar">
+            <div class="col-10">
+              <div>
                 <h1 class=" text-center font-weight-bold p-1">CADASTRO DE FUNCIONÁRIO</h1>
               </div>
+            </div>
+            <div class="col-1 text-right">
+              <div onclick="fonte('a')"><img src="/img/increase.png"></div>
+            </div>
+            <div class="col-1 text-right">
+              <div onclick="fonte('d')"><img src="/img/decrease.png"></div>
             </div>
           </div>
         </div>
@@ -116,9 +122,6 @@
                 </div>
             </form>
 
-            <button type="button" id="botao" onclick="fonte('a')">Aumentar!</button>
-            <button type="button" id="botao" onclick="fonte('d')">Diminuir!</button>
-
       </div>
 
 
@@ -132,7 +135,7 @@
           </div>
         </div>
       </div>
-    </div>
+
 
 
 

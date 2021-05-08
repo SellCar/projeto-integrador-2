@@ -14,7 +14,6 @@
 </head>
 
 <body>
-  <div class="acessibilidade">
   <header>
     <div class="container">
       <div class="row">
@@ -40,12 +39,14 @@
     <h2 th:text="${veiculo.placa}">Placa:</h2>
     <h2 th:text="${veiculo.renavan}">Renavan:</h2>
     <h2 th:text="${veiculo.chassi}">Chassi:</h2>
-    <input type="checkbox" th:checked="${veiculo.multimidia}" />Multimídia
-    <input type="checkbox" th:checked="${veiculo.travaeletrica}" />Trava Elétrica
+    <input type="checkbox" th:checked="${veiculo.multimidia}" th:if="${veiculo.multimidia}" />Multimídia
+    <input type="checkbox" th:checked="${veiculo.travaeletrica}" th:if="${veiculo.travaeletrica}"/>Trava Elétrica
     <input type="checkbox" th:checked="${veiculo.vidroeletrico}" />Vidro Elétrico
     <input type="checkbox" th:checked="${veiculo.arcondicionado}" />Ar Condicionado
+    <div th:if="${veiculo.direcaohid}">
     <input type="checkbox" th:checked="${veiculo.direcaohid}" />Direção Hidráulica
-    <input type="checkbox" th:checked="${veiculo.direcaoeletrica}" />Direção Elétrica
+    </div>
+    <input type="checkbox" th:checked="${veiculo.direcaoeletrica}"  th:if="${veiculo.direcaoeletrica}"/>Direção Elétrica
     <input type="checkbox" th:checked="${veiculo.rodaligaleve}" />Roda Liga Leve
     <input type="checkbox" th:checked="${veiculo.alarme}" />Alarme
     <input type="checkbox" th:checked="${veiculo.retrovisoreletro}" />Retrovisor Eletrocrômico
@@ -72,7 +73,6 @@
       </div>
     </div>
   </div>
-</div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -14,7 +14,6 @@
 </head>
 
 <body>
-  <div class="acessibilidade">
   <header>
     <div class="container">
       <div class="row">
@@ -117,9 +116,9 @@
 
           <div class="col-4">
             <div><label class="form-check-label" for="direcaohid"><input class="form-check-input" type="checkbox"
-                  name="direcaohid" id="direcaohid" th:value="${veiculo.direcaohid}">Direção Hidráulica</label></div>
+                  name="direcaohid" id="direcaohid" th:checked="${veiculo.direcaohid}">Direção Hidráulica</label></div>
             <div><label class="form-check-label" for="direcaoeletrica"><input class="form-check-input" type="checkbox"
-                  name="direcaoeletrica" id="direcaoeletrica" th:value="${veiculo.direcaoeletrica}">Direção
+                  name="direcaoeletrica" id="direcaoeletrica" th:checked="${veiculo.direcaoeletrica}">Direção
                 Elétrica</label></div>
             <div><label class="form-check-label" for="rodaligaleve"><input class="form-check-input" type="checkbox"
                   name="rodaligaleve" id="rodaligaleve" th:value="${veiculo.rodaligaleve}">Roda Liga Leve</label></div>
@@ -172,7 +171,6 @@
       </div>
     </div>
   </div>
-</div>
 
   <!-- Optional JavaScript -->
   <script src="/js/interacoes.js"></script>
