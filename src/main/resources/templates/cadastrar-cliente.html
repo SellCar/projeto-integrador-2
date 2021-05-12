@@ -73,10 +73,41 @@
                     <div class="col-3">
                         <select class="form-control" name="uf" id="uf" title="União Federativa" th:value="${cliente.uf}">
                             <option selected disabled value="selecionar">SELECIONE O ESTADO</option>
+                            <optgroup label="Região Norte">
+                              <option value="AM">Amazonas</option>
+                              <option value="RR">Roraima</option>
+                              <option value="AP">Amapá</option>
+                              <option value="PA">Pará</option>
+                              <option value="TO">Tocantins</option>
+                              <option value="RO">Rondônia</option>
+                              <option value="AC">Acre</option>
+                            </optgroup>
+                            <optgroup label="Região Nordeste">
+                              <option value="MA">Maranhão</option>
+                              <option value="PI">Piauí</option>
+                              <option value="CE">Ceará</option>
+                              <option value="RN">Rio Grande do Norte</option>
+                              <option value="PE">Pernambuco</option>
+                              <option value="PB">Paraíba</option>
+                              <option value="SE">Sergipe</option>
+                              <option value="AL">Alagoas</option>
+                              <option value="BA">Bahia</option>
+                            </optgroup>
+                            <optgroup label="Região Centro-Oeste">
+                              <option value="MT">Mato Grosso</option>
+                              <option value="MS">Mato Grosso do Sul</option>
+                              <option value="GO">Goiás</option>
+                            </optgroup>
+                            <optgroup label="Região Sudeste">
+                              <option value="SP">São Paulo</option>
+                              <option value="RJ">Rio de Janeiro</option>
+                              <option value="ES">Espírito Santo</option>
+                              <option value="MG">Minas Gerais</option>
+                            </optgroup>
                             <optgroup label="Região Sul">
-                                <option value="SC">SC</option>
-                                <option value="RS">RS</option>
-                                <option value="PR">PR</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="PR">Paraná</option>
                             </optgroup>
                         </select>
                     </div>
@@ -91,7 +122,7 @@
                     <div class="col-4"><input class="form-control" type="text" name="telefone" id="telefone"
                             th:value="${cliente.telefone}" title="Telefone do Cliente" placeholder="(48)99999-9999" maxlength="14"></div>
                     <div class="col-4"><input class="form-control" type="email" name="emailcli" id="emailcli"
-                            th:value="${cliente.emailcli}" title="E-Mail do Cliente" placeholder="ex: email@email.com.br"></div>
+                            th:value="${cliente.emailcli}" title="E-Mail do Cliente" placeholder="email@email.com"></div>
                 </div>
             </div>
 

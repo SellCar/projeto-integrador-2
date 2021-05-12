@@ -44,42 +44,50 @@
     <h2 th:text="${veiculo.renavan}">Renavan:</h2>
     <h2 th:text="${veiculo.chassi}">Chassi:</h2>
     
+    <div class="row ml-0">
+    <div class="col-4">
     <div th:if="${veiculo.multimidia}">
-    <input type="checkbox" th:checked="${veiculo.multimidia}"  />Multimídia
-  </div>
-  <div th:if="${veiculo.travaeletrica}"> 
-  <input type="checkbox" th:checked="${veiculo.travaeletrica}"/>Trava Elétrica
-</div> 
-<div th:if="${veiculo.vidroeletrico}">  
-<input type="checkbox" th:checked="${veiculo.vidroeletrico}" />Vidro Elétrico
-</div>    
-<div th:if="${veiculo.arcondicionado}">
-  <input type="checkbox" th:checked="${veiculo.arcondicionado}" />Ar Condicionado
-</div>
-  <div th:if="${veiculo.direcaohid}">
-    <input type="checkbox" th:checked="${veiculo.direcaohid}" />Direção Hidráulica
+    <input type="checkbox" th:checked="${veiculo.multimidia}" class="form-check-input" />Multimídia
     </div>
-    <div th:if="${veiculo.direcaoeletrica}">
-    <input type="checkbox" th:checked="${veiculo.direcaoeletrica}"  />Direção Elétrica
-  </div>
-  <div th:if="${veiculo.rodaligaleve}">
-    <input type="checkbox" th:checked="${veiculo.rodaligaleve}" />Roda Liga Leve
-  </div>
-  <div th:if="${veiculo.alarme}">
-    <input type="checkbox" th:checked="${veiculo.alarme}" />Alarme
-  </div>
-  <div th:if="${veiculo.retrovisoreletro}">
-    <input type="checkbox" th:checked="${veiculo.retrovisoreletro}" />Retrovisor Eletrocrômico
-  </div>
-  <div  th:if="${veiculo.sensorestacio}">
-    <input type="checkbox" th:checked="${veiculo.sensorestacio}" />Sensor Estacionamento
-  </div>
-  <div th:if="${veiculo.chavecanivete}">
-    <input type="checkbox" th:checked="${veiculo.chavecanivete}" />Chave Canivete
-  </div>
-  <div th:if="${veiculo.controltrac}">
-    <input type="checkbox" th:checked="${veiculo.controltrac}" />Controle Tração/Estabilidade
-  </div>
+    <div th:if="${veiculo.travaeletrica}"> 
+    <input type="checkbox" th:checked="${veiculo.travaeletrica}" class="form-check-input"/>Trava Elétrica
+    </div> 
+    <div th:if="${veiculo.vidroeletrico}">  
+    <input type="checkbox" th:checked="${veiculo.vidroeletrico}" class="form-check-input" />Vidro Elétrico
+    </div>    
+    <div th:if="${veiculo.arcondicionado}">
+      <input type="checkbox" th:checked="${veiculo.arcondicionado}" class="form-check-input" />Ar Condicionado
+    </div>
+    </div>
+    <div class="col-4">
+      <div th:if="${veiculo.direcaohid}">
+        <input type="checkbox" th:checked="${veiculo.direcaohid}" class="form-check-input" />Direção Hidráulica
+        </div>
+        <div th:if="${veiculo.direcaoeletrica}">
+        <input type="checkbox" th:checked="${veiculo.direcaoeletrica}" class="form-check-input"  />Direção Elétrica
+      </div>
+      <div th:if="${veiculo.rodaligaleve}">
+        <input type="checkbox" th:checked="${veiculo.rodaligaleve}" class="form-check-input" />Roda Liga Leve
+      </div>
+      <div th:if="${veiculo.alarme}">
+        <input type="checkbox" th:checked="${veiculo.alarme}" class="form-check-input" />Alarme
+      </div>
+    </div>
+    <div class="col-4">
+      <div th:if="${veiculo.retrovisoreletro}">
+        <input type="checkbox" th:checked="${veiculo.retrovisoreletro}" class="form-check-input" />Retrovisor Eletrocrômico
+      </div>
+      <div  th:if="${veiculo.sensorestacio}">
+        <input type="checkbox" th:checked="${veiculo.sensorestacio}" class="form-check-input" />Sensor Estacionamento
+      </div>
+      <div th:if="${veiculo.chavecanivete}">
+        <input type="checkbox" th:checked="${veiculo.chavecanivete}" class="form-check-input" />Chave Canivete
+      </div>
+      <div th:if="${veiculo.controltrac}">
+        <input type="checkbox" th:checked="${veiculo.controltrac}" class="form-check-input" />Controle Tração/Estabilidade
+      </div>
+    </div>
+    </div>
     <div><a class="btn btn-dark m-1" href="/index-veiculo">VOLTAR</a></div> 
     
     <!-- <button type="button" id="botao" onclick="fonte('a')">Aumentar!</button>
@@ -87,15 +95,13 @@
 
   </div>
 
-
   </div>
 
   <div class="container">
     <div class="row">
       <div class="col">
         <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All
-          Rights
-          Reserved &copy</footer>
+          Rights Reserved &copy</footer>
       </div>
     </div>
   </div>
