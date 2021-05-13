@@ -61,72 +61,78 @@
                     </div>
         
                     <div class="row">
-                        <div class="col-4"><b><label for="endereco">Endereço</label></b></div>
+                        <div class="col-2"><b><label for="cep">CEP</label></b></div>
+                        <div class="col-4"><b><label for="rua">Rua</label></b></div>
+                        <div class="col-2"><b><label for="bairro">Bairro</label></b></div>
+                        <div class="col-2"><b><label for="cidade">Cidade</label></b></div>
                         <div class="col-2"><b><label for="numres">Número</label></b></div>
-                        <div class="col-3"><b><label for="cep">CEP</label></b></div>
-                        <div class="col-3"><b><label for="uf">UF</label></b></div>
                     </div>
         
                     <div class="row mb-3">
-                        <div class="col-4"><input class="form-control" type="text" name="endereco" id="endereco"
-                                th:value="${funcionario.endereco}" title="Endereço do Funcionário" placeholder="Rua X"></div>
+                        <div class="col-2"><input class="form-control" type="text" name="cep" id="cep" onblur="pesquisacep(this.value);"
+                                th:value="${funcionario.cep}" title="CEP do Funcionário (somente números)" placeholder="00.000-000" maxlength="10"></div>
+                        <div class="col-4"><input class="form-control" type="text" name="rua" id="rua"
+                                th:value="${funcionario.rua}" title="Rua do Funcionário" placeholder="Rua X"></div>
+                        <div class="col-2"><input class="form-control" type="text" name="bairro" id="bairro"
+                                th:value="${funcionario.bairro}" title="Bairro do Funcionário" placeholder="Kobrasol"></div>
+                        <div class="col-2"><input class="form-control" type="text" name="cidade" id="cidade"
+                                th:value="${funcionario.cidade}" title="Cidade do Funcionário" placeholder="São José"></div>
                         <div class="col-2"><input class="form-control" type="text" name="numres" id="numres"
                                 th:value="${funcionario.numres}" title="Número da Residencia do Funcionário" placeholder="100" max="4"></div>
-                        <div class="col-3"><input class="form-control" type="text" name="cep" id="cep"
-                                th:value="${funcionario.cep}" title="CEP do Funcionário (somente números)" placeholder="00.000-000" maxlength="10"></div>
-                        <div class="col-3">
-                            <select class="form-control" name="uf" id="uf" title="União Federativa" th:value="${funcionario.uf}">
-                                <option selected disabled value="selecionar">SELECIONE O ESTADO</option>
-                                <optgroup label="Região Norte">
-                                  <option value="AM">Amazonas</option>
-                                  <option value="RR">Roraima</option>
-                                  <option value="AP">Amapá</option>
-                                  <option value="PA">Pará</option>
-                                  <option value="TO">Tocantins</option>
-                                  <option value="RO">Rondônia</option>
-                                  <option value="AC">Acre</option>
-                                </optgroup>
-                                <optgroup label="Região Nordeste">
-                                  <option value="MA">Maranhão</option>
-                                  <option value="PI">Piauí</option>
-                                  <option value="CE">Ceará</option>
-                                  <option value="RN">Rio Grande do Norte</option>
-                                  <option value="PE">Pernambuco</option>
-                                  <option value="PB">Paraíba</option>
-                                  <option value="SE">Sergipe</option>
-                                  <option value="AL">Alagoas</option>
-                                  <option value="BA">Bahia</option>
-                                </optgroup>
-                                <optgroup label="Região Centro-Oeste">
-                                  <option value="MT">Mato Grosso</option>
-                                  <option value="MS">Mato Grosso do Sul</option>
-                                  <option value="GO">Goiás</option>
-                                </optgroup>
-                                <optgroup label="Região Sudeste">
-                                  <option value="SP">São Paulo</option>
-                                  <option value="RJ">Rio de Janeiro</option>
-                                  <option value="ES">Espírito Santo</option>
-                                  <option value="MG">Minas Gerais</option>
-                                </optgroup>
-                                <optgroup label="Região Sul">
-                                    <option value="SC">Santa Catarina</option>
-                                    <option value="RS">Rio Grande do Sul</option>
-                                    <option value="PR">Paraná</option>
-                                </optgroup>
-                            </select>
-                        </div>
                     </div>
         
                     <div class="row">
+                        <div class="col-3"><b><label for="uf">UF</label></b></div>
                         <div class="col-4"><b><label for="telefone">Telefone</label></b></div>
                         <div class="col-4"><b></b><label for="email"><b>E-Mail</b></label></div>
                     </div>
         
                     <div class="row mb-3">
-                        <div class="col-4"><input class="form-control" type="text" name="telefone" id="telefone"
-                                th:value="${funcionario.telefone}" title="Telefone do Funcionário (somente números)" placeholder="(48)99999-9999" maxlength="14"></div>
-                        <div class="col-4"><input class="form-control" type="text" name="emailfunc" id="emailfunc"
-                                th:value="${funcionario.emailfunc}" title="E-Mail do Funcionário" placeholder="email@email.com"></div>
+                      <div class="col-3">
+                        <select class="form-control" name="uf" id="uf" title="União Federativa" th:value="${funcionario.uf}">
+                            <option selected disabled value="selecionar">SELECIONE O ESTADO</option>
+                            <optgroup label="Região Norte">
+                              <option value="AM">Amazonas</option>
+                              <option value="RR">Roraima</option>
+                              <option value="AP">Amapá</option>
+                              <option value="PA">Pará</option>
+                              <option value="TO">Tocantins</option>
+                              <option value="RO">Rondônia</option>
+                              <option value="AC">Acre</option>
+                            </optgroup>
+                            <optgroup label="Região Nordeste">
+                              <option value="MA">Maranhão</option>
+                              <option value="PI">Piauí</option>
+                              <option value="CE">Ceará</option>
+                              <option value="RN">Rio Grande do Norte</option>
+                              <option value="PE">Pernambuco</option>
+                              <option value="PB">Paraíba</option>
+                              <option value="SE">Sergipe</option>
+                              <option value="AL">Alagoas</option>
+                              <option value="BA">Bahia</option>
+                            </optgroup>
+                            <optgroup label="Região Centro-Oeste">
+                              <option value="MT">Mato Grosso</option>
+                              <option value="MS">Mato Grosso do Sul</option>
+                              <option value="GO">Goiás</option>
+                            </optgroup>
+                            <optgroup label="Região Sudeste">
+                              <option value="SP">São Paulo</option>
+                              <option value="RJ">Rio de Janeiro</option>
+                              <option value="ES">Espírito Santo</option>
+                              <option value="MG">Minas Gerais</option>
+                            </optgroup>
+                            <optgroup label="Região Sul">
+                                <option value="SC">Santa Catarina</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="PR">Paraná</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="col-4"><input class="form-control" type="text" name="telefone" id="telefone"
+                           th:value="${funcionario.telefone}" title="Telefone do Funcionário (somente números)" placeholder="(48)99999-9999" maxlength="14"></div>
+                    <div class="col-4"><input class="form-control" type="text" name="emailfunc" id="emailfunc"
+                           th:value="${funcionario.emailfunc}" title="E-Mail do Funcionário" placeholder="email@email.com"></div>
                     </div>
         
                     <div class="row">
@@ -175,6 +181,7 @@
     <!-- Optional JavaScript -->
     <script src="/js/interacoes.js"></script>
     <script src="/js/mascara-data.js"></script>
+    <script src="/js/pesquisa-cep.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
