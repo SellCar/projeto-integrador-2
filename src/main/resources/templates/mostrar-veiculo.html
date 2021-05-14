@@ -40,6 +40,11 @@
     <h2 th:text="${veiculo.nomeveiculo}">Nome do Veículo:</h2>
     <h2 th:text="${veiculo.anofabricacao}">Ano Fabricação:</h2>
     <h2 th:text="${veiculo.anomodelo}">Ano Modelo:</h2>
+    <h2 th:text="${veiculo.portas}">Portas:</h2>
+    <h2 th:text="${veiculo.cambio}">Câmbio:</h2>
+    <h2 th:text="${veiculo.combustivel}">Combustível:</h2>
+    <h2 th:text="${veiculo.carroceria}">Carroceria:</h2>
+    <h2 th:text="${veiculo.quilometragem}">Quilometragem:</h2>
     <h2 th:text="${veiculo.placa}">Placa:</h2>
     <h2 th:text="${veiculo.renavan}">Renavan:</h2>
     <h2 th:text="${veiculo.chassi}">Chassi:</h2>
@@ -58,6 +63,15 @@
     <div th:if="${veiculo.arcondicionado}">
       <input type="checkbox" th:checked="${veiculo.arcondicionado}" class="form-check-input" />Ar Condicionado
     </div>
+    <div th:if="${veiculo.tetosolar}">
+      <input type="checkbox" th:checked="${veiculo.tetosolar}" class="form-check-input" />Teto Solar
+    </div>
+    <div th:if="${veiculo.faroldiurno}">
+      <input type="checkbox" th:checked="${veiculo.faroldiurno}" class="form-check-input" />Farol Diurno
+    </div>
+    <div th:if="${veiculo.cruizecontrol}">
+      <input type="checkbox" th:checked="${veiculo.cruizecontrol}" class="form-check-input" />Cruize Control
+    </div>
     </div>
     <div class="col-4">
       <div th:if="${veiculo.direcaohid}">
@@ -72,6 +86,15 @@
       <div th:if="${veiculo.alarme}">
         <input type="checkbox" th:checked="${veiculo.alarme}" class="form-check-input" />Alarme
       </div>
+      <div th:if="${veiculo.reboque}">
+        <input type="checkbox" th:checked="${veiculo.reboque}" class="form-check-input" />Reboque
+        </div>
+        <div th:if="${veiculo.abs}">
+          <input type="checkbox" th:checked="${veiculo.abs}" class="form-check-input" />ABS
+          </div>
+          <div th:if="${veiculo.assistrampa}">
+            <input type="checkbox" th:checked="${veiculo.assistrampa}" class="form-check-input" />Assistente de Rampa
+            </div>
     </div>
     <div class="col-4">
       <div th:if="${veiculo.retrovisoreletro}">
@@ -85,6 +108,15 @@
       </div>
       <div th:if="${veiculo.controltrac}">
         <input type="checkbox" th:checked="${veiculo.controltrac}" class="form-check-input" />Controle Tração/Estabilidade
+      </div>
+      <div th:if="${veiculo.camerare}">
+        <input type="checkbox" th:checked="${veiculo.camerare}" class="form-check-input" />Câmera de Ré
+      </div>
+      <div th:if="${veiculo.bancocouro}">
+        <input type="checkbox" th:checked="${veiculo.bancocouro}" class="form-check-input" />Banco de Couro
+      </div>
+      <div th:if="${veiculo.airbag}">
+        <input type="checkbox" th:checked="${veiculo.airbag}" class="form-check-input" />Airbag
       </div>
     </div>
     </div>

@@ -40,32 +40,87 @@
 
       <div class="form-group text-left m-3">
         <div class="row">
-          <div class="col-6"><b><label for="fabricante">Fabricante</label></b></div>
-          <div class="col-6"><b><label for="nomeveiculo">Nome do Veiculo</label></b></div>
+          <div class="col-3"><b><label for="fabricante">Fabricante</label></b></div>
+          <div class="col-3"><b><label for="nomeveiculo">Nome do Veiculo</label></b></div>
+          <div class="col-2"><b><label for="anofabricacao">Ano Fabricação</label></b></div>
+          <div class="col-2"><b><label for="anomodelo">Ano Modelo</label></b></div>
+          <div class="col-2"><b><label for="portas">Portas</label></b></div>
         </div>
 
         <div class="row mb-3">
-          <div class="col-6"><input class="form-control" type="text" name="fabricante" id="fabricante"
+          <div class="col-3"><input class="form-control" type="text" name="fabricante" id="fabricante"
               th:value="${veiculo.fabricante}" title="Marca/Fabricante do Veículo" placeholder="Ford"></div>
-          <div class="col-6"><input class="form-control" type="text" name="nomeveiculo" id="nomeveiculo"
+          <div class="col-3"><input class="form-control" type="text" name="nomeveiculo" id="nomeveiculo"
               th:value="${veiculo.nomeveiculo}" title="Nome do Veículo" placeholder="EcoSport"></div>
+          <div class="col-2"><input class="form-control" type="text" name="anofabricacao" id="anofabricacao"
+              th:value="${veiculo.anofabricacao}" title="Ano de Fabricação do Veículo (somente números)"
+              pattern="[0-9]+$" placeholder="2010" maxlength="4"></div>
+          <div class="col-2"> <input class="form-control" type="text" name="anomodelo" id="anomodelo"
+              th:value="${veiculo.anomodelo}" title="Ano do Modelo do Veículo (somente números)" pattern="[0-9]+$"
+              placeholder="2011" maxlength="4"></div>
+          <div class="col-2">
+              <select class="form-control" name="portas" id="portas" title="Qtde Portas" th:value="veiculo.portas">
+                <option selected disabled value="selecionar">SELECIONE UMA OPÇÃO</option>
+                <option value="2p">2 portas</option>
+                <option value="4p">4 portas</option>
+              </select>
+          </div>
         </div>
 
         <div class="row">
-          <div class="col-6"><b><label for="anofabricacao">Ano Fabricação</label></b></div>
-          <div class="col-6"><b><label for="anomodelo">Ano Modelo</label></b></div>
+          <div class="col-3"><b><label for="cambio">Câmbio</label></b></div>
+          <div class="col-3"><b><label for="combustivel">Combustível</label></b></div>
+          <div class="col-3"><b><label for="carroceria">Carroceria</label></b></div>
+          <div class="col-2"><b><label for="quilometragem">Quilometragem</label></b></div>
         </div>
 
         <div class="row  mb-3">
-          <div class="col-6"><input class="form-control" type="text" name="anofabricacao" id="anofabricacao"
-              th:value="${veiculo.anofabricacao}" title="Ano de Fabricação do Veículo (somente números)"
-              pattern="[0-9]+$" placeholder="2010" maxlength="4"></div>
-          <div class="col-6"> <input class="form-control" type="text" name="anomodelo" id="anomodelo"
-              th:value="${veiculo.anomodelo}" title="Ano do Modelo do Veículo (somente números)" pattern="[0-9]+$"
-              placeholder="2011" maxlength="4"></div>
+          <div class="col-3">
+            <select class="form-control" name="cambio" id="cambio" title="Câmbio" th:value="veiculo.cambio">
+              <option selected disabled value="selecionar">SELECIONE UMA OPÇÃO</option>
+              <option value="manual">Manual</option>
+              <option value="automatico">Automático</option>
+              <option value="cvt">CVT</option>
+              <option value="dualogic">Dualogic (FIAT)</option>
+              <option value="imotion">I-Motion (VW)</option>
+              <option value="easytronic">Easy-Tronic (GM)</option>
+              <option value="dsg">DSG (VW)</option>
+              <option value="powershift">Powershift (Ford)</option>
+            </select>
+          </div>
+          <div class="col-3">
+            <select class="form-control" name="combustivel" id="combustivel" title="Combustível" th:value="veiculo.combustivel">
+              <option selected disabled value="selecionar">SELECIONE UMA OPÇÃO</option>
+              <option value="gasolina">Gasolina</option>
+              <option value="alcool">Álcool</option>
+              <option value="diesel">Diesel</option>
+              <option value="gnv">GNV</option>
+              <option value="flex">Flex (Gasolina + Álcool)</option>
+              <option value="multiflex">MultiFlex (GNV + Flex)</option>
+              <option value="hibrido">Híbrido (Elétrico + Gasolina)</option>
+              <option value="eletrico">Elétrico</option>
+            </select>
+          </div>
+          <div class="col-3">
+            <select class="form-control" name="carroceria" id="carroceria" title="Tipo de Carroceria"
+              th:value="veiculo.carroceria">
+              <option selected disabled value="selecionar">SELECIONE UMA OPÇÃO</option>
+              <option value="hatch">Hatch</option>
+              <option value="suv">SUV (Utilitário Esportivo)</option>
+              <option value="sedan">Sedan</option>
+              <option value="picape">Picape</option>
+              <option value="conversivel">Conversível</option>
+              <option value="van">Van</option>
+              <option value="perua/wagon">Perua/Wagon</option>
+            </select>
+          </div>
+          <div class="col-3">
+            <input class="form-control" type="text" name="quilometragem" id="quilometragem"
+              th:value="${veiculo.quilometragem}" title="Quilometragem do Veículo" placeholder="37.515 km">
+          </div>
         </div>
 
-        <div class="row ">
+        <div class="row">
           <div class="col-4"><b><label for="placa">Placa</label></b></div>
           <div class="col-4"><b><label for="renavan">Renavan</label></b></div>
           <div class="col-4"><b><label for="chassi">Chassi</label></b></div>
@@ -116,6 +171,24 @@
                   th:checked="${veiculo.arcondicionado}">Ar Condicionado
               </label>
             </div>
+            <div>
+              <label for="tetosolar" class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="tetosolar" id="tetosolar"
+                  th:checked="${veiculo.tetosolar}">Teto Solar
+              </label>
+            </div>
+            <div>
+              <label for="faroldiurno" class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="faroldiurno" id="faroldiurno"
+                  th:checked="${veiculo.faroldiurno}">Farol Diurno
+              </label>
+            </div>
+            <div>
+              <label for="cruizecontrol" class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="cruizecontrol" id="cruizecontrol"
+                  th:checked="${veiculo.cruizecontrol}">Cruize Control
+              </label>
+            </div>
           </div>
 
           <div class="col-4">
@@ -128,6 +201,12 @@
                   name="rodaligaleve" id="rodaligaleve" th:checked="${veiculo.rodaligaleve}">Roda Liga Leve</label></div>
             <div><label class="form-check-label" for="alarme"><input class="form-check-input" type="checkbox"
                   name="alarme" id="alarme" th:checked="${veiculo.alarme}">Alarme</label></div>
+            <div><label class="form-check-label" for="reboque"><input class="form-check-input" type="checkbox"
+                  name="reboque" id="reboque" th:checked="${veiculo.reboque}">Reboque</label></div>
+            <div><label class="form-check-label" for="abs"><input class="form-check-input" type="checkbox"
+                  name="abs" id="abs" th:checked="${veiculo.abs}">ABS</label></div>
+            <div><label class="form-check-label" for="assistrampa"><input class="form-check-input" type="checkbox"
+                  name="assistrampa" id="assistrampa" th:checked="${veiculo.assistrampa}">Assistente de Rampa</label></div>
           </div>
 
           <div class="col-4">
@@ -143,6 +222,12 @@
             <div><label class="form-check-label" for="controltrac"><input class="form-check-input" type="checkbox"
                   name="controltrac" id="controltrac" th:checked="${veiculo.controltrac}">Controle de
                 Tração/Estabilidade</label></div>
+            <div><label class="form-check-label" for="camerare"><input class="form-check-input" type="checkbox"
+                  name="camerare" id="camerare" th:checked="${veiculo.camerare}">Camera Ré</label></div>
+            <div><label class="form-check-label" for="bancocouro"><input class="form-check-input" type="checkbox"
+                  name="bancocouro" id="bancocouro" th:checked="${veiculo.bancocouro}">Banco Couro</label></div>
+            <div><label class="form-check-label" for="airbag"><input class="form-check-input" type="checkbox"
+                  name="airbag" id="airbag" th:checked="${veiculo.airbag}">Airbag</label></div>
           </div>
         </div>
 

@@ -24,6 +24,11 @@ public class Veiculo {
     String nomeveiculo;
     String anofabricacao;
     String anomodelo;
+    String portas;
+    String cambio;
+    String combustivel;
+    String carroceria;
+    String quilometragem;
     String placa;
     String renavan;
     String chassi;
@@ -39,4 +44,13 @@ public class Veiculo {
     Boolean sensorestacio;
     Boolean chavecanivete;
     Boolean controltrac;
+    Boolean tetosolar;
+    Boolean faroldiurno;
+    Boolean reboque;
+    Boolean abs;
+    Boolean camerare;
+    Boolean bancocouro;
+    Boolean cruizecontrol;
+    Boolean assistrampa;
+    Boolean airbag;
 }
