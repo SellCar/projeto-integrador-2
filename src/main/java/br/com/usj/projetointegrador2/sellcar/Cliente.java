@@ -23,12 +23,14 @@ public class Cliente {
     String nome;
     String cpf;
     String datanascimentocli;
+    String rg;
     String rua;
     String bairro;
     String cidade;
     String numres; //numero da residencia
     String cep;
     String uf;
+    String complemento;
     String telefone;
     String emailcli;
 }

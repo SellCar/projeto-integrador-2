@@ -23,12 +23,14 @@ public class Funcionario {
     String nome;
     String cpf;
     String datanascimentofunc;
+    String rg;
     String rua;
     String bairro;
     String cidade;
     String numres; //numero da residencia
     String cep;
     String uf;
+    String complemento;
     String telefone;
     String emailfunc;
     String cadlogin;

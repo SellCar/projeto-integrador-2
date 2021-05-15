@@ -41,36 +41,45 @@
 
       <div class="form-group text-left m-3">
           <div class="row">
-              <div class="col-6"><b><label for="nomecliente">Nome Completo</label></b></div>
-              <div class="col-6"><b><label for="nomeveiculo">Nome do Veículo</label></b></div>
+              <div class="col-5"><b><label for="nomecliente">Nome Cliente</label></b></div>
+              <div class="col-5"><b><label for="nomeveiculo">Nome Veículo</label></b></div>
+              <div class="col-2"><b><label for="datacompra">Data Compra</label></b></div>
           </div>
   
           <div class="row mb-3">
-              <div class="col-6"><input class="form-control" type="text" name="nomecliente" id="nomecliente"
+              <div class="col-5"><input class="form-control" type="text" name="nomecliente" id="nomecliente"
                       th:value="${vendas.nomecliente}" title="Nome Completo do comprador!" placeholder="José da Silva">
               </div>
-              <div class="col-6"><input class="form-control" type="text" name="nomeveiculo" id="nomeveiculo"
+              <div class="col-5"><input class="form-control" type="text" name="nomeveiculo" id="nomeveiculo"
                       th:value="${vendas.nomeveiculo}" title="Veículo que será comprado!" placeholder="Ford EcoSport">
               </div>
+              <div class="col-2"><input class="form-control" type="text" name="datacompra" id="datacompra" maxlength="10"
+                th:value="${vendas.datacompra}" onkeypress="mascaraData( this, event )" title="Data da Compra"
+                placeholder="01/01/2000" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"></div>
           </div>
   
           <div class="row">
-              <div class="col-4"><b><label for="valororiginal">Valor Original</label></b></div>
-              <div class="col-4"><b><label for="valorfinal">Valor Final</label></b></div>
-              <div class="col-4"><b><label for="formaspagamento">Forma de Pagamento</label></b></div>
+              <div class="col-3"><b><label for="vendedor">Vendedor</label></b></div>
+              <div class="col-3"><b><label for="valororiginal">Valor Original</label></b></div>
+              <div class="col-3"><b><label for="valorfinal">Valor Final</label></b></div>
+              <div class="col-3"><b><label for="formaspagamento">Forma de Pagamento</label></b></div>
           </div>
   
           <div class="row mb-3">
-              <div class="col-4"><input class="form-control" type="text" name="valororiginal" id="valororiginal"
+              <div class="col-3">
+                <input class="form-control" type="text" name="vendedor" id="vendedor" th:value="${vendas.vendedor}"
+                  title="Funcionário que efetuou a venda!" placeholder="michel.felippe">
+              </div>
+              <div class="col-3"><input class="form-control" type="text" name="valororiginal" id="valororiginal"
                       th:value="${vendas.valororiginal}" title="Valor que está sendo pedido no veículo!"
                       onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="R$35900,00"></div>
-              <div class="col-4"><input class="form-control" type="text" name="valorfinal" id="valorfinal"
+              <div class="col-3"><input class="form-control" type="text" name="valorfinal" id="valorfinal"
                       th:value="${vendas.valorfinal}" title="Valor que o veículo foi vendido!"
                       onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="R$33900,00"></div>
-              <div class="col-4">
+              <div class="col-3">
                   <select class="form-control" title="Forma de Pagamento do Veículo" name="formaspagamento"
                       id="formaspagamento" th:value="${vendas.formaspagamento}">
-                      <option value="selecionar" selected disabled>Selecione uma Opção</option>
+                      <option value="selecionar" selected disabled>SELECIONE UMA OPÇÃO</option>
                       <option value="avista">A Vista</option>
                       <option value="financiamento">Financiamento</option>
                       <option value="troca">Troca</option>
@@ -107,6 +116,7 @@
   <!-- Optional JavaScript -->
   <script src="/js/interacoes.js"></script>
   <script src="/js/moeda.js"></script>
+  <script src="/js/mascara-data.js"></script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

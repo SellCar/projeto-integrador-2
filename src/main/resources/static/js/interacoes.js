@@ -13,6 +13,11 @@
   let value = cpf.value.replace(/[^0-9]/g, "").replace(/^([\d]{3})([\d]{3})?([\d]{3})?([\d]{2})?/, "$1.$2.$3-$4");
   cpf.value = value;});
 
+  const rg = document.querySelector("#rg");
+  rg.addEventListener("keyup", () => {
+  let value = rg.value.replace(/[^0-9]/g, "").replace(/^([\d]{1})([\d]{3})?([\d]{3})?/, "$1.$2.$3");
+  rg.value = value;});
+
   const cep = document.querySelector("#cep");
   cep.addEventListener("keyup", () => {
   let value = cep.value.replace(/[^0-9]/g, "").replace(/^([\d]{2})([\d]{3})?([\d]{3})?/, "$1.$2-$3");

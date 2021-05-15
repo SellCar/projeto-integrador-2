@@ -44,20 +44,23 @@
             <div class="container">
                 <div class="form-group text-left m-3">
                     <div class="row">
-                        <div class="col-6"><b><label for="nome">Nome Completo</label></b></div>
+                        <div class="col-5"><b><label for="nome">Nome Completo</label></b></div>
                         <div class="col-3"><b><label for="cpf">CPF</label></b></div>
-                        <div class="col-3"><b><label for="datanascimento">Data Nascimento</label></b></div>
-                    </div>
+                        <div class="col-2"><b><label for="datanascimento">Data Nascimento</label></b></div>
+                        <div class="col-2"><b><label for="rg">RG</label></b></div>
+                    </div>                  
         
                     <div class="row mb-3">
-                        <div class="col-6"><input class="form-control" type="text" name="nome" id="nome"
+                        <div class="col-5"><input class="form-control" type="text" name="nome" id="nome"
                                 th:value="${funcionario.nome}" title="Nome Completo do Funcionário" placeholder="José da Silva"
                                 onkeydown="return/[a-z, ]/i.test(event.key)"></div>
                         <div class="col-3"><input class="form-control" type="text" name="cpf" id="cpf"
                                 th:value="${funcionario.cpf}" title="CPF do Funcionário (somente números)" placeholder="000.000.000-00" maxlength="14"></div>
-                        <div class="col-3"><input class="form-control" type="text" name="datanascimentofunc" id="datanascimentofunc"
+                        <div class="col-2"><input class="form-control" type="text" name="datanascimentofunc" id="datanascimentofunc"
                                 th:value="${funcionario.datanascimentofunc}" title="Data de Nascimento do Funcionário (somente números)" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
                                 maxlength="10" onkeypress="mascaraData( this, event )" placeholder="01/01/2000"></div>
+                        <div class="col-2"><input class="form-control" type="text" name="rg" id="rg" title="RG do Funcionário (somente números)"
+                                maxlength="9" th:value="${funcionario.rg}" placeholder="0.000.000"></div>
                     </div>
         
                     <div class="row">
@@ -83,8 +86,8 @@
         
                     <div class="row">
                         <div class="col-3"><b><label for="uf">UF</label></b></div>
-                        <div class="col-4"><b><label for="telefone">Telefone</label></b></div>
-                        <div class="col-4"><b></b><label for="email"><b>E-Mail</b></label></div>
+                        <div class="col-6"><b><label for="complemento">Complemento</label></b></div>
+                        <div class="col-3"><b><label for="telefone">Telefone</label></b></div>
                     </div>
         
                     <div class="row mb-3">
@@ -129,26 +132,32 @@
                             </optgroup>
                         </select>
                     </div>
-                    <div class="col-4"><input class="form-control" type="text" name="telefone" id="telefone"
-                           th:value="${funcionario.telefone}" title="Telefone do Funcionário (somente números)" placeholder="(48)99999-9999" maxlength="14"></div>
-                    <div class="col-4"><input class="form-control" type="text" name="emailfunc" id="emailfunc"
-                           th:value="${funcionario.emailfunc}" title="E-Mail do Funcionário" placeholder="email@email.com"></div>
+                    <div class="col-6">
+                      <input class="form-control" type="text" name="complemento" id="complemento" th:value="${funcionario.complemento}"
+                         title="Complemento do Endereço" placeholder="Ao lado do Mercado ABC">
+                    </div>
+                    <div class="col-3"><input class="form-control" type="text" name="telefone" id="telefone"
+                           th:value="${funcionario.telefone}" title="Telefone do Funcionário (somente números)"
+                           placeholder="(48)99999-9999" maxlength="14"></div>
                     </div>
         
                     <div class="row">
-                        <div class="col-6"><b><label for="login">Login</label></b></div>
-                        <div class="col-6"><b><label for="senha">Senha</label></b></div>
+                        <div class="col-4"><b></b><label for="email"><b>E-Mail</b></label></div>
+                        <div class="col-4"><b><label for="login">Login</label></b></div>
+                        <div class="col-4"><b><label for="senha">Senha</label></b></div>
                     </div>
         
                     <div class="row mb-3">
-                        <div class="col-6"><input class="form-control" type="text" name="cadlogin" id="cadlogin"
-                                th:value="${funcionario.cadlogin}" title="Nome que será digitado no login!" placeholder="ex: alberto.silva"></div>
-                        <div class="col-6"><input class="form-control" type="password" name="cadsenha" id="cadsenha"
-                                th:value="${funcionario.cadsenha}" title="Senha para entrar no sistema!" placeholder="mínimo 8 dígitos" minlength="8"
-                                maxlength="14"></div>
+                      <div class="col-4"><input class="form-control" type="text" name="emailfunc" id="emailfunc"
+                          th:value="${funcionario.emailfunc}" title="E-Mail do Funcionário" placeholder="email@email.com"></div>
+                        <div class="col-4"><input class="form-control" type="text" name="cadlogin" id="cadlogin"
+                          th:value="${funcionario.cadlogin}" title="Nome que será digitado no login!" placeholder="ex: alberto.silva"></div>
+                        <div class="col-4"><input class="form-control" type="password" name="cadsenha" id="cadsenha"
+                          th:value="${funcionario.cadsenha}" title="Senha para entrar no sistema!" placeholder="mínimo 8 dígitos" minlength="8"
+                          maxlength="14"></div>
                     </div>
                 </div>
-        
+              </div>
                 <input type="hidden" name="id" th:value="${funcionario.id}">
         
                 <div class="row text-center">

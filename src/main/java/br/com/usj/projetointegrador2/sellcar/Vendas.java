@@ -22,6 +22,8 @@ public class Vendas {
 
     String nomecliente;
     String nomeveiculo;
+    String datacompra;
+    String vendedor;
     String valororiginal;
     String valorfinal;
     String formaspagamento;
