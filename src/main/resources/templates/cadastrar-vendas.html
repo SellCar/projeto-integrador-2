@@ -70,12 +70,16 @@
                 <input class="form-control" type="text" name="vendedor" id="vendedor" th:value="${vendas.vendedor}"
                   title="Funcionário que efetuou a venda!" placeholder="michel.felippe">
               </div>
-              <div class="col-3"><input class="form-control" type="text" name="valororiginal" id="valororiginal"
+              <div class="input-group col-3">
+                <span class="input-group-text" id="real">R$</span>
+                <input class="form-control" type="text" name="valororiginal" id="valororiginal" aria-describedby="real"
                       th:value="${vendas.valororiginal}" title="Valor que está sendo pedido no veículo!"
-                      onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="R$35900,00"></div>
-              <div class="col-3"><input class="form-control" type="text" name="valorfinal" id="valorfinal"
+                      onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="35900,00"></div>
+              <div class="input-group col-3">
+                <span class="input-group-text" id="real">R$</span>
+                <input class="form-control" type="text" name="valorfinal" id="valorfinal"
                       th:value="${vendas.valorfinal}" title="Valor que o veículo foi vendido!"
-                      onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="R$33900,00"></div>
+                      onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="33900,00"></div>
               <div class="col-3">
                   <select class="form-control" title="Forma de Pagamento do Veículo" name="formaspagamento"
                       id="formaspagamento" th:value="${vendas.formaspagamento}">
