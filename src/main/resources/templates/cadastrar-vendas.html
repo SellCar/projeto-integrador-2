@@ -71,12 +71,12 @@
                   title="Funcionário que efetuou a venda!" placeholder="michel.felippe">
               </div>
               <div class="input-group col-3">
-                <span class="input-group-text" id="real">R$</span>
+                <span class="input-group-text bg-dark text-white" id="real">R$</span>
                 <input class="form-control" type="text" name="valororiginal" id="valororiginal" aria-describedby="real"
                       th:value="${vendas.valororiginal}" title="Valor que está sendo pedido no veículo!"
                       onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="35900,00"></div>
               <div class="input-group col-3">
-                <span class="input-group-text" id="real">R$</span>
+                <span class="input-group-text bg-dark text-white" id="real">R$</span>
                 <input class="form-control" type="text" name="valorfinal" id="valorfinal"
                       th:value="${vendas.valorfinal}" title="Valor que o veículo foi vendido!"
                       onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="33900,00"></div>
