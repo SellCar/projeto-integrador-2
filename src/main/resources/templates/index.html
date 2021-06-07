@@ -1,114 +1,107 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <title>SellCar - Login</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+<head>
+  <title>SellCar - Login</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/estilo.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" 
+  <link rel="stylesheet" href="/css/estilo.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
     integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-  </head>
-  <body>
-    <header>
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <img src="/img/sellcar-banner.png" alt="logo" id="logo">
-            </div>
+</head>
+
+<body>
+  <!-- HEADER - IMAGEM - TÍTULO -->
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <img src="/img/sellcar-banner.png" alt="logo" id="logo">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div id="tituloSellCar">
+            <h1 class=" text-center font-weight-bold p-1">LOGIN</h1>
           </div>
-          <div class="row">
-            <div class="col">
-              <div id="tituloSellCar">
-                <h1 class=" text-center font-weight-bold p-1">LOGIN</h1>
-              </div>
-            </div>
-          </div>
         </div>
-      </header>
+      </div>
+    </div>
+  </header>
+  <!-- HEADER - IMAGEM - TÍTULO -->
 
-      <div class="container" id="bgWhite">
-        <!-- <div class="row mt-5">
-            <div class="offset-3 col-6"><b><label for="login">Login</label></b></div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="offset-3 col-6"><input class="form-control" type="text" name="login" id="login"
-                    title="Login do Funcionário" placeholder="nome.sobrenome" required></div>
-        </div>
-
-        <div class="row">
-            <div class="offset-3 col-6"><b><label for="senha">Senha</label></b></div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="offset-3 col-6">
-              <input class="form-control" type="password" name="senha" id="senha"
-                title="Senha do Funcionário" minlength="8" maxlength="14" placeholder="********" required>
-                <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" height="30px" width="30px" id="olho" class="olho">
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="offset-3 col-6 text-center">
-                <a class="btn btn-dark mt-2 pequeno" onclick="return entrar()" title="Entrar no Sistema" href="/menu-principal">ENTRAR</a>
-            </div>
-        </div> -->
-          <div class="container mt-5">
-            <div class="row">
-              <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                <div class="card card-signin my-5">
-                  <div class="card-body">
-                    <h5 class="card-title text-center">SELLCAR</h5>
-                    <form class="form-signin">
-                      <div class="form-label-group">
-                        <input type="username" id="inputusername" class="form-control" placeholder="username address" required autofocus>
-                        <label for="inputusername">Nome de usuário</label>
-                      </div>
-        
-                      <div class="form-label-group">
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                        <label for="inputPassword">Senha</label>
-                      </div>
-        
-                      <div class="custom-control custom-checkbox mb-3">
-                        <input type="checkbox" class="custom-control-input" id="customCheck1">
-                        <label class="custom-control-label" for="customCheck1">Lembrar senha</label>
-                      </div>
-                      <button class="btn btn-lg btn-dark btn-block text-uppercase" type="button" onClick="Login()">Entrar</button>
-                     
-                    </form>
-                  </div>
+  <!-- MENU PRINCIPAL - BACKGROUND BRANCO -->
+  <div class="container" id="bgWhite">
+    <!-- LOGIN -->
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <h5 class="card-title text-center">SELLCAR</h5>
+              <form class="form-signin">
+                <div class="form-label-group">
+                  <input type="username" id="inputusername" class="form-control" placeholder="username address" required
+                    autofocus>
+                  <label for="inputusername">Nome de usuário</label>
                 </div>
-              </div>
+
+                <div class="form-label-group">
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                  <label for="inputPassword">Senha</label>
+                </div>
+
+                <div class="custom-control custom-checkbox mb-3">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Lembrar senha</label>
+                </div>
+                <button class="btn btn-lg btn-dark btn-block text-uppercase" type="button"
+                  onClick="Login()">Entrar</button>
+
+              </form>
             </div>
-          </div>
-
-
-      </div>
-
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All
-              Rights
-              Reserved &copy</footer>
           </div>
         </div>
       </div>
-    <!-- Optional JavaScript -->
-    <script src="/js/interacoes.js"></script>
-    <script src="/js/senha.js"></script>
-    <script src="/js/login.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" 
-    integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+    </div>
+    <!-- LOGIN -->
+  </div>
+  <!-- MENU PRINCIPAL - BACKGROUND BRANCO -->
+
+  <!-- FOOTER -->
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All
+          Rights
+          Reserved &copy</footer>
+      </div>
+    </div>
+  </div>
+  <!-- FOOTER -->
+
+  <!-- Optional JavaScript -->
+  <script src="/js/interacoes.js"></script>
+  <script src="/js/senha.js"></script>
+  <script src="/js/login.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js"
+    integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a"
+    crossorigin="anonymous"></script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
