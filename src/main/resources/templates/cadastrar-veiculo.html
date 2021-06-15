@@ -2,278 +2,267 @@
 <html lang="pt-br">
 
 <head>
-  <title>SellCar - Cadastro Veículo</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SellCar - Cadastro Veículo</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/estilo.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/estilo.css">
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <img src="/img/sellcar-banner.png" alt="logo" id="logo">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img src="/img/sellcar-banner.png" alt="logo" id="logo">
+                </div>
+            </div>
+            <div class="row" id="tituloSellCar">
+                <div class="col-11">
+                    <div>
+                        <h1 class=" text-center font-weight-bold p-1">CADASTRO DE VEÍCULO</h1>
+                    </div>
+                </div>
+                <div class="col-1 text-center btn-group mt-3">
+                    <div onclick="fonte('a')"><img src="/img/increase.png" height="30px" width="30px" class="mr-2"></div>
+                    <div onclick="fonte('d')"><img src="/img/decrease.png" height="30px" width="30px"></div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="row" id="tituloSellCar">
-        <div class="col-11">
-          <div>
-            <h1 class=" text-center font-weight-bold p-1">CADASTRO DE VEÍCULO</h1>
-          </div>
-        </div>
-        <div class="col-1 text-center btn-group mt-3">
-          <div onclick="fonte('a')"><img src="/img/increase.png" height="30px" width="30px" class="mr-2"></div>
-          <div onclick="fonte('d')"><img src="/img/decrease.png" height="30px" width="30px"></div>
-        </div>
-      </div>
-    </div>
-  </header>
+    </header>
 
-  <div class="container" id="bgWhite">
-    <form action="/cadastrar-veiculo" method="POST" class="was-validated">
+    <div class="container" id="bgWhite">
+        <form action="/cadastrar-veiculo" method="POST" class="was-validated">
 
-      <div class="form-group text-left m-3">
-        <div class="row">
-          <div class="col-3"><b><label for="fabricante">Fabricante</label></b></div>
-          <div class="col-3"><b><label for="nomeveiculo">Nome do Veiculo</label></b></div>
-          <div class="col-2"><b><label for="anofabricacao">Ano Fabricação</label></b></div>
-          <div class="col-2"><b><label for="anomodelo">Ano Modelo</label></b></div>
-          <div class="col-2"><b><label for="portas">Portas</label></b></div>
-        </div>
+            <div class="form-group text-left m-3">
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-3"></div>
+                    <div class="col-2"></div>
+                    <div class="col-2"></div>
+                    <div class="col-2"></div>
+                </div>
 
-        <div class="row mb-3">
-          <div class="col-3"><input class="form-control" type="text" name="fabricante" id="fabricante"
-              th:value="${veiculo.fabricante}" title="Marca/Fabricante do Veículo" placeholder="Ford"></div>
-          <div class="col-3"><input class="form-control" type="text" name="nomeveiculo" id="nomeveiculo"
-              th:value="${veiculo.nomeveiculo}" title="Nome do Veículo" placeholder="EcoSport"></div>
-          <div class="col-2"><input class="form-control" type="text" name="anofabricacao" id="anofabricacao"
-              th:value="${veiculo.anofabricacao}" title="Ano de Fabricação do Veículo (somente números)"
-              pattern="[0-9]+$" placeholder="2010" maxlength="4"></div>
-          <div class="col-2"> <input class="form-control" type="text" name="anomodelo" id="anomodelo"
-              th:value="${veiculo.anomodelo}" title="Ano do Modelo do Veículo (somente números)" pattern="[0-9]+$"
-              placeholder="2011" maxlength="4"></div>
-          <div class="col-2">
-              <select class="form-control" name="portas" id="portas" title="Qtde Portas" th:value="veiculo.portas">
-                <option selected disabled value="selecionar">SELECIONE UMA OPÇÃO</option>
-                <option value="2p">2 portas</option>
-                <option value="4p">4 portas</option>
-              </select>
-          </div>
-        </div>
+                <div class="row">
+                    <div class="col-12 col-md-3 mb-3">
+                        <b><label for="fabricante">Fabricante</label></b>
+                        <input class="form-control is-invalid" type="text" name="fabricante" id="fabricante" th:value="${veiculo.fabricante}" title="Marca/Fabricante do Veículo" placeholder="Ford" required></div>
+                    <div class="col-12 col-md-3 mb-3">
+                        <b><label for="nomeveiculo">Nome do Veiculo</label></b>
+                        <input class="form-control is-invalid" type="text" name="nomeveiculo" id="nomeveiculo" th:value="${veiculo.nomeveiculo}" title="Nome do Veículo" placeholder="EcoSport" required></div>
+                    <div class="col-12 col-md-2 mb-3">
+                        <b><label for="anofabricacao">Ano Fabricação</label></b>
+                        <input class="form-control is-invalid" type="text" name="anofabricacao" id="anofabricacao" th:value="${veiculo.anofabricacao}" title="Ano de Fabricação do Veículo (somente números)" pattern="[0-9]+$" placeholder="2010" maxlength="4" required></div>
+                    <div class="col-12 col-md-2 mb-3">
+                        <b><label for="anomodelo">Ano Modelo</label></b>
+                        <input class="form-control is-invalid" type="text" name="anomodelo" id="anomodelo" th:value="${veiculo.anomodelo}" title="Ano do Modelo do Veículo (somente números)" pattern="[0-9]+$" placeholder="2011" maxlength="4" required></div>
+                    <div class="col-12 col-md-2 mb-3">
+                        <b><label for="portas">Portas</label></b>
+                        <select class="form-control is-invalid" name="portas" id="portas" title="Qtde Portas" th:value="veiculo.portas" required>
+                            <option selected disabled value="">SELECIONE UMA OPÇÃO</option>
+                            <option value="2p">2 portas</option>
+                            <option value="4p">4 portas</option>
+                        </select>
+                    </div>
+                </div>
 
-        <div class="row">
-          <div class="col-3"><b><label for="cambio">Câmbio</label></b></div>
-          <div class="col-3"><b><label for="combustivel">Combustível</label></b></div>
-          <div class="col-3"><b><label for="carroceria">Carroceria</label></b></div>
-          <div class="col-2"><b><label for="quilometragem">Quilometragem</label></b></div>
-        </div>
+                <div class="row">
+                    <div class="col-12 col-md-3 mb-3">
+                        <b><label for="cambio">Câmbio</label></b>
+                        <select class="form-control is-invalid" name="cambio" id="cambio" title="Câmbio" th:value="veiculo.cambio" required>
+                            <option selected disabled value="">SELECIONE UMA OPÇÃO</option>
+                            <option value="manual">Manual</option>
+                            <option value="automatico">Automático</option>
+                            <option value="cvt">CVT</option>
+                            <option value="dualogic">Dualogic (FIAT)</option>
+                            <option value="imotion">I-Motion (VW)</option>
+                            <option value="easytronic">Easy-Tronic (GM)</option>
+                            <option value="dsg">DSG (VW)</option>
+                            <option value="powershift">Powershift (Ford)</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-md-3 mb-3">
+                        <b><label for="combustivel">Combustível</label></b>
+                        <select class="form-control is-invalid" name="combustivel" id="combustivel" title="Combustível" th:value="veiculo.combustivel" required>
+                            <option selected disabled value="">SELECIONE UMA OPÇÃO</option>
+                            <option value="gasolina">Gasolina</option>
+                            <option value="alcool">Álcool</option>
+                            <option value="diesel">Diesel</option>
+                            <option value="gnv">GNV</option>
+                            <option value="flex">Flex (Gasolina + Álcool)</option>
+                            <option value="multiflex">MultiFlex (GNV + Flex)</option>
+                            <option value="hibrido">Híbrido (Elétrico + Gasolina)</option>
+                            <option value="eletrico">Elétrico</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-md-3 mb-3">
+                        <b><label for="carroceria">Carroceria</label></b>
+                        <select class="form-control is-invalid" name="carroceria" id="carroceria" title="Tipo de Carroceria" th:value="veiculo.carroceria" required>
+                            <option selected disabled value="">SELECIONE UMA OPÇÃO</option>
+                            <option value="hatch">Hatch</option>
+                            <option value="suv">SUV (Utilitário Esportivo)</option>
+                            <option value="sedan">Sedan</option>
+                            <option value="picape">Picape</option>
+                            <option value="conversivel">Conversível</option>
+                            <option value="van">Van</option>
+                            <option value="perua/wagon">Perua/Wagon</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-md-3 mb-3">
+                        <b><label for="quilometragem">Quilometragem</label></b>
+                        <input class="form-control is-invalid" type="text" name="quilometragem" id="quilometragem" th:value="${veiculo.quilometragem}" title="Quilometragem do Veículo" placeholder="37.515 km" required>
+                    </div>
+                </div>
 
-        <div class="row  mb-3">
-          <div class="col-3">
-            <select class="form-control" name="cambio" id="cambio" title="Câmbio" th:value="veiculo.cambio">
-              <option selected disabled value="selecionar">SELECIONE UMA OPÇÃO</option>
-              <option value="manual">Manual</option>
-              <option value="automatico">Automático</option>
-              <option value="cvt">CVT</option>
-              <option value="dualogic">Dualogic (FIAT)</option>
-              <option value="imotion">I-Motion (VW)</option>
-              <option value="easytronic">Easy-Tronic (GM)</option>
-              <option value="dsg">DSG (VW)</option>
-              <option value="powershift">Powershift (Ford)</option>
-            </select>
-          </div>
-          <div class="col-3">
-            <select class="form-control" name="combustivel" id="combustivel" title="Combustível" th:value="veiculo.combustivel">
-              <option selected disabled value="selecionar">SELECIONE UMA OPÇÃO</option>
-              <option value="gasolina">Gasolina</option>
-              <option value="alcool">Álcool</option>
-              <option value="diesel">Diesel</option>
-              <option value="gnv">GNV</option>
-              <option value="flex">Flex (Gasolina + Álcool)</option>
-              <option value="multiflex">MultiFlex (GNV + Flex)</option>
-              <option value="hibrido">Híbrido (Elétrico + Gasolina)</option>
-              <option value="eletrico">Elétrico</option>
-            </select>
-          </div>
-          <div class="col-3">
-            <select class="form-control" name="carroceria" id="carroceria" title="Tipo de Carroceria"
-              th:value="veiculo.carroceria">
-              <option selected disabled value="selecionar">SELECIONE UMA OPÇÃO</option>
-              <option value="hatch">Hatch</option>
-              <option value="suv">SUV (Utilitário Esportivo)</option>
-              <option value="sedan">Sedan</option>
-              <option value="picape">Picape</option>
-              <option value="conversivel">Conversível</option>
-              <option value="van">Van</option>
-              <option value="perua/wagon">Perua/Wagon</option>
-            </select>
-          </div>
-          <div class="col-3">
-            <input class="form-control" type="text" name="quilometragem" id="quilometragem"
-              th:value="${veiculo.quilometragem}" title="Quilometragem do Veículo" placeholder="37.515 km">
-          </div>
-        </div>
+                <div class="row">
+                    <div class="col-12 col-md-4 mb-3">
+                        <b><label for="placa">Placa</label></b>
+                        <input class="form-control is-invalid" type="text" name="placa" id="placa" th:value="${veiculo.placa}" title="Placa do Veículo" onkeyup="validarPlaca(this)" placeholder="ex: AAA-1234" maxlength="8" autofocus required>
+                    </div>
 
-        <div class="row">
-          <div class="col-4"><b><label for="placa">Placa</label></b></div>
-          <div class="col-4"><b><label for="renavan">Renavan</label></b></div>
-          <div class="col-4"><b><label for="chassi">Chassi</label></b></div>
-        </div>
+                    <div class="col-12 col-md-4 mb-3">
+                        <b><label for="renavan">Renavan</label></b>
+                        <input class="form-control is-invalid" type="text" name="renavan" id="renavan" th:value="${veiculo.renavan}" title="Renavam do Veículo (somente números)" placeholder="ex: 00154935468" maxlength="11" required>
+                    </div>
 
-        <div class="row  mb-3">
-          <div class="col-4"><input class="form-control" type="text" name="placa" id="placa" th:value="${veiculo.placa}"
-              title="Placa do Veículo" onkeyup="validarPlaca(this)" placeholder="ex: AAA-1234" maxlength="8" autofocus>
-          </div>
-          <div class="col-4"><input class="form-control" type="text" name="renavan" id="renavan"
-              th:value="${veiculo.renavan}" title="Renavam do Veículo (somente números)" placeholder="ex: 00154935468"
-              maxlength="11"></div>
-          <div class="col-4"><input class="form-control" type="text" name="chassi" id="chassi"
-              th:value="${veiculo.chassi}" title="Numeração do Chassi do Veículo" placeholder="ex: 9BW.HE21J.X.24060831"
-              maxlength="17"></div>
-        </div>
+                    <div class="col-12 col-md-4 mb-3">
+                        <b><label for="chassi">Chassi</label></b>
+                        <input class="form-control is-invalid" type="text" name="chassi" id="chassi" th:value="${veiculo.chassi}" title="Numeração do Chassi do Veículo" placeholder="ex: 9BW.HE21J.X.24060831" maxlength="17" required>
+                    </div>
+                </div>
 
 
-        <div class="row ml-0">
-          <div class="col">
-            <div><b>Opcionais</b></div>
-          </div>
-        </div>
+                <div class="row ml-0">
+                    <div class="col">
+                        <div><b>Opcionais</b></div>
+                    </div>
+                </div>
 
-        <div class="row ml-2" title="Opcionais do Veículo">
-          <div class="col-4">
-            <div>
-              <label for="multimidia" class="form-check-label">
+                <div class="row ml-2" title="Opcionais do Veículo">
+                    <div class="col-4">
+                        <div>
+                            <label for="multimidia" class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="multimidia" id="multimidia"
                   th:checked="${veiculo.multimidia}">Multimídia
               </label>
-            </div>
-            <div>
-              <label for="travaeletrica" class="form-check-label">
+                        </div>
+                        <div>
+                            <label for="travaeletrica" class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="travaeletrica" id="travaeletrica"
                   th:checked="${veiculo.travaeletrica}">Trava Elétrica
               </label>
-            </div>
-            <div>
-              <label for="vidroeletrico" class="form-check-label">
+                        </div>
+                        <div>
+                            <label for="vidroeletrico" class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="vidroeletrico" id="vidroeletrico"
                   th:checked="${veiculo.vidroeletrico}">Vidro Elétrico
               </label>
-            </div>
-            <div>
-              <label for="arcondicionado" class="form-check-label">
+                        </div>
+                        <div>
+                            <label for="arcondicionado" class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="arcondicionado" id="arcondicionado"
                   th:checked="${veiculo.arcondicionado}">Ar Condicionado
               </label>
-            </div>
-            <div>
-              <label for="tetosolar" class="form-check-label">
+                        </div>
+                        <div>
+                            <label for="tetosolar" class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="tetosolar" id="tetosolar"
                   th:checked="${veiculo.tetosolar}">Teto Solar
               </label>
-            </div>
-            <div>
-              <label for="faroldiurno" class="form-check-label">
+                        </div>
+                        <div>
+                            <label for="faroldiurno" class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="faroldiurno" id="faroldiurno"
                   th:checked="${veiculo.faroldiurno}">Farol Diurno
               </label>
-            </div>
-            <div>
-              <label for="cruizecontrol" class="form-check-label">
+                        </div>
+                        <div>
+                            <label for="cruizecontrol" class="form-check-label">
                 <input class="form-check-input" type="checkbox" name="cruizecontrol" id="cruizecontrol"
                   th:checked="${veiculo.cruizecontrol}">Cruize Control
               </label>
-            </div>
-          </div>
+                        </div>
+                    </div>
 
-          <div class="col-4">
-            <div><label class="form-check-label" for="direcaohid"><input class="form-check-input" type="checkbox"
+                    <div class="col-4">
+                        <div><label class="form-check-label" for="direcaohid"><input class="form-check-input" type="checkbox"
                   name="direcaohid" id="direcaohid" th:checked="${veiculo.direcaohid}">Direção Hidráulica</label></div>
-            <div><label class="form-check-label" for="direcaoeletrica"><input class="form-check-input" type="checkbox"
+                        <div><label class="form-check-label" for="direcaoeletrica"><input class="form-check-input" type="checkbox"
                   name="direcaoeletrica" id="direcaoeletrica" th:checked="${veiculo.direcaoeletrica}">Direção
                 Elétrica</label></div>
-            <div><label class="form-check-label" for="rodaligaleve"><input class="form-check-input" type="checkbox"
+                        <div><label class="form-check-label" for="rodaligaleve"><input class="form-check-input" type="checkbox"
                   name="rodaligaleve" id="rodaligaleve" th:checked="${veiculo.rodaligaleve}">Roda Liga Leve</label></div>
-            <div><label class="form-check-label" for="alarme"><input class="form-check-input" type="checkbox"
+                        <div><label class="form-check-label" for="alarme"><input class="form-check-input" type="checkbox"
                   name="alarme" id="alarme" th:checked="${veiculo.alarme}">Alarme</label></div>
-            <div><label class="form-check-label" for="reboque"><input class="form-check-input" type="checkbox"
+                        <div><label class="form-check-label" for="reboque"><input class="form-check-input" type="checkbox"
                   name="reboque" id="reboque" th:checked="${veiculo.reboque}">Reboque</label></div>
-            <div><label class="form-check-label" for="abs"><input class="form-check-input" type="checkbox"
+                        <div><label class="form-check-label" for="abs"><input class="form-check-input" type="checkbox"
                   name="abs" id="abs" th:checked="${veiculo.abs}">ABS</label></div>
-            <div><label class="form-check-label" for="assistrampa"><input class="form-check-input" type="checkbox"
+                        <div><label class="form-check-label" for="assistrampa"><input class="form-check-input" type="checkbox"
                   name="assistrampa" id="assistrampa" th:checked="${veiculo.assistrampa}">Assistente de Rampa</label></div>
-          </div>
+                    </div>
 
-          <div class="col-4">
-            <div><label class="form-check-label" for="retrovisoreletro"><input class="form-check-input" type="checkbox"
+                    <div class="col-4">
+                        <div><label class="form-check-label" for="retrovisoreletro"><input class="form-check-input" type="checkbox"
                   name="retrovisoreletro" id="retrovisoreletro" th:checked="${veiculo.retrovisoreletro}">Retrovisor
                 Eletrocrômico</label></div>
-            <div><label class="form-check-label" for="sensorestacio"><input class="form-check-input" type="checkbox"
+                        <div><label class="form-check-label" for="sensorestacio"><input class="form-check-input" type="checkbox"
                   name="sensorestacio" id="sensorestacio" th:checked="${veiculo.sensorestacio}">Sensor de
                 Estacionamento</label></div>
-            <div><label class="form-check-label" for="chavecanivete"><input class="form-check-input" type="checkbox"
+                        <div><label class="form-check-label" for="chavecanivete"><input class="form-check-input" type="checkbox"
                   name="chavecanivete" id="chavecanivete" th:checked="${veiculo.chavecanivete}">Chave Canivete</label>
-            </div>
-            <div><label class="form-check-label" for="controltrac"><input class="form-check-input" type="checkbox"
+                        </div>
+                        <div><label class="form-check-label" for="controltrac"><input class="form-check-input" type="checkbox"
                   name="controltrac" id="controltrac" th:checked="${veiculo.controltrac}">Controle de
                 Tração/Estabilidade</label></div>
-            <div><label class="form-check-label" for="camerare"><input class="form-check-input" type="checkbox"
+                        <div><label class="form-check-label" for="camerare"><input class="form-check-input" type="checkbox"
                   name="camerare" id="camerare" th:checked="${veiculo.camerare}">Camera Ré</label></div>
-            <div><label class="form-check-label" for="bancocouro"><input class="form-check-input" type="checkbox"
+                        <div><label class="form-check-label" for="bancocouro"><input class="form-check-input" type="checkbox"
                   name="bancocouro" id="bancocouro" th:checked="${veiculo.bancocouro}">Banco Couro</label></div>
-            <div><label class="form-check-label" for="airbag"><input class="form-check-input" type="checkbox"
+                        <div><label class="form-check-label" for="airbag"><input class="form-check-input" type="checkbox"
                   name="airbag" id="airbag" th:checked="${veiculo.airbag}">Airbag</label></div>
-          </div>
-        </div>
+                    </div>
+                </div>
 
 
-      </div>
+            </div>
 
-      <input type="hidden" name="id" th:value="${veiculo.id}">
+            <input type="hidden" name="id" th:value="${veiculo.id}">
 
-      <div class="row text-center">
-        <div class="col-4"></div>
-        <div class="col-4"><input class="btn btn-dark m-1" title="Botão para salvar os dados inseridos!" type="submit"
-            value="SALVAR" id="cadastrar" onclick="return confirmar()"></div>
-        <div class="col-4 text-right"><a href="/index-veiculo"><img src="/img/back.png" alt="voltar" id="voltar"></a></div>
-      </div>
-    </form>
+            <div class="row text-center">
+                <div class="col-4"></div>
+                <div class="col-4"><input class="btn btn-dark m-1" title="Botão para salvar os dados inseridos!" type="submit" value="SALVAR" id="cadastrar" onclick="return confirmar()"></div>
+                <div class="col-4 text-right">
+                    <a href="/index-veiculo"><img src="/img/back.png" alt="voltar" id="voltar"></a>
+                </div>
+            </div>
+        </form>
 
-    <!-- <button type="button" id="botao" onclick="fonte('a')">Aumentar!</button>
+        <!-- <button type="button" id="botao" onclick="fonte('a')">Aumentar!</button>
     <button type="button" id="botao" onclick="fonte('d')">Diminuir!</button> -->
 
-  </div>
-
-
-
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All
-          Rights
-          Reserved &copy</footer>
-      </div>
     </div>
-  </div>
 
-  <!-- Optional JavaScript -->
-  <script src="/js/interacoes.js"></script>
-  <script src="/js/placa.js"></script>
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All Rights Reserved &copy</footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="/js/interacoes.js"></script>
+    <script src="/js/placa.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>

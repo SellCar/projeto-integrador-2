@@ -8,92 +8,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/estilo.css">
 
 </head>
 
 <body>
-  
-  <header>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <img src="/img/sellcar-banner.png" alt="logo" id="logo">
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img src="/img/sellcar-banner.png" alt="logo" id="logo">
+                </div>
+            </div>
+            <div class="row" id="tituloSellCar">
+                <div class="col">
+                    <div>
+                        <h1 class=" text-center font-weight-bold p-1">CADASTRO DE CLIENTE</h1>
+                    </div>
+                </div>
+                <div class="col-1 text-center btn-group mt-3">
+                    <div onclick="fonte('a')"><img src="/img/increase.png" height="30px" width="30px" class="mr-2"></div>
+                    <div onclick="fonte('d')"><img src="/img/decrease.png" height="30px" width="30px"></div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="row" id="tituloSellCar">
-        <div class="col">
-          <div>
-            <h1 class=" text-center font-weight-bold p-1">CADASTRO DE CLIENTE</h1>
-          </div>
-        </div>
-        <div class="col-1 text-center btn-group mt-3">
-          <div onclick="fonte('a')"><img src="/img/increase.png" height="30px" width="30px" class="mr-2"></div>
-          <div onclick="fonte('d')"><img src="/img/decrease.png" height="30px" width="30px"></div>
-        </div>
-      </div>
-    </div>
-  </header>
+    </header>
     <div class="container" id="bgWhite">
         <form action="/cadastrar-cliente" method="POST" class="was-validated">
             <div class="form-group text-left m-3">
-                <div class="row">
-                    <div class="col-5"><b><label for="nome">Nome Completo</label></b></div>
-                    <div class="col-3"><b><label for="cpf">CPF</label></b></div>
-                    <div class="col-2"><b><label for="datanascimento">Data Nascimento</label></b></div>
-                    <div class="col-2"><b><label for="rg">RG</label></b></div>
-                </div>
 
-                <div class="row mb-3">
-                    <div class="col-5"><input class="form-control" type="text" name="nome" id="nome"
-                            th:value="${cliente.nome}" title="Nome Completo do Cliente" placeholder="José da Silva"
-                            onkeydown="return/[a-z, ]/i.test(event.key)"></div>
-                    <div class="col-3"><input class="form-control" type="text" name="cpf" id="cpf"
-                            th:value="${cliente.cpf}" title="CPF do Cliente (somente números)" placeholder="000.000.000-00" maxlength="14"></div>
-                    <div class="col-2"> <input class="form-control" type="text" name="datanascimentocli"
-                            id="datanascimentocli" onkeypress="mascaraData( this, event )"
-                            title="Data de Nascimento do Cliente (somente números)" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
-                            maxlength="10" th:value="${cliente.datanascimentocli}" placeholder="01/01/2000">
+                <div class="row">
+                    <div class="col-12 col-md-5 mb-3">
+                        <b><label for="nome">Nome Completo</label></b>
+                        <input class="form-control is-invalid" type="text" name="nome" id="nome" th:value="${cliente.nome}" title="Nome Completo do Cliente" placeholder="José da Silva" onkeydown="return/[a-z, ]/i.test(event.key)" required></div>
+                    <div class="col-12 col-md-3 mb-3">
+                        <b><label for="cpf">CPF</label></b>
+                        <input class="form-control is-invalid" type="text" name="cpf" id="cpf" th:value="${cliente.cpf}" title="CPF do Cliente (somente números)" placeholder="000.000.000-00" maxlength="14" required></div>
+                    <div class="col-12 col-md-2 mb-3">
+                        <b><label for="datanascimento">Data Nascimento</label></b>
+                        <input class="form-control is-invalid" type="text" name="datanascimentocli" id="datanascimentocli" onkeypress="mascaraData( this, event )" title="Data de Nascimento do Cliente (somente números)" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" maxlength="10" th:value="${cliente.datanascimentocli}"
+                            placeholder="01/01/2000" required>
                     </div>
-                    <div class="col-2">
-                      <input class="form-control" type="text" name="rg" id="rg" title="RG do Cliente (somente números)"
-                        maxlength="9" th:value="${cliente.rg}" placeholder="0.000.000">
+                    <div class="col-12 col-md-2 mb-3">
+                        <b><label for="rg">RG</label></b>
+                        <input class="form-control is-invalid" type="text" name="rg" id="rg" title="RG do Cliente (somente números)" maxlength="9" th:value="${cliente.rg}" placeholder="0.000.000" required>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-2"><b><label for="cep">CEP</label></b></div>
-                    <div class="col-4"><b><label for="rua">Rua</label></b></div>
-                    <div class="col-2"><b><label for="bairro">Bairro</label></b></div>
-                    <div class="col-2"><b><label for="cidade">Cidade</label></b></div>
-                    <div class="col-2"><b><label for="numres">Número</label></b></div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-2"><input class="form-control" type="text" name="cep" id="cep" onblur="pesquisacep(this.value);"
-                    th:value="${cliente.cep}" title="CEP do Cliente" placeholder="00.000-000" maxlength="10"></div>
-                  <div class="col-4"><input class="form-control" type="text" name="rua" id="rua"
-                    th:value="${cliente.rua}" title="Rua do Cliente" placeholder="Rua X"></div>
-                  <div class="col-2"><input class="form-control" type="text" name="bairro" id="bairro"
-                    th:value="${cliente.bairro}" title="Bairro do Cliente" placeholder="Kobrasol"></div>
-                  <div class="col-2"><input class="form-control" type="text" name="cidade" id="cidade"
-                    th:value="${cliente.cidade}" title="Cidade do Cliente" placeholder="São José"></div>
-                  <div class="col-2"><input class="form-control" type="text" name="numres" id="numres" pattern="[0-9]+$"
-                    th:value="${cliente.numres}" title="Número da Residencia do Cliente" placeholder="100" maxlength="4"></div>
+                    <div class="col-12 col-md-2 mb-3">
+                        <b><label for="cep">CEP</label></b>
+                        <input class="form-control is-invalid" type="text" name="cep" id="cep" onblur="pesquisacep(this.value);" th:value="${cliente.cep}" title="CEP do Cliente" placeholder="00.000-000" maxlength="10" required></div>
+                    <div class="col-12 col-md-4 mb-3">
+                        <b><label for="rua">Rua</label></b>
+                        <input class="form-control is-invalid" type="text" name="rua" id="rua" th:value="${cliente.rua}" title="Rua do Cliente" placeholder="Rua X" required></div>
+                    <div class="col-12 col-md-2 mb-3">
+                        <b><label for="bairro">Bairro</label></b>
+                        <input class="form-control is-invalid" type="text" name="bairro" id="bairro" th:value="${cliente.bairro}" title="Bairro do Cliente" placeholder="Kobrasol" required></div>
+                    <div class="col-12 col-md-2 mb-3">
+                        <b><label for="cidade">Cidade</label></b>
+                        <input class="form-control is-invalid" type="text" name="cidade" id="cidade" th:value="${cliente.cidade}" title="Cidade do Cliente" placeholder="São José" required></div>
+                    <div class="col-12 col-md-2 mb-3">
+                        <b><label for="numres">Número</label></b>
+                        <input class="form-control is-invalid" type="text" name="numres" id="numres" pattern="[0-9]+$" th:value="${cliente.numres}" title="Número da Residencia do Cliente" placeholder="100" maxlength="4" required></div>
                 </div>
 
                 <div class="row">
-                    <div class="col-3"><b><label for="uf">UF</label></b></div>
-                    <div class="col-6"><b><label for="complemento">Complemento</label></b></div>
-                    <div class="col-3"><b><label for="telefone">Telefone</label></b></div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-3">
-                    <select class="form-control" name="uf" id="uf" title="União Federativa" th:value="${cliente.uf}">
-                        <option selected disabled value="selecionar">SELECIONE O ESTADO</option>
+                    <div class="col-12 col-md-3 mb-3">
+                        <b><label for="uf">UF</label></b>
+                        <select class="form-control is-invalid" name="uf" id="uf" title="União Federativa" th:value="${cliente.uf}" required>
+                        <option selected disabled value="">SELECIONE O ESTADO</option>
                         <optgroup label="Região Norte">
                           <option value="AM">Amazonas</option>
                           <option value="RR">Roraima</option>
@@ -131,36 +117,33 @@
                             <option value="PR">Paraná</option>
                         </optgroup>
                     </select>
+                    </div>
+                    <div class="col-12 col-md-6 mb-3">
+                        <b><label for="complemento">Complemento</label></b>
+                        <input class="form-control is-invalid" type="text" name="complemento" id="complemento" th:value="${cliente.complemento}" title="Complemento do Endereço" placeholder="Ao lado do Mercado ABC" required>
+                    </div>
+                    <div class="col-12 col-md-3 mb-3">
+                        <b><label for="telefone">Telefone</label></b>
+                        <input class="form-control is-invalid" type="text" name="telefone" id="telefone" th:value="${cliente.telefone}" title="Telefone do Cliente" placeholder="(48)99999-9999" maxlength="14" required>
+                    </div>
                 </div>
-                <div class="col-6">
-                  <input class="form-control" type="text" name="complemento" id="complemento" th:value="${cliente.complemento}"
-                     title="Complemento do Endereço" placeholder="Ao lado do Mercado ABC">
-                </div>
-               <div class="col-3">
-                  <input class="form-control" type="text" name="telefone" id="telefone"
-                      th:value="${cliente.telefone}" title="Telefone do Cliente" placeholder="(48)99999-9999" maxlength="14">
-               </div>
-             </div>
 
-             <div class="row">
-                <div class="col-4"><b><label for="email">E-Mail</label></b></div>
-             </div>
-
-             <div class="row mb-3">
-                <div class="col-4">
-                  <input class="form-control" type="email" name="emailcli" id="emailcli"
-                       th:value="${cliente.emailcli}" title="E-Mail do Cliente" placeholder="email@email.com">
+                <div class="row">
+                    <div class="col-12 col-md-4 mb-3">
+                        <b><label for="email">E-Mail</label></b>
+                        <input class="form-control is-invalid" type="email" name="emailcli" id="emailcli" th:value="${cliente.emailcli}" title="E-Mail do Cliente" placeholder="email@email.com" required>
+                    </div>
                 </div>
-             </div>
             </div>
 
             <input type="hidden" name="id" th:value="${cliente.id}">
 
             <div class="row text-center">
                 <div class="col-4"></div>
-                <div class="col-4"><input class="btn btn-dark m-1" title="Botão para salvar os dados inseridos!" type="submit" value="SALVAR" id="cadastrar"
-                        onclick="return confirmar()"></div>
-                <div class="col-4 text-right"><a href="/index-cliente"><img src="/img/back.png" alt="voltar" id="voltar"></a></div>
+                <div class="col-4"><input class="btn btn-dark m-1" title="Botão para salvar os dados inseridos!" type="submit" value="SALVAR" id="cadastrar" onclick="return confirmar()"></div>
+                <div class="col-4 text-right">
+                    <a href="/index-cliente"><img src="/img/back.png" alt="voltar" id="voltar"></a>
+                </div>
             </div>
         </form>
 
@@ -168,33 +151,25 @@
         <button type="button" id="botao" onclick="fonte('d')">Diminuir!</button> -->
 
     </div>
-            
-    
+
+
     <div class="container">
         <div class="row">
-          <div class="col">
-            <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All
-              Rights
-              Reserved &copy</footer>
-          </div>
+            <div class="col">
+                <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All Rights Reserved &copy</footer>
+            </div>
         </div>
-      </div>
-    
+    </div>
+
 
     <!-- Optional JavaScript -->
     <script src="/js/interacoes.js"></script>
     <script src="/js/mascara-data.js"></script>
     <script src="/js/pesquisa-cep.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
