@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/estilo.css">
 </head>
 
@@ -27,7 +28,8 @@
                     </div>
                 </div>
                 <div class="col-1 text-center btn-group mt-3">
-                    <div onclick="fonte('a')"><img src="/img/increase.png" height="30px" width="30px" class="mr-2"></div>
+                    <div onclick="fonte('a')"><img src="/img/increase.png" height="30px" width="30px" class="mr-2">
+                    </div>
                     <div onclick="fonte('d')"><img src="/img/decrease.png" height="30px" width="30px"></div>
                 </div>
             </div>
@@ -42,44 +44,60 @@
                 <div class="row">
                     <div class="col-12 col-md-5 mb-3">
                         <b><label class="col-form-label" for="nomecliente">Nome Cliente</label></b>
-                        <input class="form-control is-invalid" type="text" name="nomecliente" id="nomecliente" th:value="${vendas.nomecliente}" title="Nome Completo do comprador!" placeholder="José da Silva" required>
+                        <input class="form-control is-invalid" type="text" name="nomecliente" id="nomecliente"
+                            th:value="${vendas.nomecliente}" title="Nome Completo do comprador!"
+                            placeholder="José da Silva" required>
                     </div>
                     <div class="col-12 col-md-5 mb-3">
                         <b><label for="nomeveiculo">Nome Veículo</label></b>
-                        <input class="form-control is-invalid" type="text" name="nomeveiculo" id="nomeveiculo" th:value="${vendas.nomeveiculo}" title="Veículo que será comprado!" placeholder="Ford EcoSport" required>
+                        <input class="form-control is-invalid" type="text" name="nomeveiculo" id="nomeveiculo"
+                            th:value="${vendas.nomeveiculo}" title="Veículo que será comprado!"
+                            placeholder="Ford EcoSport" required>
                     </div>
                     <div class="col-12 col-md-2 mb-3">
                         <b><label for="datacompra">Data Compra</label></b>
-                        <input class="form-control is-invalid" type="text" name="datacompra" id="datacompra" maxlength="10" th:value="${vendas.datacompra}" onkeypress="mascaraData( this, event )" title="Data da Compra" placeholder="01/01/2000" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
-                            required></div>
+                        <input class="form-control is-invalid" type="text" name="datacompra" id="datacompra"
+                            maxlength="10" th:value="${vendas.datacompra}" onkeypress="mascaraData( this, event )"
+                            title="Data da Compra" placeholder="01/01/2000" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$"
+                            required>
+                    </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 col-md-3 mb-3">
                         <b><label for="vendedor">Vendedor</label></b>
-                        <input class="form-control is-invalid" type="text" name="vendedor" id="vendedor" th:value="${vendas.vendedor}" title="Funcionário que efetuou a venda!" placeholder="michel.felippe" required>
+                        <input class="form-control is-invalid" type="text" name="vendedor" id="vendedor"
+                            th:value="${vendas.vendedor}" title="Funcionário que efetuou a venda!"
+                            placeholder="michel.felippe" required>
                     </div>
 
                     <div class="input-group col-12 col-md-3 mb-3">
                         <b><label for="valororiginal">Valor Original</label></b>
                         <span class="input-group-text bg-dark text-white" id="real">R$</span>
-                        <input class="form-control is-invalid" type="text" name="valororiginal" id="valororiginal" aria-describedby="real" th:value="${vendas.valororiginal}" title="Valor que está sendo pedido no veículo!" onKeyPress="return(moeda(this,'.',',',event))" maxlength="10"
-                            placeholder="35900,00" required>
+                        <input class="form-control is-invalid" type="text" name="valororiginal" id="valororiginal"
+                            aria-describedby="real" th:value="${vendas.valororiginal}"
+                            title="Valor que está sendo pedido no veículo!"
+                            onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="35900,00"
+                            required>
                     </div>
 
                     <div class="input-group col-12 col-md-3 mb-3">
                         <b><label for="valorfinal">Valor Final</label></b>
                         <span class="input-group-text bg-dark text-white" id="real">R$</span>
-                        <input class="form-control is-invalid" type="text" name="valorfinal" id="valorfinal" th:value="${vendas.valorfinal}" title="Valor que o veículo foi vendido!" onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="33900,00" required>
+                        <input class="form-control is-invalid" type="text" name="valorfinal" id="valorfinal"
+                            th:value="${vendas.valorfinal}" title="Valor que o veículo foi vendido!"
+                            onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="33900,00"
+                            required>
                     </div>
 
                     <div class="col-12 col-md-3 mb-3">
                         <b><label for="formaspagamento">Forma de Pagamento</label></b>
-                        <select class="form-control is-invalid" title="Forma de Pagamento do Veículo" name="formaspagamento" id="formaspagamento" th:value="${vendas.formaspagamento}" required>
-                          <option value="" selected disabled>SELECIONE UMA OPÇÃO</option>
-                          <option value="avista">A Vista</option>
-                          <option value="financiamento">Financiamento</option>
-                          <option value="troca">Troca</option>
+                        <select class="form-control is-invalid" title="Forma de Pagamento do Veículo"
+                            name="formaspagamento" id="formaspagamento" th:value="${vendas.formaspagamento}" required>
+                            <option value="" selected disabled>SELECIONE UMA OPÇÃO</option>
+                            <option value="avista">A Vista</option>
+                            <option value="financiamento">Financiamento</option>
+                            <option value="troca">Troca</option>
                         </select>
                     </div>
                 </div>
@@ -89,7 +107,8 @@
 
             <div class="row text-center">
                 <div class="col-4"></div>
-                <div class="col-4"><input class="btn btn-dark m-1" title="Botão para salvar os dados inseridos!" type="submit" value="SALVAR" id="cadastrar" onclick="return confirmar()"></div>
+                <div class="col-4"><input class="btn btn-dark m-1" title="Botão para salvar os dados inseridos!"
+                        type="submit" value="SALVAR" id="cadastrar" onclick="return confirmar()"></div>
                 <div class="col-4 text-right">
                     <a href="/index-vendas"><img src="/img/back.png" alt="voltar" id="voltar"></a>
                 </div>
@@ -104,7 +123,8 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All Rights Reserved &copy</footer>
+                <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados
+                    - All Rights Reserved &copy</footer>
             </div>
         </div>
     </div>
@@ -114,9 +134,15 @@
     <script src="/js/moeda.js"></script>
     <script src="/js/mascara-data.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
