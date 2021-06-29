@@ -71,24 +71,32 @@
                             placeholder="michel.felippe" required>
                     </div>
 
-                    <div class="input-group col-12 col-md-3 mb-3">
+                    <div class="col-12 col-md-3 mb-3">
                         <b><label for="valororiginal">Valor Original</label></b>
-                        <span class="input-group-text bg-dark text-white" id="real">R$</span>
-                        <input class="form-control is-invalid" type="text" name="valororiginal" id="valororiginal"
-                            aria-describedby="real" th:value="${vendas.valororiginal}"
-                            title="Valor que está sendo pedido no veículo!"
-                            onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="35900,00"
-                            required>
+
+                        <div class="input-group">
+                            <span class="input-group-text bg-dark text-white" id="real">R$</span>
+                            <input class="form-control is-invalid" type="text" name="valorfinal" id="valorfinal"
+                                th:value="${vendas.valorfinal}" title="Valor que o veículo foi vendido!"
+                                onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="33900,00"
+                                required>
+                        </div>
                     </div>
 
-                    <div class="input-group col-12 col-md-3 mb-3">
+                    <div class="col-12 col-md-3 mb-3">
                         <b><label for="valorfinal">Valor Final</label></b>
-                        <span class="input-group-text bg-dark text-white" id="real">R$</span>
-                        <input class="form-control is-invalid" type="text" name="valorfinal" id="valorfinal"
-                            th:value="${vendas.valorfinal}" title="Valor que o veículo foi vendido!"
-                            onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="33900,00"
-                            required>
+
+                        <div class="input-group">
+                            <span class="input-group-text bg-dark text-white" id="real">R$</span>
+                            <input class="form-control is-invalid" type="text" name="valororiginal" id="valororiginal"
+                                aria-describedby="real" th:value="${vendas.valororiginal}"
+                                title="Valor que está sendo pedido no veículo!"
+                                onKeyPress="return(moeda(this,'.',',',event))" maxlength="10" placeholder="35900,00"
+                                required>
+                        </div>
                     </div>
+
+
 
                     <div class="col-12 col-md-3 mb-3">
                         <b><label for="formaspagamento">Forma de Pagamento</label></b>
