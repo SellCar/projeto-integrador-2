@@ -36,7 +36,165 @@
   </header>
 
   <div class="container text-center" id="bgWhite">
-    <h2 th:text="${veiculo.fabricante}">Fabricante:</h2>
+    <div class="container">
+      <div class="form-group text-left m-3">
+
+          <div class="row">
+              <div class="col-12 col-md-5 mb-3">
+                  <b><label for="nome">Nome Completo</label></b>
+                  <input class="form-control is-invalid" type="text" name="nome" id="nome"
+                      th:value="${funcionario.nome}" title="Nome Completo do Funcionário"
+                      placeholder="José da Silva" onkeydown="return/[a-z, ]/i.test(event.key)" required>
+              </div>
+
+              <div class="col-12 col-md-3 mb-3">
+                  <b><label for="cpf">CPF</label></b>
+                  <input class="form-control is-invalid" type="text" name="cpf" id="cpf"
+                      th:value="${funcionario.cpf}" title="CPF do Funcionário (somente números)"
+                      placeholder="000.000.000-00" maxlength="14" required>
+              </div>
+
+              <div class="col-12 col-md-2 mb-3">
+                  <b><label for="datanascimento">Data Nascimento</label></b>
+                  <input class="form-control is-invalid" type="text" name="datanascimentofunc"
+                      id="datanascimentofunc" th:value="${funcionario.datanascimentofunc}"
+                      title="Data de Nascimento do Funcionário (somente números)"
+                      pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" maxlength="10"
+                      onkeypress="mascaraData( this, event )" placeholder="01/01/2000" required>
+              </div>
+
+              <div class="col-12 col-md-2 mb-3">
+                  <b><label for="rg">RG</label></b>
+                  <input class="form-control is-invalid" type="text" name="rg" id="rg"
+                      title="RG do Funcionário (somente números)" maxlength="9" th:value="${funcionario.rg}"
+                      placeholder="0.000.000" required>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-12 col-md-2 mb-3">
+                  <b><label for="cep">CEP</label></b>
+                  <input class="form-control is-invalid" type="text" name="cep" id="cep"
+                      onblur="pesquisacep(this.value);" th:value="${funcionario.cep}"
+                      title="CEP do Funcionário (somente números)" placeholder="00.000-000" maxlength="10"
+                      required>
+              </div>
+              <div class="col-12 col-md-4 mb-3">
+                  <b><label for="rua">Rua</label></b>
+                  <input class="form-control is-invalid" type="text" name="rua" id="rua"
+                      th:value="${funcionario.rua}" title="Rua do Funcionário" placeholder="Rua X" required>
+              </div>
+              <div class="col-12 col-md-2 mb-3">
+                  <b><label for="bairro">Bairro</label></b>
+                  <input class="form-control is-invalid" type="text" name="bairro" id="bairro"
+                      th:value="${funcionario.bairro}" title="Bairro do Funcionário" placeholder="Kobrasol"
+                      required>
+              </div>
+              <div class="col-12 col-md-2 mb-3">
+                  <b><label for="cidade">Cidade</label></b>
+                  <input class="form-control is-invalid" type="text" name="cidade" id="cidade"
+                      th:value="${funcionario.cidade}" title="Cidade do Funcionário" placeholder="São José"
+                      required>
+              </div>
+              <div class="col-12 col-md-2 mb-3">
+                  <b><label for="numres">Número</label></b>
+                  <input class="form-control is-invalid" type="text" name="numres" id="numres"
+                      th:value="${funcionario.numres}" title="Número da Residencia do Funcionário"
+                      placeholder="100" maxlength="4" required>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-12 col-md-3 mb-3">
+                  <b><label for="uf">UF</label></b>
+                  <select class="form-control is-invalid" name="uf" id="uf" title="União Federativa"
+                      th:value="${funcionario.uf}" required>
+                      <option selected disabled value="">SELECIONE O ESTADO</option>
+                      <optgroup label="Região Norte">
+                          <option value="AM">Amazonas</option>
+                          <option value="RR">Roraima</option>
+                          <option value="AP">Amapá</option>
+                          <option value="PA">Pará</option>
+                          <option value="TO">Tocantins</option>
+                          <option value="RO">Rondônia</option>
+                          <option value="AC">Acre</option>
+                      </optgroup>
+                      <optgroup label="Região Nordeste">
+                          <option value="MA">Maranhão</option>
+                          <option value="PI">Piauí</option>
+                          <option value="CE">Ceará</option>
+                          <option value="RN">Rio Grande do Norte</option>
+                          <option value="PE">Pernambuco</option>
+                          <option value="PB">Paraíba</option>
+                          <option value="SE">Sergipe</option>
+                          <option value="AL">Alagoas</option>
+                          <option value="BA">Bahia</option>
+                      </optgroup>
+                      <optgroup label="Região Centro-Oeste">
+                          <option value="MT">Mato Grosso</option>
+                          <option value="MS">Mato Grosso do Sul</option>
+                          <option value="GO">Goiás</option>
+                      </optgroup>
+                      <optgroup label="Região Sudeste">
+                          <option value="SP">São Paulo</option>
+                          <option value="RJ">Rio de Janeiro</option>
+                          <option value="ES">Espírito Santo</option>
+                          <option value="MG">Minas Gerais</option>
+                      </optgroup>
+                      <optgroup label="Região Sul">
+                          <option value="SC">Santa Catarina</option>
+                          <option value="RS">Rio Grande do Sul</option>
+                          <option value="PR">Paraná</option>
+                      </optgroup>
+                  </select>
+              </div>
+              <div class="col-12 col-md-6 mb-3">
+                  <b><label for="complemento">Complemento</label></b>
+                  <input class="form-control is-invalid" type="text" name="complemento" id="complemento"
+                      th:value="${funcionario.complemento}" title="Complemento do Endereço"
+                      placeholder="Ao lado do Mercado ABC" required>
+              </div>
+              <div class="col-12 col-md-3 mb-3">
+                  <b><label for="telefone">Telefone</label></b>
+                  <input class="form-control is-invalid" type="text" name="telefone" id="telefone"
+                      th:value="${funcionario.telefone}" title="Telefone do Funcionário (somente números)"
+                      placeholder="(48)99999-9999" maxlength="14" required>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-12 col-md-4 mb-3">
+                  <b><label for="email">E-Mail</b>
+                  <input class="form-control is-invalid" type="text" name="emailfunc" id="emailfunc"
+                      th:value="${funcionario.emailfunc}" title="E-Mail do Funcionário"
+                      placeholder="email@email.com" required>
+              </div>
+
+              <div class="col-12 col-md-4 mb-3">
+                  <b><label for="login">Login</label></b>
+                  <input class="form-control is-invalid" type="text" name="cadlogin" id="cadlogin"
+                      th:value="${funcionario.cadlogin}" title="Nome que será digitado no login!"
+                      placeholder="alberto.silva" required>
+              </div>
+
+              <div class="col-12 col-md-4 mb-3">
+                  <b><label for="senha">Senha</label></b>
+                  <input class="form-control is-invalid" type="password" name="cadsenha" id="cadsenha"
+                      th:value="${funcionario.cadsenha}" title="Senha para entrar no sistema!"
+                      placeholder="mínimo 8 dígitos" minlength="8" maxlength="14" required>
+              </div>
+          </div>
+      </div>
+  </div>
+   
+   
+   
+   
+   
+   
+   
+   
+    <!-- <h2 th:text="${veiculo.fabricante}">Fabricante:</h2>
     <h2 th:text="${veiculo.nomeveiculo}">Nome do Veículo:</h2>
     <h2 th:text="${veiculo.anofabricacao}">Ano Fabricação:</h2>
     <h2 th:text="${veiculo.anomodelo}">Ano Modelo:</h2>
@@ -48,80 +206,82 @@
     <h2 th:text="${veiculo.placa}">Placa:</h2>
     <h2 th:text="${veiculo.renavan}">Renavan:</h2>
     <h2 th:text="${veiculo.chassi}">Chassi:</h2>
-    
+
     <div class="row ml-0">
-    <div class="col-4">
-    <div th:if="${veiculo.multimidia}">
-    <input type="checkbox" th:checked="${veiculo.multimidia}" class="form-check-input" />Multimídia
-    </div>
-    <div th:if="${veiculo.travaeletrica}"> 
-    <input type="checkbox" th:checked="${veiculo.travaeletrica}" class="form-check-input"/>Trava Elétrica
-    </div> 
-    <div th:if="${veiculo.vidroeletrico}">  
-    <input type="checkbox" th:checked="${veiculo.vidroeletrico}" class="form-check-input" />Vidro Elétrico
-    </div>    
-    <div th:if="${veiculo.arcondicionado}">
-      <input type="checkbox" th:checked="${veiculo.arcondicionado}" class="form-check-input" />Ar Condicionado
-    </div>
-    <div th:if="${veiculo.tetosolar}">
-      <input type="checkbox" th:checked="${veiculo.tetosolar}" class="form-check-input" />Teto Solar
-    </div>
-    <div th:if="${veiculo.faroldiurno}">
-      <input type="checkbox" th:checked="${veiculo.faroldiurno}" class="form-check-input" />Farol Diurno
-    </div>
-    <div th:if="${veiculo.cruizecontrol}">
-      <input type="checkbox" th:checked="${veiculo.cruizecontrol}" class="form-check-input" />Cruize Control
-    </div>
-    </div>
-    <div class="col-4">
-      <div th:if="${veiculo.direcaohid}">
-        <input type="checkbox" th:checked="${veiculo.direcaohid}" class="form-check-input" />Direção Hidráulica
+      <div class="col-4">
+        <div th:if="${veiculo.multimidia}">
+          <input type="checkbox" th:checked="${veiculo.multimidia}" class="form-check-input" />Multimídia
+        </div>
+        <div th:if="${veiculo.travaeletrica}">
+          <input type="checkbox" th:checked="${veiculo.travaeletrica}" class="form-check-input" />Trava Elétrica
+        </div>
+        <div th:if="${veiculo.vidroeletrico}">
+          <input type="checkbox" th:checked="${veiculo.vidroeletrico}" class="form-check-input" />Vidro Elétrico
+        </div>
+        <div th:if="${veiculo.arcondicionado}">
+          <input type="checkbox" th:checked="${veiculo.arcondicionado}" class="form-check-input" />Ar Condicionado
+        </div>
+        <div th:if="${veiculo.tetosolar}">
+          <input type="checkbox" th:checked="${veiculo.tetosolar}" class="form-check-input" />Teto Solar
+        </div>
+        <div th:if="${veiculo.faroldiurno}">
+          <input type="checkbox" th:checked="${veiculo.faroldiurno}" class="form-check-input" />Farol Diurno
+        </div>
+        <div th:if="${veiculo.cruizecontrol}">
+          <input type="checkbox" th:checked="${veiculo.cruizecontrol}" class="form-check-input" />Cruize Control
+        </div>
+      </div>
+      <div class="col-4">
+        <div th:if="${veiculo.direcaohid}">
+          <input type="checkbox" th:checked="${veiculo.direcaohid}" class="form-check-input" />Direção Hidráulica
         </div>
         <div th:if="${veiculo.direcaoeletrica}">
-        <input type="checkbox" th:checked="${veiculo.direcaoeletrica}" class="form-check-input"  />Direção Elétrica
-      </div>
-      <div th:if="${veiculo.rodaligaleve}">
-        <input type="checkbox" th:checked="${veiculo.rodaligaleve}" class="form-check-input" />Roda Liga Leve
-      </div>
-      <div th:if="${veiculo.alarme}">
-        <input type="checkbox" th:checked="${veiculo.alarme}" class="form-check-input" />Alarme
-      </div>
-      <div th:if="${veiculo.reboque}">
-        <input type="checkbox" th:checked="${veiculo.reboque}" class="form-check-input" />Reboque
+          <input type="checkbox" th:checked="${veiculo.direcaoeletrica}" class="form-check-input" />Direção Elétrica
+        </div>
+        <div th:if="${veiculo.rodaligaleve}">
+          <input type="checkbox" th:checked="${veiculo.rodaligaleve}" class="form-check-input" />Roda Liga Leve
+        </div>
+        <div th:if="${veiculo.alarme}">
+          <input type="checkbox" th:checked="${veiculo.alarme}" class="form-check-input" />Alarme
+        </div>
+        <div th:if="${veiculo.reboque}">
+          <input type="checkbox" th:checked="${veiculo.reboque}" class="form-check-input" />Reboque
         </div>
         <div th:if="${veiculo.abs}">
           <input type="checkbox" th:checked="${veiculo.abs}" class="form-check-input" />ABS
-          </div>
-          <div th:if="${veiculo.assistrampa}">
-            <input type="checkbox" th:checked="${veiculo.assistrampa}" class="form-check-input" />Assistente de Rampa
-            </div>
+        </div>
+        <div th:if="${veiculo.assistrampa}">
+          <input type="checkbox" th:checked="${veiculo.assistrampa}" class="form-check-input" />Assistente de Rampa
+        </div>
+      </div>
+      <div class="col-4">
+        <div th:if="${veiculo.retrovisoreletro}">
+          <input type="checkbox" th:checked="${veiculo.retrovisoreletro}" class="form-check-input" />Retrovisor
+          Eletrocrômico
+        </div>
+        <div th:if="${veiculo.sensorestacio}">
+          <input type="checkbox" th:checked="${veiculo.sensorestacio}" class="form-check-input" />Sensor Estacionamento
+        </div>
+        <div th:if="${veiculo.chavecanivete}">
+          <input type="checkbox" th:checked="${veiculo.chavecanivete}" class="form-check-input" />Chave Canivete
+        </div>
+        <div th:if="${veiculo.controltrac}">
+          <input type="checkbox" th:checked="${veiculo.controltrac}" class="form-check-input" />Controle
+          Tração/Estabilidade
+        </div>
+        <div th:if="${veiculo.camerare}">
+          <input type="checkbox" th:checked="${veiculo.camerare}" class="form-check-input" />Câmera de Ré
+        </div>
+        <div th:if="${veiculo.bancocouro}">
+          <input type="checkbox" th:checked="${veiculo.bancocouro}" class="form-check-input" />Banco de Couro
+        </div>
+        <div th:if="${veiculo.airbag}">
+          <input type="checkbox" th:checked="${veiculo.airbag}" class="form-check-input" />Airbag
+        </div>
+      </div> -->
     </div>
-    <div class="col-4">
-      <div th:if="${veiculo.retrovisoreletro}">
-        <input type="checkbox" th:checked="${veiculo.retrovisoreletro}" class="form-check-input" />Retrovisor Eletrocrômico
-      </div>
-      <div  th:if="${veiculo.sensorestacio}">
-        <input type="checkbox" th:checked="${veiculo.sensorestacio}" class="form-check-input" />Sensor Estacionamento
-      </div>
-      <div th:if="${veiculo.chavecanivete}">
-        <input type="checkbox" th:checked="${veiculo.chavecanivete}" class="form-check-input" />Chave Canivete
-      </div>
-      <div th:if="${veiculo.controltrac}">
-        <input type="checkbox" th:checked="${veiculo.controltrac}" class="form-check-input" />Controle Tração/Estabilidade
-      </div>
-      <div th:if="${veiculo.camerare}">
-        <input type="checkbox" th:checked="${veiculo.camerare}" class="form-check-input" />Câmera de Ré
-      </div>
-      <div th:if="${veiculo.bancocouro}">
-        <input type="checkbox" th:checked="${veiculo.bancocouro}" class="form-check-input" />Banco de Couro
-      </div>
-      <div th:if="${veiculo.airbag}">
-        <input type="checkbox" th:checked="${veiculo.airbag}" class="form-check-input" />Airbag
-      </div>
-    </div>
-    </div>
-    <div><a class="btn btn-dark m-1" href="/index-veiculo">VOLTAR</a></div> 
-    
+    <div><a class="btn btn-dark m-1" href="/index-veiculo">VOLTAR</a></div>
+
     <!-- <button type="button" id="botao" onclick="fonte('a')">Aumentar!</button>
     <button type="button" id="botao" onclick="fonte('d')">Diminuir!</button> -->
 

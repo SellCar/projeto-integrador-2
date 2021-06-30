@@ -1,42 +1,131 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <title>Cliente Cadastrado</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+<head>
+  <title>Cliente Cadastrado</title>
+  <!-- disabled meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/estilo.css">
-  
-  </head>
+  <link rel="stylesheet" href="/css/estilo.css">
 
-  <body>
-    <header>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <img src="/img/sellcar-banner.png" alt="logo" id="logo">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <img src="/img/sellcar-banner.png" alt="logo" id="logo">
+        </div>
+      </div>
+      <div class="row" id="tituloSellCar">
+        <div class="col-11">
+          <div>
+            <h1 class=" text-center font-weight-bold p-1">CLIENTE CADASTRADO</h1>
           </div>
         </div>
-        <div class="row" id="tituloSellCar">
-          <div class="col-11">
-            <div>
-              <h1 class=" text-center font-weight-bold p-1">CLIENTE CADASTRADO</h1>
-            </div>
+        <div class="col-1 text-center btn-group mt-3">
+          <div onclick="fonte('a')"><img src="/img/increase.png" height="30px" width="30px" class="mr-2"></div>
+          <div onclick="fonte('d')"><img src="/img/decrease.png" height="30px" width="30px"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container " id="bgWhite">
+    <div class="container">
+      <div class="form-group text-left m-3">
+        <div class="row">
+          <div class="col-12 col-md-5 mb-3">
+            <b><label for="nome">Nome Completo</label></b>
+            <input class="form-control" type="text" name="nome" id="nome" th:value="${cliente.nome}"
+              title="Nome Completo do Cliente" placeholder="José da Silva" onkeydown="return/[a-z, ]/i.test(event.key)"
+              disabled>
           </div>
-          <div class="col-1 text-center btn-group mt-3">
-            <div onclick="fonte('a')"><img src="/img/increase.png" height="30px" width="30px" class="mr-2"></div>
-            <div onclick="fonte('d')"><img src="/img/decrease.png" height="30px" width="30px"></div>
+          <div class="col-12 col-md-3 mb-3">
+            <b><label for="cpf">CPF</label></b>
+            <input class="form-control" type="text" name="cpf" id="cpf" th:value="${cliente.cpf}"
+              title="CPF do Cliente (somente números)" placeholder="000.000.000-00" maxlength="14" disabled>
+          </div>
+          <div class="col-12 col-md-2 mb-3">
+            <b><label for="datanascimento">Data Nascimento</label></b>
+            <input class="form-control" type="text" name="datanascimentocli" id="datanascimentocli"
+              onkeypress="mascaraData( this, event )" title="Data de Nascimento do Cliente (somente números)"
+              pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" maxlength="10" th:value="${cliente.datanascimentocli}"
+              placeholder="01/01/2000" disabled>
+          </div>
+          <div class="col-12 col-md-2 mb-3">
+            <b><label for="rg">RG</label></b>
+            <input class="form-control" type="text" name="rg" id="rg" title="RG do Cliente (somente números)"
+              maxlength="9" th:value="${cliente.rg}" placeholder="0.000.000" disabled>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-2 mb-3">
+            <b><label for="cep">CEP</label></b>
+            <input class="form-control" type="text" name="cep" id="cep" onblur="pesquisacep(this.value);"
+              th:value="${cliente.cep}" title="CEP do Cliente" placeholder="00.000-000" maxlength="10" disabled>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <b><label for="rua">Rua</label></b>
+            <input class="form-control" type="text" name="rua" id="rua" th:value="${cliente.rua}" title="Rua do Cliente"
+              placeholder="Rua X" disabled>
+          </div>
+          <div class="col-12 col-md-2 mb-3">
+            <b><label for="bairro">Bairro</label></b>
+            <input class="form-control" type="text" name="bairro" id="bairro" th:value="${cliente.bairro}"
+              title="Bairro do Cliente" placeholder="Kobrasol" disabled>
+          </div>
+          <div class="col-12 col-md-2 mb-3">
+            <b><label for="cidade">Cidade</label></b>
+            <input class="form-control" type="text" name="cidade" id="cidade" th:value="${cliente.cidade}"
+              title="Cidade do Cliente" placeholder="São José" disabled>
+          </div>
+          <div class="col-12 col-md-2 mb-3">
+            <b><label for="numres">Número</label></b>
+            <input class="form-control" type="text" name="numres" id="numres" pattern="[0-9]+$"
+              th:value="${cliente.numres}" title="Número da Residencia do Cliente" placeholder="100" maxlength="4"
+              disabled>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-3 mb-3">
+            <b><label for="uf">UF</label></b>
+            <input class="form-control" type="text" name="uf" id="uf" th:value="${cliente.uf}" title="União Federativa"
+              disabled>
+
+          </div>
+          <div class="col-12 col-md-6 mb-3">
+            <b><label for="complemento">Complemento</label></b>
+            <input class="form-control" type="text" name="complemento" id="complemento"
+              th:value="${cliente.complemento}" title="Complemento do Endereço" placeholder="Ao lado do Mercado ABC"
+              disabled>
+          </div>
+          <div class="col-12 col-md-3 mb-3">
+            <b><label for="telefone">Telefone</label></b>
+            <input class="form-control" type="text" name="telefone" id="telefone" th:value="${cliente.telefone}"
+              title="Telefone do Cliente" placeholder="(48)99999-9999" maxlength="14" disabled>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-4 mb-3">
+            <b><label for="email">E-Mail</label></b>
+            <input class="form-control" type="email" name="emailcli" id="emailcli" th:value="${cliente.emailcli}"
+              title="E-Mail do Cliente" placeholder="email@email.com" disabled>
           </div>
         </div>
       </div>
-    </header>
+    </div>
 
-    <div class="container" id="bgWhite">
-      <div class="container text-center">
+
+    <!-- <div class="container text-center">
         <div class="row">
           <div class="col">
             <h4 th:text="${cliente.nome}">Nome:</h4>
@@ -108,31 +197,38 @@
           </div>
         </div>
       </div>
-      <div class="text-center">
-        <a class="btn btn-dark m-1" href="/index-cliente">VOLTAR</a>
-      </div>
 
         <!-- <button type="button" id="botao" onclick="fonte('a')">Aumentar!</button>
         <button type="button" id="botao" onclick="fonte('d')">Diminuir!</button> -->
-
+    <div class="text-center">
+      <a class="btn btn-dark m-1" href="/index-cliente">VOLTAR</a>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All
-            Rights
-            Reserved &copy</footer>
-        </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All
+          Rights
+          Reserved &copy</footer>
       </div>
     </div>
+  </div>
 
 
-    <!-- Optional JavaScript -->
-    <script src="/js/interacoes.js"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+  <!-- Optional JavaScript -->
+  <script src="/js/interacoes.js"></script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
