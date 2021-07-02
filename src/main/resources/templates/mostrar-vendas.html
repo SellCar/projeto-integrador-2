@@ -3,7 +3,7 @@
 
 <head>
   <title>Venda Cadastrada</title>
-  <!-- Required meta tags -->
+  <!-- disabled meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -35,13 +35,71 @@
   </header>
 
   <div class="container text-center" id="bgWhite">
-    <h2 th:text="${vendas.nomecliente}">Nome Cliente:</h2>
-    <h2 th:text="${vendas.nomeveiculo}">Nome do Veículo:</h2>
-    <h2 th:text="${vendas.datacompra}">Data Compra</h2>
-    <h2 th:text="${vendas.vendedor}">Vendedor</h2>
-    <h2 th:text="${vendas.valororiginal}">Valor Original:</h2>
-    <h2 th:text="${vendas.valorfinal}">Valor Final:</h2>
-    <h2 th:text="${vendas.formaspagamento}">Forma de Pagamento:</h2>
+
+    <div class="form-group text-left m-3">
+      <div class="row">
+        <!-- NOME CLIENTE -->
+        <div class="col-12 col-md-5 mb-3">
+          <b><label class="col-form-label" for="nomecliente">Nome Cliente</label></b>
+          <input class="form-control" type="text" name="nomecliente" id="nomecliente" th:value="${vendas.nomecliente}"
+            title="Nome Completo do comprador!" disabled>
+        </div>
+
+        <!-- NOME VEICULO -->
+        <div class="col-12 col-md-5 mb-3">
+          <b><label for="nomeveiculo">Nome Veículo</label></b>
+          <input class="form-control" type="text" name="nomeveiculo" id="nomeveiculo" th:value="${vendas.nomeveiculo}"
+            title="Veículo que será comprado!" disabled>
+        </div>
+
+        <!-- DATA COMPRA -->
+        <div class="col-12 col-md-2 mb-3">
+          <b><label for="datacompra">Data Compra</label></b>
+          <input class="form-control" type="text" name="datacompra" id="datacompra" th:value="${vendas.datacompra}"
+            title="Data da Compra" disabled>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- VENDEDOR -->
+        <div class="col-12 col-md-3 mb-3">
+          <b><label for="vendedor">Vendedor</label></b>
+          <input class="form-control" type="text" name="vendedor" id="vendedor" th:value="${vendas.vendedor}"
+            title="Funcionário que efetuou a venda!" disabled>
+        </div>
+
+        <!-- VALOR DE ENTRADA -->
+        <div class="col-12 col-md-3 mb-3">
+          <b>
+            <label for="valororiginal">Valor de Entrada</label>
+          </b>
+          <div class="input-group">
+            <span class="input-group-text bg-dark text-white" id="real">R$</span>
+            <input class="form-control" type="text" name="valorfinal" id="valorfinal" th:value="${vendas.valorfinal}"
+              title="Valor que o veículo foi vendido!" disabled>
+          </div>
+        </div>
+
+        <!-- VALOR DE SAIDA -->
+        <div class="col-12 col-md-3 mb-3">
+          <b><label for="valorfinal">Valor de Saída</label></b>
+
+          <div class="input-group">
+            <span class="input-group-text bg-dark text-white" id="real">R$</span>
+            <input class="form-control" type="text" name="valororiginal" id="valororiginal"
+              th:value="${vendas.valororiginal}" title="Valor que está sendo pedido no veículo!" disabled>
+          </div>
+        </div>
+
+        <!-- FORMA DE PAGAMENTO -->
+        <div class="col-12 col-md-3 mb-3">
+          <b><label for="formaspagamento">Forma de Pagamento</label></b>
+          <input class="form-control" title="Forma de Pagamento do Veículo" name="formaspagamento" id="formaspagamento"
+            th:value="${vendas.formaspagamento}" disabled>
+          </input>
+        </div>
+      </div>
+    </div>
 
     <div><a class="btn btn-dark m-1" href="/index-vendas">VOLTAR</a></div>
 
@@ -49,7 +107,7 @@
     <button type="button" id="botao" onclick="fonte('d')">Diminuir!</button> -->
 
   </div>
-  
+
   <div class="container">
     <div class="row">
       <div class="col">
@@ -60,7 +118,7 @@
     </div>
   </div>
 
-  
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

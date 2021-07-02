@@ -25,7 +25,7 @@
       <div class="row" id="tituloSellCar">
         <div class="col-11">
           <div>
-            <h1 class=" text-center font-weight-bold p-1">CLIENTE CADASTRADO</h1>
+            <h1 class=" text-center font-weight-bold p-1" id="cadastro">CLIENTE CADASTRADO</h1>
           </div>
         </div>
         <div class="col-1 text-center btn-group mt-3">
@@ -39,167 +39,109 @@
   <div class="container " id="bgWhite">
     <div class="container">
       <div class="form-group text-left m-3">
+
         <div class="row">
+          <!-- nome -->
           <div class="col-12 col-md-5 mb-3">
             <b><label for="nome">Nome Completo</label></b>
             <input class="form-control" type="text" name="nome" id="nome" th:value="${cliente.nome}"
-              title="Nome Completo do Cliente" placeholder="José da Silva" onkeydown="return/[a-z, ]/i.test(event.key)"
-              disabled>
+              title="Nome Completo do Cliente" disabled>
           </div>
+
+          <!-- cpf -->
           <div class="col-12 col-md-3 mb-3">
             <b><label for="cpf">CPF</label></b>
             <input class="form-control" type="text" name="cpf" id="cpf" th:value="${cliente.cpf}"
-              title="CPF do Cliente (somente números)" placeholder="000.000.000-00" maxlength="14" disabled>
+              title="CPF do Cliente (somente números)" disabled>
           </div>
+
+          <!-- data de nascimento  -->
           <div class="col-12 col-md-2 mb-3">
             <b><label for="datanascimento">Data Nascimento</label></b>
             <input class="form-control" type="text" name="datanascimentocli" id="datanascimentocli"
-              onkeypress="mascaraData( this, event )" title="Data de Nascimento do Cliente (somente números)"
-              pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" maxlength="10" th:value="${cliente.datanascimentocli}"
-              placeholder="01/01/2000" disabled>
+              title="Data de Nascimento do Cliente (somente números)" th:value="${cliente.datanascimentocli}" disabled>
           </div>
+
+          <!-- rg -->
           <div class="col-12 col-md-2 mb-3">
             <b><label for="rg">RG</label></b>
             <input class="form-control" type="text" name="rg" id="rg" title="RG do Cliente (somente números)"
-              maxlength="9" th:value="${cliente.rg}" placeholder="0.000.000" disabled>
+              th:value="${cliente.rg}" disabled>
           </div>
+
         </div>
 
         <div class="row">
+          <!-- cep -->
           <div class="col-12 col-md-2 mb-3">
             <b><label for="cep">CEP</label></b>
-            <input class="form-control" type="text" name="cep" id="cep" onblur="pesquisacep(this.value);"
-              th:value="${cliente.cep}" title="CEP do Cliente" placeholder="00.000-000" maxlength="10" disabled>
+            <input class="form-control" type="text" name="cep" id="cep" th:value="${cliente.cep}" title="CEP do Cliente"
+              disabled>
           </div>
+
+          <!-- rua -->
           <div class="col-12 col-md-4 mb-3">
             <b><label for="rua">Rua</label></b>
             <input class="form-control" type="text" name="rua" id="rua" th:value="${cliente.rua}" title="Rua do Cliente"
-              placeholder="Rua X" disabled>
+              disabled>
           </div>
+
+          <!-- bairro -->
           <div class="col-12 col-md-2 mb-3">
             <b><label for="bairro">Bairro</label></b>
             <input class="form-control" type="text" name="bairro" id="bairro" th:value="${cliente.bairro}"
-              title="Bairro do Cliente" placeholder="Kobrasol" disabled>
+              title="Bairro do Cliente" disabled>
           </div>
+
+          <!-- cidade -->
           <div class="col-12 col-md-2 mb-3">
             <b><label for="cidade">Cidade</label></b>
             <input class="form-control" type="text" name="cidade" id="cidade" th:value="${cliente.cidade}"
-              title="Cidade do Cliente" placeholder="São José" disabled>
+              title="Cidade do Cliente" disabled>
           </div>
+
+          <!-- numero residencia -->
           <div class="col-12 col-md-2 mb-3">
             <b><label for="numres">Número</label></b>
-            <input class="form-control" type="text" name="numres" id="numres" pattern="[0-9]+$"
-              th:value="${cliente.numres}" title="Número da Residencia do Cliente" placeholder="100" maxlength="4"
-              disabled>
+            <input class="form-control" type="text" name="numres" id="numres" th:value="${cliente.numres}"
+              title="Número da Residencia do Cliente" disabled>
           </div>
+
         </div>
 
         <div class="row">
+          <!-- uf -->
           <div class="col-12 col-md-3 mb-3">
             <b><label for="uf">UF</label></b>
             <input class="form-control" type="text" name="uf" id="uf" th:value="${cliente.uf}" title="União Federativa"
               disabled>
-
           </div>
+          <!-- complemento -->
           <div class="col-12 col-md-6 mb-3">
             <b><label for="complemento">Complemento</label></b>
             <input class="form-control" type="text" name="complemento" id="complemento"
-              th:value="${cliente.complemento}" title="Complemento do Endereço" placeholder="Ao lado do Mercado ABC"
-              disabled>
+              th:value="${cliente.complemento}" title="Complemento do Endereço" disabled>
           </div>
+          <!-- telefone -->
           <div class="col-12 col-md-3 mb-3">
             <b><label for="telefone">Telefone</label></b>
             <input class="form-control" type="text" name="telefone" id="telefone" th:value="${cliente.telefone}"
-              title="Telefone do Cliente" placeholder="(48)99999-9999" maxlength="14" disabled>
+              title="Telefone do Cliente" disabled>
           </div>
         </div>
 
         <div class="row">
+          <!-- email -->
           <div class="col-12 col-md-4 mb-3">
             <b><label for="email">E-Mail</label></b>
             <input class="form-control" type="email" name="emailcli" id="emailcli" th:value="${cliente.emailcli}"
-              title="E-Mail do Cliente" placeholder="email@email.com" disabled>
+              title="E-Mail do Cliente" disabled>
           </div>
         </div>
       </div>
     </div>
 
-
-    <!-- <div class="container text-center">
-        <div class="row">
-          <div class="col">
-            <h4 th:text="${cliente.nome}">Nome:</h4>
-            <hr>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col">
-            <h4 th:text="${cliente.cpf}">CPF:</h4>
-            <hr>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col">
-            <h4 th:text="${cliente.datanascimentocli}">Data Nascimento:</h4>
-            <hr>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col">
-            <h4 th:text="${cliente.rg}">RG:</h4>
-            <hr>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col">
-            <h4 th:text="${cliente.cep}">CEP:</h4>
-            <hr>
-            <h4 th:text="${cliente.rua}">Rua:</h4>
-            <hr>
-            <h4 th:text="${cliente.bairro}">Bairro:</h4>
-            <hr>
-            <h4 th:text="${cliente.cidade}">Cidade:</h4>
-            <hr>
-            <h4 th:text="${cliente.numres}">Número:</h4>
-            <hr>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col">
-            <h4 th:text="${cliente.uf}">UF:</h4>
-            <hr>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col">
-            <h4 th:text="${cliente.complemento}">Complemento:</h4>
-            <hr>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col">
-            <h4 th:text="${cliente.telefone}">Telefone:</h4>
-            <hr>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col">
-            <h4 th:text="${cliente.emailcli}">E-Mail:</h4>
-            <hr>
-          </div>
-        </div>
-      </div>
-
-        <!-- <button type="button" id="botao" onclick="fonte('a')">Aumentar!</button>
-        <button type="button" id="botao" onclick="fonte('d')">Diminuir!</button> -->
+    <!-- botao voltar -->
     <div class="text-center">
       <a class="btn btn-dark m-1" href="/index-cliente">VOLTAR</a>
     </div>

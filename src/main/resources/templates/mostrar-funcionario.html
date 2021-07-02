@@ -41,141 +41,127 @@
       <div class="form-group text-left m-3">
 
         <div class="row">
+
+          <!-- nome -->
           <div class="col-12 col-md-5 mb-3">
             <b><label for="nome">Nome Completo</label></b>
             <input class="form-control" type="text" name="nome" id="nome" th:value="${funcionario.nome}"
-              title="Nome Completo do Funcionário" placeholder="José da Silva"
-              onkeydown="return/[a-z, ]/i.test(event.key)" disabled>
+              title="Nome Completo do Funcionário" disabled>
           </div>
 
+          <!-- cpf -->
           <div class="col-12 col-md-3 mb-3">
             <b><label for="cpf">CPF</label></b>
             <input class="form-control" type="text" name="cpf" id="cpf" th:value="${funcionario.cpf}"
-              title="CPF do Funcionário (somente números)" placeholder="000.000.000-00" maxlength="14" disabled>
+              title="CPF do Funcionário (somente números)" disabled>
           </div>
 
+          <!-- data de nascimento -->
           <div class="col-12 col-md-2 mb-3">
             <b><label for="datanascimento">Data Nascimento</label></b>
             <input class="form-control" type="text" name="datanascimentofunc" id="datanascimentofunc"
               th:value="${funcionario.datanascimentofunc}" title="Data de Nascimento do Funcionário (somente números)"
-              pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" maxlength="10" onkeypress="mascaraData( this, event )"
-              placeholder="01/01/2000" disabled>
+              disabled>
           </div>
 
+          <!-- rg -->
           <div class="col-12 col-md-2 mb-3">
             <b><label for="rg">RG</label></b>
-            <input class="form-control" type="text" name="rg" id="rg"
-              title="RG do Funcionário (somente números)" maxlength="9" th:value="${funcionario.rg}"
-              placeholder="0.000.000" disabled>
+            <input class="form-control" type="text" name="rg" id="rg" title="RG do Funcionário (somente números)"
+              th:value="${funcionario.rg}" disabled>
           </div>
         </div>
 
         <div class="row">
+          <!-- cep -->
           <div class="col-12 col-md-2 mb-3">
             <b><label for="cep">CEP</label></b>
-            <input class="form-control" type="text" name="cep" id="cep" onblur="pesquisacep(this.value);"
-              th:value="${funcionario.cep}" title="CEP do Funcionário (somente números)" placeholder="00.000-000"
-              maxlength="10" disabled>
+            <input class="form-control" type="text" name="cep" id="cep" th:value="${funcionario.cep}"
+              title="CEP do Funcionário (somente números)" disabled>
           </div>
+
+          <!-- rua -->
           <div class="col-12 col-md-4 mb-3">
             <b><label for="rua">Rua</label></b>
             <input class="form-control" type="text" name="rua" id="rua" th:value="${funcionario.rua}"
-              title="Rua do Funcionário" placeholder="Rua X" disabled>
+              title="Rua do Funcionário" disabled>
           </div>
+
+          <!-- bairro -->
           <div class="col-12 col-md-2 mb-3">
             <b><label for="bairro">Bairro</label></b>
-            <input class="form-control" type="text" name="bairro" id="bairro"
-              th:value="${funcionario.bairro}" title="Bairro do Funcionário" placeholder="Kobrasol" disabled>
+            <input class="form-control" type="text" name="bairro" id="bairro" th:value="${funcionario.bairro}"
+              title="Bairro do Funcionário" disabled>
           </div>
+
+          <!-- cidade -->
           <div class="col-12 col-md-2 mb-3">
             <b><label for="cidade">Cidade</label></b>
-            <input class="form-control" type="text" name="cidade" id="cidade"
-              th:value="${funcionario.cidade}" title="Cidade do Funcionário" placeholder="São José" disabled>
+            <input class="form-control" type="text" name="cidade" id="cidade" th:value="${funcionario.cidade}"
+              title="Cidade do Funcionário" disabled>
           </div>
+
+          <!-- numero residencia -->
           <div class="col-12 col-md-2 mb-3">
             <b><label for="numres">Número</label></b>
-            <input class="form-control" type="text" name="numres" id="numres"
-              th:value="${funcionario.numres}" title="Número da Residencia do Funcionário" placeholder="100"
-              maxlength="4" disabled>
+            <input class="form-control" type="text" name="numres" id="numres" th:value="${funcionario.numres}"
+              title="Número da Residencia do Funcionário" disabled>
           </div>
         </div>
 
         <div class="row">
+          <!-- uf -->
           <div class="col-12 col-md-3 mb-3">
             <b><label for="uf">UF</label></b>
-            <input class="form-control" type="text" name="uf" id="uf" th:value="${funcionario.uf}" title="União Federativa"
-              disabled>
-           
+            <input class="form-control" type="text" name="uf" id="uf" th:value="${funcionario.uf}"
+              title="União Federativa" disabled>
           </div>
+
+          <!-- complemento -->
           <div class="col-12 col-md-6 mb-3">
             <b><label for="complemento">Complemento</label></b>
             <input class="form-control" type="text" name="complemento" id="complemento"
-              th:value="${funcionario.complemento}" title="Complemento do Endereço" placeholder="Ao lado do Mercado ABC"
-              disabled>
+              th:value="${funcionario.complemento}" title="Complemento do Endereço" disabled>
           </div>
+
+          <!-- telefone -->
           <div class="col-12 col-md-3 mb-3">
             <b><label for="telefone">Telefone</label></b>
-            <input class="form-control" type="text" name="telefone" id="telefone"
-              th:value="${funcionario.telefone}" title="Telefone do Funcionário (somente números)"
-              placeholder="(48)99999-9999" maxlength="14" disabled>
+            <input class="form-control" type="text" name="telefone" id="telefone" th:value="${funcionario.telefone}"
+              title="Telefone do Funcionário (somente números)" disabled>
           </div>
         </div>
 
         <div class="row">
+          <!-- email -->
           <div class="col-12 col-md-4 mb-3">
             <b><label for="email">E-Mail</b>
-            <input class="form-control" type="text" name="emailfunc" id="emailfunc"
-              th:value="${funcionario.emailfunc}" title="E-Mail do Funcionário" placeholder="email@email.com" disabled>
+            <input class="form-control" type="text" name="emailfunc" id="emailfunc" th:value="${funcionario.emailfunc}"
+              title="E-Mail do Funcionário" disabled>
           </div>
 
+          <!-- login -->
           <div class="col-12 col-md-4 mb-3">
             <b><label for="login">Login</label></b>
-            <input class="form-control" type="text" name="cadlogin" id="cadlogin"
-              th:value="${funcionario.cadlogin}" title="Nome que será digitado no login!" placeholder="alberto.silva"
-              disabled>
+            <input class="form-control" type="text" name="cadlogin" id="cadlogin" th:value="${funcionario.cadlogin}"
+              title="Nome que será digitado no login!" disabled>
           </div>
 
+          <!-- senha -->
           <div class="col-12 col-md-4 mb-3">
             <b><label for="senha">Senha</label></b>
-            <input class="form-control" type="password" name="cadsenha" id="cadsenha"
-              th:value="${funcionario.cadsenha}" title="Senha para entrar no sistema!" placeholder="mínimo 8 dígitos"
-              minlength="8" maxlength="14" disabled>
+            <input class="form-control" type="password" name="cadsenha" id="cadsenha" th:value="${funcionario.cadsenha}"
+              title="Senha para entrar no sistema!" disabled>
           </div>
         </div>
       </div>
     </div>
 
-
-
-    <!-- <div class="container text-center">
-      <h4 th:text="${funcionario.nome}">Nome:</h4>
-      <h4 th:text="${funcionario.cpf}">CPF:</h4>
-      <h4 th:text="${funcionario.datanascimentofunc}">Data Nascimento:</h4>
-      <h4 th:text="${funcionario.rg}">RG</h4>
-      <h4 th:text="${funcionario.cep}">CEP:</h4>
-      <h4 th:text="${funcionario.rua}">Rua:</h4>
-      <h4 th:text="${funcionario.bairro}">Bairro:</h4>
-      <h4 th:text="${funcionario.cidade}">Cidade:</h4>
-      <h4 th:text="${funcionario.numres}">Número</h4>
-      <h4 th:text="${funcionario.uf}">UF:</h4>
-      <h4 th:text="${funcionario.complemento}">Complemento:</h4>
-      <h4 th:text="${funcionario.telefone}">Telefone:</h4>
-      <h4 th:text="${funcionario.emailfunc}">E-Mail:</h4>
-      <h4 th:text="${funcionario.cadlogin}">Login:</h4>
-      <h4 th:text="${funcionario.cadsenha}">Senha:</h4>
-
-     
+    <!-- voltar -->
+    <div>
+      <a class="btn btn-dark m-1" href="/index-funcionario">VOLTAR</a>
     </div>
-
-    <!-- <button type="button" id="botao" onclick="fonte('a')">Aumentar!</button>
-        <button type="button" id="botao" onclick="fonte('d')">Diminuir!</button> -->
-        <div>
-          <a class="btn btn-dark m-1" href="/index-funcionario">VOLTAR</a>
-        </div>
-
   </div>
-
-
 
   <div class="container">
     <div class="row">
@@ -186,7 +172,6 @@
       </div>
     </div>
   </div>
-
 
 
   <!-- Optional JavaScript -->

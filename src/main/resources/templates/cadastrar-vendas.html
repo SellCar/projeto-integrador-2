@@ -24,7 +24,7 @@
             <div class="row" id="tituloSellCar">
                 <div class="col">
                     <div>
-                        <h1 class=" text-center font-weight-bold p-1">CADASTRO DE VENDA</h1>
+                        <h1 class=" text-center font-weight-bold p-1" id="cadastro">CADASTRO DE VENDA</h1>
                     </div>
                 </div>
                 <div class="col-1 text-center btn-group mt-3">
@@ -72,7 +72,7 @@
                     </div>
 
                     <div class="col-12 col-md-3 mb-3">
-                        <b><label for="valororiginal">Valor Original</label></b>
+                        <b><label for="valororiginal">Valor de entrada</label></b>
 
                         <div class="input-group">
                             <span class="input-group-text bg-dark text-white" id="real">R$</span>
@@ -84,7 +84,7 @@
                     </div>
 
                     <div class="col-12 col-md-3 mb-3">
-                        <b><label for="valorfinal">Valor Final</label></b>
+                        <b><label for="valorfinal">Valor de Saída</label></b>
 
                         <div class="input-group">
                             <span class="input-group-text bg-dark text-white" id="real">R$</span>
@@ -96,14 +96,12 @@
                         </div>
                     </div>
 
-
-
                     <div class="col-12 col-md-3 mb-3">
                         <b><label for="formaspagamento">Forma de Pagamento</label></b>
                         <select class="form-control is-invalid" title="Forma de Pagamento do Veículo"
                             name="formaspagamento" id="formaspagamento" th:value="${vendas.formaspagamento}" required>
                             <option value="" selected disabled>SELECIONE UMA OPÇÃO</option>
-                            <option value="avista">A Vista</option>
+                            <option value="a vista">A Vista</option>
                             <option value="financiamento">Financiamento</option>
                             <option value="troca">Troca</option>
                         </select>
