@@ -8,8 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/estilo.css">
 </head>
 
@@ -44,31 +43,23 @@
                 <div class="row">
                     <div class="col-12 col-md-3 mb-3">
                         <b><label for="fabricante">Fabricante</label></b>
-                        <input class="form-control is-invalid" type="text" name="fabricante" id="fabricante"
-                            th:value="${veiculo.fabricante}" title="Marca/Fabricante do Veículo" placeholder="Ford"
-                            required>
+                        <input class="form-control is-invalid" type="text" name="fabricante" id="fabricante" th:value="${veiculo.fabricante}" title="Marca/Fabricante do Veículo" placeholder="Ford" required>
                     </div>
                     <div class="col-12 col-md-3 mb-3">
                         <b><label for="nomeveiculo">Nome do Veiculo</label></b>
-                        <input class="form-control is-invalid" type="text" name="nomeveiculo" id="nomeveiculo"
-                            th:value="${veiculo.nomeveiculo}" title="Nome do Veículo" placeholder="EcoSport" required>
+                        <input class="form-control is-invalid" type="text" name="nomeveiculo" id="nomeveiculo" th:value="${veiculo.nomeveiculo}" title="Nome do Veículo" placeholder="EcoSport" required>
                     </div>
                     <div class="col-12 col-md-2 mb-3">
                         <b><label for="anofabricacao">Ano Fabricação</label></b>
-                        <input class="form-control is-invalid" type="text" name="anofabricacao" id="anofabricacao"
-                            th:value="${veiculo.anofabricacao}" title="Ano de Fabricação do Veículo (somente números)"
-                            pattern="[0-9]+$" placeholder="2010" maxlength="4" required>
+                        <input class="form-control is-invalid" type="text" name="anofabricacao" id="anofabricacao" th:value="${veiculo.anofabricacao}" title="Ano de Fabricação do Veículo (somente números)" pattern="[0-9]+$" placeholder="2010" maxlength="4" required>
                     </div>
                     <div class="col-12 col-md-2 mb-3">
                         <b><label for="anomodelo">Ano Modelo</label></b>
-                        <input class="form-control is-invalid" type="text" name="anomodelo" id="anomodelo"
-                            th:value="${veiculo.anomodelo}" title="Ano do Modelo do Veículo (somente números)"
-                            pattern="[0-9]+$" placeholder="2011" maxlength="4" required>
+                        <input class="form-control is-invalid" type="text" name="anomodelo" id="anomodelo" th:value="${veiculo.anomodelo}" title="Ano do Modelo do Veículo (somente números)" pattern="[0-9]+$" placeholder="2011" maxlength="4" required>
                     </div>
                     <div class="col-12 col-md-2 mb-3">
                         <b><label for="portas">Portas</label></b>
-                        <select class="form-control is-invalid" name="portas" id="portas" title="Qtde Portas"
-                            th:value="${veiculo.portas}" required>
+                        <select class="form-control is-invalid" name="portas" id="portas" title="Qtde Portas" th:value="${veiculo.portas}" required>
                             <option selected disabled value="">SELECIONE UMA OPÇÃO</option>
                             <option value="2">2 portas</option>
                             <option value="4">4 portas</option>
@@ -79,8 +70,7 @@
                 <div class="row">
                     <div class="col-12 col-md-3 mb-3">
                         <b><label for="cambio">Câmbio</label></b>
-                        <select class="form-control is-invalid" name="cambio" id="cambio" title="Câmbio"
-                            th:value="${veiculo.cambio}" required>
+                        <select class="form-control is-invalid" name="cambio" id="cambio" title="Câmbio" th:value="${veiculo.cambio}" required>
                             <option selected disabled value="">SELECIONE UMA OPÇÃO</option>
                             <option value="manual">Manual</option>
                             <option value="automatico">Automático</option>
@@ -94,8 +84,7 @@
                     </div>
                     <div class="col-12 col-md-3 mb-3">
                         <b><label for="combustivel">Combustível</label></b>
-                        <select class="form-control is-invalid" name="combustivel" id="combustivel" title="Combustível"
-                            th:value="${veiculo.combustivel}" required>
+                        <select class="form-control is-invalid" name="combustivel" id="combustivel" title="Combustível" th:value="${veiculo.combustivel}" required>
                             <option selected disabled value="">SELECIONE UMA OPÇÃO</option>
                             <option value="gasolina">Gasolina</option>
                             <option value="alcool">Álcool</option>
@@ -109,8 +98,7 @@
                     </div>
                     <div class="col-12 col-md-3 mb-3">
                         <b><label for="carroceria">Carroceria</label></b>
-                        <select class="form-control is-invalid" name="carroceria" id="carroceria"
-                            title="Tipo de Carroceria" th:value="${veiculo.carroceria}" required>
+                        <select class="form-control is-invalid" name="carroceria" id="carroceria" title="Tipo de Carroceria" th:value="${veiculo.carroceria}" required>
                             <option selected disabled value="">SELECIONE UMA OPÇÃO</option>
                             <option value="hatch">Hatch</option>
                             <option value="suv">SUV (Utilitário Esportivo)</option>
@@ -123,39 +111,29 @@
                     </div>
                     <div class="col-12 col-md-3 mb-3">
                         <b><label for="quilometragem">Quilometragem</label></b>
-                        <input class="form-control is-invalid" type="text" name="quilometragem" id="quilometragem"
-                            th:value="${veiculo.quilometragem}" title="Quilometragem do Veículo" placeholder="37.515 km"
-                            required>
+                        <input class="form-control is-invalid" type="text" name="quilometragem" id="quilometragem" th:value="${veiculo.quilometragem}" title="Quilometragem do Veículo" placeholder="37.515 km" required>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-12 col-md-3 mb-3">
                         <b><label for="placa">Placa</label></b>
-                        <input class="form-control is-invalid" type="text" name="placa" id="placa"
-                            th:value="${veiculo.placa}" title="Placa do Veículo" onkeyup="validarPlaca(this)"
-                            placeholder="ex: AAA-1234" maxlength="8" autofocus required>
+                        <input class="form-control is-invalid" type="text" name="placa" id="placa" th:value="${veiculo.placa}" title="Placa do Veículo" onkeyup="validarPlaca(this)" placeholder="ex: AAA-1234" maxlength="8" autofocus required>
                     </div>
 
                     <div class="col-12 col-md-3 mb-3">
                         <b><label for="renavan">Renavan</label></b>
-                        <input class="form-control is-invalid" type="text" name="renavan" id="renavan"
-                            th:value="${veiculo.renavan}" title="Renavam do Veículo (somente números)"
-                            placeholder="ex: 00154935468" maxlength="11" required>
+                        <input class="form-control is-invalid" type="text" name="renavan" id="renavan" th:value="${veiculo.renavan}" title="Renavam do Veículo (somente números)" placeholder="ex: 00154935468" maxlength="11" required>
                     </div>
 
                     <div class="col-12 col-md-3 mb-3">
                         <b><label for="chassi">Chassi</label></b>
-                        <input class="form-control is-invalid" type="text" name="chassi" id="chassi"
-                            th:value="${veiculo.chassi}" title="Numeração do Chassi do Veículo"
-                            placeholder="ex: 9BW.HE21J.X.24060831" maxlength="17" required>
+                        <input class="form-control is-invalid" type="text" name="chassi" id="chassi" th:value="${veiculo.chassi}" title="Numeração do Chassi do Veículo" placeholder="ex: 9BW.HE21J.X.24060831" maxlength="17" required>
                     </div>
 
                     <div class="col-12 col-md-3 mb-3">
-                        <b><label for="chassi">Motor</label></b>
-                        <input class="form-control is-invalid" type="text" name="chassi" id="chassi"
-                            th:value="${veiculo.chassi}" title="Numeração do Chassi do Veículo"
-                            placeholder="ex: " maxlength="7" required>
+                        <b><label for="motor">Motor</label></b>
+                        <input class="form-control is-invalid" type="text" name="motor" id="motor" th:value="${veiculo.motor}" title="Cilindrada do Motor" placeholder="1.6" maxlength="3" required>
                     </div>
                 </div>
 
@@ -272,8 +250,7 @@
 
             <div class="row text-center">
                 <div class="col-4"></div>
-                <div class="col-4"><input class="btn btn-dark m-1" title="Botão para salvar os dados inseridos!"
-                        type="submit" value="SALVAR" id="cadastrar" onclick="return confirmar()"></div>
+                <div class="col-4"><input class="btn btn-dark m-1" title="Botão para salvar os dados inseridos!" type="submit" value="SALVAR" id="cadastrar" onclick="return confirmar()"></div>
                 <div class="col-4 text-right">
                     <a href="/index-veiculo"><img src="/img/back.png" alt="voltar" id="voltar"></a>
                 </div>
@@ -290,8 +267,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados
-                    - All Rights Reserved &copy</footer>
+                <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All Rights Reserved &copy</footer>
             </div>
         </div>
     </div>
@@ -300,15 +276,9 @@
     <script src="/js/interacoes.js"></script>
     <script src="/js/placa.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -2,189 +2,165 @@
 <html lang="pt-br">
 
 <head>
-  <title>Funcionário Cadastrado</title>
-  <!-- disabled meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Funcionário Cadastrado</title>
+    <!-- disabled meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/estilo.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/estilo.css">
 
 </head>
 
 <body>
-  <header>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img src="/img/sellcar-banner.png" alt="logo" id="logo">
+                </div>
+            </div>
+            <div class="row" id="tituloSellCar">
+                <div class="col-11">
+                    <div>
+                        <h1 class=" text-center font-weight-bold p-1">FUNCIONÁRIO CADASTRADO</h1>
+                    </div>
+                </div>
+                <div class="col-1 text-center btn-group mt-3">
+                    <div onclick="fonte('a')"><img src="/img/increase.png" height="30px" width="30px" class="mr-2"></div>
+                    <div onclick="fonte('d')"><img src="/img/decrease.png" height="30px" width="30px"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container text-center" id="bgWhite">
+        <div class="container">
+            <div class="form-group text-left m-3">
+
+                <div class="row">
+
+                    <!-- nome -->
+                    <div class="col-12 col-md-5 mb-3">
+                        <b><label for="nome">Nome Completo</label></b>
+                        <input class="form-control" type="text" name="nome" id="nome" th:value="${funcionario.nome}" title="Nome Completo do Funcionário" disabled>
+                    </div>
+
+                    <!-- cpf -->
+                    <div class="col-12 col-md-3 mb-3">
+                        <b><label for="cpf">CPF</label></b>
+                        <input class="form-control" type="text" name="cpf" id="cpf" th:value="${funcionario.cpf}" title="CPF do Funcionário (somente números)" disabled>
+                    </div>
+
+                    <!-- data de nascimento -->
+                    <div class="col-12 col-md-2 mb-3">
+                        <b><label for="datanascimento">Data Nascimento</label></b>
+                        <input class="form-control" type="text" name="datanascimentofunc" id="datanascimentofunc" th:value="${funcionario.datanascimentofunc}" title="Data de Nascimento do Funcionário (somente números)" disabled>
+                    </div>
+
+                    <!-- rg -->
+                    <div class="col-12 col-md-2 mb-3">
+                        <b><label for="rg">RG</label></b>
+                        <input class="form-control" type="text" name="rg" id="rg" title="RG do Funcionário (somente números)" th:value="${funcionario.rg}" disabled>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- cep -->
+                    <div class="col-12 col-md-2 mb-3">
+                        <b><label for="cep">CEP</label></b>
+                        <input class="form-control" type="text" name="cep" id="cep" th:value="${funcionario.cep}" title="CEP do Funcionário (somente números)" disabled>
+                    </div>
+
+                    <!-- rua -->
+                    <div class="col-12 col-md-4 mb-3">
+                        <b><label for="rua">Rua</label></b>
+                        <input class="form-control" type="text" name="rua" id="rua" th:value="${funcionario.rua}" title="Rua do Funcionário" disabled>
+                    </div>
+
+                    <!-- bairro -->
+                    <div class="col-12 col-md-2 mb-3">
+                        <b><label for="bairro">Bairro</label></b>
+                        <input class="form-control" type="text" name="bairro" id="bairro" th:value="${funcionario.bairro}" title="Bairro do Funcionário" disabled>
+                    </div>
+
+                    <!-- cidade -->
+                    <div class="col-12 col-md-2 mb-3">
+                        <b><label for="cidade">Cidade</label></b>
+                        <input class="form-control" type="text" name="cidade" id="cidade" th:value="${funcionario.cidade}" title="Cidade do Funcionário" disabled>
+                    </div>
+
+                    <!-- numero residencia -->
+                    <div class="col-12 col-md-2 mb-3">
+                        <b><label for="numres">Número</label></b>
+                        <input class="form-control" type="text" name="numres" id="numres" th:value="${funcionario.numres}" title="Número da Residencia do Funcionário" disabled>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- uf -->
+                    <div class="col-12 col-md-3 mb-3">
+                        <b><label for="uf">UF</label></b>
+                        <input class="form-control" type="text" name="uf" id="uf" th:value="${funcionario.uf}" title="União Federativa" disabled>
+                    </div>
+
+                    <!-- complemento -->
+                    <div class="col-12 col-md-6 mb-3">
+                        <b><label for="complemento">Complemento</label></b>
+                        <input class="form-control" type="text" name="complemento" id="complemento" th:value="${funcionario.complemento}" title="Complemento do Endereço" disabled>
+                    </div>
+
+                    <!-- telefone -->
+                    <div class="col-12 col-md-3 mb-3">
+                        <b><label for="telefone">Telefone</label></b>
+                        <input class="form-control" type="text" name="telefone" id="telefone" th:value="${funcionario.telefone}" title="Telefone do Funcionário (somente números)" disabled>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- email -->
+                    <div class="col-12 col-md-4 mb-3">
+                        <b><label for="email">E-Mail</b>
+                        <input class="form-control" type="text" name="emailfunc" id="emailfunc" th:value="${funcionario.emailfunc}" title="E-Mail do Funcionário" disabled>
+                    </div>
+
+                    <!-- login -->
+                    <div class="col-12 col-md-4 mb-3">
+                        <b><label for="login">Login</label></b>
+                        <input class="form-control" type="text" name="cadlogin" id="cadlogin" th:value="${funcionario.cadlogin}" title="Nome que será digitado no login!" disabled>
+                    </div>
+
+                    <!-- senha -->
+                    <div class="col-12 col-md-4 mb-3">
+                        <b><label for="senha">Senha</label></b>
+                        <input class="form-control" type="password" name="cadsenha" id="cadsenha" th:value="${funcionario.cadsenha}" title="Senha para entrar no sistema!" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- voltar -->
+        <div>
+            <a class="btn btn-dark m-1" href="/index-funcionario">VOLTAR</a>
+        </div>
+    </div>
+
     <div class="container">
-      <div class="row">
-        <div class="col">
-          <img src="/img/sellcar-banner.png" alt="logo" id="logo">
-        </div>
-      </div>
-      <div class="row" id="tituloSellCar">
-        <div class="col-11">
-          <div>
-            <h1 class=" text-center font-weight-bold p-1">FUNCIONÁRIO CADASTRADO</h1>
-          </div>
-        </div>
-        <div class="col-1 text-center btn-group mt-3">
-          <div onclick="fonte('a')"><img src="/img/increase.png" height="30px" width="30px" class="mr-2"></div>
-          <div onclick="fonte('d')"><img src="/img/decrease.png" height="30px" width="30px"></div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <div class="container text-center" id="bgWhite">
-    <div class="container">
-      <div class="form-group text-left m-3">
-
         <div class="row">
-
-          <!-- nome -->
-          <div class="col-12 col-md-5 mb-3">
-            <b><label for="nome">Nome Completo</label></b>
-            <input class="form-control" type="text" name="nome" id="nome" th:value="${funcionario.nome}"
-              title="Nome Completo do Funcionário" disabled>
-          </div>
-
-          <!-- cpf -->
-          <div class="col-12 col-md-3 mb-3">
-            <b><label for="cpf">CPF</label></b>
-            <input class="form-control" type="text" name="cpf" id="cpf" th:value="${funcionario.cpf}"
-              title="CPF do Funcionário (somente números)" disabled>
-          </div>
-
-          <!-- data de nascimento -->
-          <div class="col-12 col-md-2 mb-3">
-            <b><label for="datanascimento">Data Nascimento</label></b>
-            <input class="form-control" type="text" name="datanascimentofunc" id="datanascimentofunc"
-              th:value="${funcionario.datanascimentofunc}" title="Data de Nascimento do Funcionário (somente números)"
-              disabled>
-          </div>
-
-          <!-- rg -->
-          <div class="col-12 col-md-2 mb-3">
-            <b><label for="rg">RG</label></b>
-            <input class="form-control" type="text" name="rg" id="rg" title="RG do Funcionário (somente números)"
-              th:value="${funcionario.rg}" disabled>
-          </div>
+            <div class="col">
+                <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All Rights Reserved &copy</footer>
+            </div>
         </div>
-
-        <div class="row">
-          <!-- cep -->
-          <div class="col-12 col-md-2 mb-3">
-            <b><label for="cep">CEP</label></b>
-            <input class="form-control" type="text" name="cep" id="cep" th:value="${funcionario.cep}"
-              title="CEP do Funcionário (somente números)" disabled>
-          </div>
-
-          <!-- rua -->
-          <div class="col-12 col-md-4 mb-3">
-            <b><label for="rua">Rua</label></b>
-            <input class="form-control" type="text" name="rua" id="rua" th:value="${funcionario.rua}"
-              title="Rua do Funcionário" disabled>
-          </div>
-
-          <!-- bairro -->
-          <div class="col-12 col-md-2 mb-3">
-            <b><label for="bairro">Bairro</label></b>
-            <input class="form-control" type="text" name="bairro" id="bairro" th:value="${funcionario.bairro}"
-              title="Bairro do Funcionário" disabled>
-          </div>
-
-          <!-- cidade -->
-          <div class="col-12 col-md-2 mb-3">
-            <b><label for="cidade">Cidade</label></b>
-            <input class="form-control" type="text" name="cidade" id="cidade" th:value="${funcionario.cidade}"
-              title="Cidade do Funcionário" disabled>
-          </div>
-
-          <!-- numero residencia -->
-          <div class="col-12 col-md-2 mb-3">
-            <b><label for="numres">Número</label></b>
-            <input class="form-control" type="text" name="numres" id="numres" th:value="${funcionario.numres}"
-              title="Número da Residencia do Funcionário" disabled>
-          </div>
-        </div>
-
-        <div class="row">
-          <!-- uf -->
-          <div class="col-12 col-md-3 mb-3">
-            <b><label for="uf">UF</label></b>
-            <input class="form-control" type="text" name="uf" id="uf" th:value="${funcionario.uf}"
-              title="União Federativa" disabled>
-          </div>
-
-          <!-- complemento -->
-          <div class="col-12 col-md-6 mb-3">
-            <b><label for="complemento">Complemento</label></b>
-            <input class="form-control" type="text" name="complemento" id="complemento"
-              th:value="${funcionario.complemento}" title="Complemento do Endereço" disabled>
-          </div>
-
-          <!-- telefone -->
-          <div class="col-12 col-md-3 mb-3">
-            <b><label for="telefone">Telefone</label></b>
-            <input class="form-control" type="text" name="telefone" id="telefone" th:value="${funcionario.telefone}"
-              title="Telefone do Funcionário (somente números)" disabled>
-          </div>
-        </div>
-
-        <div class="row">
-          <!-- email -->
-          <div class="col-12 col-md-4 mb-3">
-            <b><label for="email">E-Mail</b>
-            <input class="form-control" type="text" name="emailfunc" id="emailfunc" th:value="${funcionario.emailfunc}"
-              title="E-Mail do Funcionário" disabled>
-          </div>
-
-          <!-- login -->
-          <div class="col-12 col-md-4 mb-3">
-            <b><label for="login">Login</label></b>
-            <input class="form-control" type="text" name="cadlogin" id="cadlogin" th:value="${funcionario.cadlogin}"
-              title="Nome que será digitado no login!" disabled>
-          </div>
-
-          <!-- senha -->
-          <div class="col-12 col-md-4 mb-3">
-            <b><label for="senha">Senha</label></b>
-            <input class="form-control" type="password" name="cadsenha" id="cadsenha" th:value="${funcionario.cadsenha}"
-              title="Senha para entrar no sistema!" disabled>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <!-- voltar -->
-    <div>
-      <a class="btn btn-dark m-1" href="/index-funcionario">VOLTAR</a>
-    </div>
-  </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All
-          Rights
-          Reserved &copy</footer>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+    <script src="/js/interacoes.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
