@@ -2,134 +2,119 @@
 <html lang="pt-br">
 
 <head>
-  <title>Venda Cadastrada</title>
-  <!-- disabled meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Venda Cadastrada</title>
+    <!-- disabled meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/estilo.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/estilo.css">
 
-<body>
-  <header>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <img src="/img/sellcar-banner.png" alt="logo" id="logo">
-        </div>
-      </div>
-      <div class="row" id="tituloSellCar">
-        <div class="col-11">
-          <div>
-            <h1 class=" text-center font-weight-bold p-1">CADASTRO DE VENDA</h1>
-          </div>
-        </div>
-        <div class="col-1 text-center btn-group mt-3">
-          <div onclick="fonte('a')"><img src="/img/increase.png" height="30px" width="30px" class="mr-2"></div>
-          <div onclick="fonte('d')"><img src="/img/decrease.png" height="30px" width="30px"></div>
-        </div>
-      </div>
-    </div>
-  </header>
+    <body>
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <img src="/img/sellcar-banner.png" alt="logo" id="logo">
+                    </div>
+                </div>
+                <div class="row" id="tituloSellCar">
+                    <div class="col-11">
+                        <div>
+                            <h1 class=" text-center font-weight-bold p-1">CADASTRO DE VENDA</h1>
+                        </div>
+                    </div>
+                    <div class="col-1 text-center btn-group mt-3">
+                        <div onclick="fonte('a')"><img src="/img/increase.png" height="30px" width="30px" class="mr-2"></div>
+                        <div onclick="fonte('d')"><img src="/img/decrease.png" height="30px" width="30px"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-  <div class="container text-center" id="bgWhite">
+        <div class="container text-center" id="bgWhite">
 
-    <div class="form-group text-left m-3">
-      <div class="row">
-        <!-- NOME CLIENTE -->
-        <div class="col-12 col-md-5 mb-3">
-          <b><label class="col-form-label" for="nomecliente">Nome Cliente</label></b>
-          <input class="form-control" type="text" name="nomecliente" id="nomecliente" th:value="${vendas.nomecliente}"
-            title="Nome Completo do comprador!" disabled>
-        </div>
+            <div class="form-group text-left m-3">
+                <div class="row">
+                    <!-- NOME CLIENTE -->
+                    <div class="col-12 col-md-5 mb-3">
+                        <b><label class="col-form-label" for="nomecliente">Nome Cliente</label></b>
+                        <input class="form-control" type="text" name="nomecliente" id="nomecliente" th:value="${vendas.nomecliente}" title="Nome Completo do comprador!" disabled>
+                    </div>
 
-        <!-- NOME VEICULO -->
-        <div class="col-12 col-md-5 mb-3">
-          <b><label for="nomeveiculo">Nome Veículo</label></b>
-          <input class="form-control" type="text" name="nomeveiculo" id="nomeveiculo" th:value="${vendas.nomeveiculo}"
-            title="Veículo que será comprado!" disabled>
-        </div>
+                    <!-- NOME VEICULO -->
+                    <div class="col-12 col-md-5 mb-3">
+                        <b><label for="nomeveiculo">Nome Veículo</label></b>
+                        <input class="form-control" type="text" name="nomeveiculo" id="nomeveiculo" th:value="${vendas.nomeveiculo}" title="Veículo que será comprado!" disabled>
+                    </div>
 
-        <!-- DATA COMPRA -->
-        <div class="col-12 col-md-2 mb-3">
-          <b><label for="datacompra">Data Compra</label></b>
-          <input class="form-control" type="text" name="datacompra" id="datacompra" th:value="${vendas.datacompra}"
-            title="Data da Compra" disabled>
-        </div>
-      </div>
+                    <!-- DATA COMPRA -->
+                    <div class="col-12 col-md-2 mb-3">
+                        <b><label for="datacompra">Data Compra</label></b>
+                        <input class="form-control" type="text" name="datacompra" id="datacompra" th:value="${vendas.datacompra}" title="Data da Compra" disabled>
+                    </div>
+                </div>
 
-      <div class="row">
-        <!-- VENDEDOR -->
-        <div class="col-12 col-md-3 mb-3">
-          <b><label for="vendedor">Vendedor</label></b>
-          <input class="form-control" type="text" name="vendedor" id="vendedor" th:value="${vendas.vendedor}"
-            title="Funcionário que efetuou a venda!" disabled>
-        </div>
+                <div class="row">
+                    <!-- VENDEDOR -->
+                    <div class="col-12 col-md-3 mb-3">
+                        <b><label for="vendedor">Vendedor</label></b>
+                        <input class="form-control" type="text" name="vendedor" id="vendedor" th:value="${vendas.vendedor}" title="Funcionário que efetuou a venda!" disabled>
+                    </div>
 
-        <!-- VALOR DE ENTRADA -->
-        <div class="col-12 col-md-3 mb-3">
-          <b>
+                    <!-- VALOR DE ENTRADA -->
+                    <div class="col-12 col-md-3 mb-3">
+                        <b>
             <label for="valororiginal">Valor de Entrada</label>
           </b>
-          <div class="input-group">
-            <span class="input-group-text bg-dark text-white" id="real">R$</span>
-            <input class="form-control" type="text" name="valorfinal" id="valorfinal" th:value="${vendas.valorfinal}"
-              title="Valor que o veículo foi vendido!" disabled>
-          </div>
-        </div>
+                        <div class="input-group">
+                            <span class="input-group-text bg-dark text-white" id="real">R$</span>
+                            <input class="form-control" type="text" name="valorfinal" id="valorfinal" th:value="${vendas.valorfinal}" title="Valor que o veículo foi vendido!" disabled>
+                        </div>
+                    </div>
 
-        <!-- VALOR DE SAIDA -->
-        <div class="col-12 col-md-3 mb-3">
-          <b><label for="valorfinal">Valor de Saída</label></b>
+                    <!-- VALOR DE SAIDA -->
+                    <div class="col-12 col-md-3 mb-3">
+                        <b><label for="valorfinal">Valor de Saída</label></b>
 
-          <div class="input-group">
-            <span class="input-group-text bg-dark text-white" id="real">R$</span>
-            <input class="form-control" type="text" name="valororiginal" id="valororiginal"
-              th:value="${vendas.valororiginal}" title="Valor que está sendo pedido no veículo!" disabled>
-          </div>
-        </div>
+                        <div class="input-group">
+                            <span class="input-group-text bg-dark text-white" id="real">R$</span>
+                            <input class="form-control" type="text" name="valororiginal" id="valororiginal" th:value="${vendas.valororiginal}" title="Valor que está sendo pedido no veículo!" disabled>
+                        </div>
+                    </div>
 
-        <!-- FORMA DE PAGAMENTO -->
-        <div class="col-12 col-md-3 mb-3">
-          <b><label for="formaspagamento">Forma de Pagamento</label></b>
-          <input class="form-control" title="Forma de Pagamento do Veículo" name="formaspagamento" id="formaspagamento"
-            th:value="${vendas.formaspagamento}" disabled>
-          </input>
-        </div>
-      </div>
-    </div>
+                    <!-- FORMA DE PAGAMENTO -->
+                    <div class="col-12 col-md-3 mb-3">
+                        <b><label for="formaspagamento">Forma de Pagamento</label></b>
+                        <input class="form-control" title="Forma de Pagamento do Veículo" name="formaspagamento" id="formaspagamento" th:value="${vendas.formaspagamento}" disabled>
+                        </input>
+                    </div>
+                </div>
+            </div>
 
-    <div><a class="btn btn-dark m-1" href="/index-vendas">VOLTAR</a></div>
+            <div><a class="btn btn-dark m-1" href="/index-vendas">VOLTAR</a></div>
 
-    <!-- <button type="button" id="botao" onclick="fonte('a')">Aumentar!</button>
+            <!-- <button type="button" id="botao" onclick="fonte('a')">Aumentar!</button>
     <button type="button" id="botao" onclick="fonte('d')">Diminuir!</button> -->
 
-  </div>
+        </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All
-          Rights
-          Reserved &copy</footer>
-      </div>
-    </div>
-  </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <footer id="footerindex" class="text-center font-weight-bold">Hackerman's - Todos os Direitos Reservados - All Rights Reserved &copy</footer>
+                </div>
+            </div>
+        </div>
 
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-</body>
+        <!-- Optional JavaScript -->
+        <script src="/js/interacoes.js"></script>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
 
 </html>

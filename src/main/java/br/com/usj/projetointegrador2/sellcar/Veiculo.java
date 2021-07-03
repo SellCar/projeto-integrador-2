@@ -32,6 +32,7 @@ public class Veiculo {
     String placa;
     String renavan;
     String chassi;
+    String motor;
     Boolean multimidia;
     Boolean travaeletrica;
     Boolean vidroeletrico;
